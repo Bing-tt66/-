@@ -1,0 +1,25 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/**/*.js
+.obsidian/plugins/**/*.css
+.obsidian/plugins/**/node_modules
+
+# Claudian
+.claudian/sessions/
+.claudian/claudian-settings.json
+
+# Claude Code
+.claude/agents/
+.claude/commands/
+.claude/skills/
+.claude/settings.local.json
+
+# System
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.kdtmp
+*.tmp
