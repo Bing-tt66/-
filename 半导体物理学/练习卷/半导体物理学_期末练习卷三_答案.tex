@@ -1,0 +1,345 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhf{}
+\fancyhead[L]{\small 半导体物理学 期末练习卷（三）· 参考答案}
+\fancyhead[R]{\small 刘恩科《半导体物理学》第8版}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\setlength{\parskip}{4pt plus 2pt minus 1pt}
+
+\newcounter{qcounter}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{半导体物理学\quad 期末练习卷（三）}}\\[4pt]
+{\Large \textbf{参 考 答 案}}\\[6pt]
+{\normalsize 刘恩科《半导体物理学》第8版}
+\end{center}
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+% ============================================================
+\section*{一、单项选择题（10$\times$3 = 30分）}
+
+\begin{enumerate}[label=\arabic*.,nosep,leftmargin=2em]
+
+\item \textbf{A} 半导体：上面是空带，下面是满带，中间隔着较窄的禁带
+
+\textbf{解析}：这是半导体与绝缘体的本质区别——两者能带结构相似（空带+满带），但半导体禁带较窄（$E_g \sim 0.1\sim 2.5\,\text{eV}$），绝缘体禁带很宽（$E_g > 5\,\text{eV}$）。选项B描述的是金属的特征（半满带），选项C将两者说反了。
+
+\item \textbf{D} 价带电子跃迁到导带
+
+\textbf{解析}：本征激发是价带电子吸收能量（$\ge E_g$）跃迁至导带，同时产生电子-空穴对。选项A和B描述的是杂质电离，选项C描述的是复合过程。需注意区分：本征激发（价带→导带）、杂质电离（杂质能级→导带或价带）、复合（导带→价带或通过复合中心）。
+
+\item \textbf{B} 施主能级上的电子跃迁到导带
+
+\textbf{解析}：施主杂质电离是施主能级上的束缚电子获得能量$\Delta E_D$后跃迁至导带成为自由电子，留下不可动的正电中心$N_D^+$。选项A是电子被施主俘获（逆过程），选项C、D描述的是受主电离。
+
+\item \textbf{B} 空穴
+
+\textbf{解析}：$N_A(\text{B}) = 2\times10^{17} > N_D(\text{P}) = 3\times10^{16}$，净受主浓度$N_A - N_D = 1.7\times10^{17}\,\text{cm}^{-3} > 0$→p型半导体，多子为空穴。这是杂质补偿的典型计算——净杂质浓度决定导电类型。
+
+\item \textbf{A} 向价带顶$E_v$移动
+
+\textbf{解析}：p型半导体$p_0 = N_v\exp(-(E_F-E_v)/k_0T) \approx N_A$。$N_A$增大→$p_0$增大→$E_F-E_v$减小→$E_F$向$E_v$移动。n型半导体则$E_F$随$N_D$增大向$E_c$移动。$E_F$位置是掺杂浓度的直接反映。
+
+\item \textbf{B} 增加
+
+\textbf{解析}：$f(E) = 1/[1+\exp((E-E_F)/k_0T)]$。当$E > E_F$时，$E-E_F > 0$，随$T$升高→$k_0T$增大→$\exp((E-E_F)/k_0T)$减小→$f(E)$增大。物理图像：温度升高→费米分布"尾巴"上翘→高能态被占据概率增大。
+
+\item \textbf{C} 光学波声子散射
+
+\textbf{解析}：强电场下载流子获得足够能量，速度趋于饱和，此时载流子动能足以激发光学波声子→光学波声子散射成为能量弛豫的主要机制。声学波散射在低场下主导，电离杂质散射在低温下重要。这是GaAs出现负微分电导（RWH效应）前的高场散射背景。
+
+\item \textbf{B} 减小
+
+\textbf{解析}：n型肖特基结，正向偏压定义为金属接正、半导体接负（与pn结方向相反）。$V > 0$时半导体侧势垒降低为$q(V_D - V)$，正向电流（半导体→金属的电子流）增大。注意：金属侧的势垒高度$\phi_B = \phi_m - \chi$不随偏压变化。
+
+\item \textbf{B} 不同；$\psi_s > 2\psi_B$
+
+\textbf{解析}：强反型时，表面少子浓度超过体内多子浓度→表面导电类型反转为与体材料相反（如p型衬底表面变为n型）。强反型判断：表面势$\psi_s \ge 2\psi_B$（其中$\psi_B = (E_i - E_F)_{\text{bulk}}/q$）。弱反型条件为$\psi_B < \psi_s < 2\psi_B$。
+
+\item \textbf{B} 过剩的硅离子Si$^+$；向下；负向电压方向
+
+\textbf{解析}：Si-SiO$_2$界面的固定正电荷来源于氧化过程中界面处过剩的硅离子（Si$^+$），带正电→吸引p型Si表面电子→能带向下弯曲（即使$V_G=0$已有耗尽/反型倾向）→需要加负栅压将能带"拉平"→$V_{FB} < 0$（向负向偏移）。选项A是界面可动离子污染（Na$^+$），不是固定电荷的主要来源。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section*{二、填空题（6$\times$4 = 24分）}
+
+\begin{enumerate}[label=\arabic*.,nosep,leftmargin=2em]
+
+\item
+$E_F$随温度升高而\textbf{经过一极大值后趋近$E_i$}；
+$E_i$位于\textbf{禁带中央附近（$E_i \approx (E_c+E_v)/2$）}；
+$T \to \infty$时$E_F \to E_i$。
+
+\textbf{解析}：n型半导体$E_F$温度依赖：低温区$E_F$在$E_D$附近；进入饱和区$E_F$先靠近$E_c$再随$T$升高下移；本征区$E_F \to E_i$。整体呈"先升后降"趋势，有极大值。无论n型还是p型，高温下$E_F \to E_i$是普遍规律。
+
+\item
+两种主要散射机构：\textbf{声学波散射（晶格散射）}和\textbf{电离杂质散射}。
+其中\textbf{声学波}散射在长波纵波时起主要作用。
+总散射几率为各散射几率之\textbf{和}（$\dfrac{1}{\mu} = \sum \dfrac{1}{\mu_i}$）。
+
+\textbf{解析}：纵声学波引起晶体体积的疏密变化→能带边发生移动→等效于对载流子的散射势。横波不改变体积，散射作用弱。各散射机制独立作用→散射几率相加（马西森定则的物理图像）。
+
+\item
+隧道结两侧均为\textbf{重}掺杂，耗尽层极\textbf{薄}（$\sim$\textbf{10\,\,nm}），正向I-V特性出现\textbf{负微分电阻（NDR）}区域。
+
+\textbf{解析}：重掺杂（$\sim10^{19}\,\text{cm}^{-3}$）→耗尽层$<10\,\text{nm}$→电子可隧穿→正向小偏压下隧穿电流大→偏压增大后n区导带与p区价带的交叠减小→隧穿电流下降→NDR→偏压继续增大→扩散电流占主导→电流再次上升。典型应用：微波振荡器、高速开关。
+
+\item
+\textbf{镜像力}效应和\textbf{隧道}效应引起势垒高度\textbf{降低}，使反向电流\textbf{增加}。
+
+\textbf{解析}：镜像力$\Delta\phi = \sqrt{q\mathcal{E}/(4\pi\varepsilon_s)}$随反向偏压增大而增大（耗尽层电场$\mathcal{E}$增大），有效势垒$\phi_B - \Delta\phi$降低→$J_{ST}$增大→反向"软"特性。隧道效应在重掺杂下显著→有效势垒进一步降低→反向电流更大。
+
+\item
+反向偏压下势垒区比平衡态\textbf{宽（展宽）}。
+$n^+$p结耗尽区主要在\textbf{p型}一侧（低掺杂侧）。
+少子寿命越\textbf{小}，反向漏电流越\textbf{大}。
+
+\textbf{解析}：$n^+$p结$N_D \gg N_A$→$x_n/x_p = N_A/N_D \ll 1$→耗尽层几乎全在p区。反向偏压下耗尽层产生电流$J_g \propto n_i X_D/\tau$，$\tau$越小→产生率$n_i/\tau$越大→反向漏电越大。这与正向复合电流的规律相反（正向复合电流也随$\tau$减小而增大，但两者物理机制不同）。
+
+\item
+取决于\textbf{金属功函数$\phi_m$与半导体功函数$\phi_s$的相对大小}。
+Au（5.2 eV）与p型Si（4.2 eV），$\phi_m > \phi_s$→形成\textbf{反阻挡}层。
+
+\textbf{解析}：p型半导体，$\phi_m > \phi_s$→电子从半导体流向金属→p型表面空穴浓度增大→表面积累（多子增多）→无反阻挡，能带向上弯→空穴势垒降低→无反阻挡层（欧姆接触型）。注意p型与n型的结论恰好相反：n型中$\phi_m > \phi_s$→阻挡层；p型中$\phi_m > \phi_s$→反阻挡层。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section*{三、简答题（4$\times$8 = 32分）}
+
+\noindent\textbf{1. 电阻率随温度的变化（8分）}
+
+\textbf{解：}\quad 中等掺杂Si的$\rho$-$T$曲线分为四段：
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\toprule
+\textbf{区段} & \textbf{温度范围} & \textbf{主导机制} & \textbf{$\rho$变化} \\
+\midrule
+A（低温） & 极低温 & 杂质冻析+电离杂质散射 & $\rho$高且随$T$变化复杂 \\
+B（升温） & 低温→室温 & 杂质电离增强→$n_0$快速增大 & $\rho$急剧下降 \\
+C（饱和） & 室温附近 & 杂质全电离（$n_0$恒定），晶格散射使$\mu$下降 & $\rho$缓慢上升 \\
+D（高温） & 高温 & 本征激发→$n_0$指数增大（超过$\mu$下降） & $\rho$急剧下降 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{各段分析}：
+
+\textbf{B段}（低温电离区）：随$T$升高，杂质电离率增大→载流子浓度$n_0$按$\exp(-\Delta E_D/2k_0T)$指数上升→$\sigma$增大→$\rho$下降。载流子浓度变化是$\rho$变化的主导因素。
+
+\textbf{C段}（饱和区）：杂质全部电离→$n_0 \approx N_D$（恒定）。随$T$升高，晶格散射增强→$\mu$按$T^{-3/2}$下降→$\sigma = n_0 q\mu$缓慢减小→$\rho$缓慢上升。迁移率变化是主导因素。这是本征半导体和掺杂半导体的关键区别——本征半导体没有此"平台"或"上升"段（$n_i$持续指数增大）。
+
+\textbf{D段}（本征区）：本征激发使$n_0 \approx n_i \propto \exp(-E_g/2k_0T)$指数上升→$\sigma$指数增大→$\rho$急剧下降。$n_0$变化再次成为主导。
+
+\textbf{n型和p型是否相同}：定性趋势相同（三段特征），但定量不同（$\mu_n \neq \mu_p$，$\Delta E_D \neq \Delta E_A$）。同等掺杂浓度下p型Si的$\rho$通常略大于n型Si（$\mu_p < \mu_n$）。
+
+\vspace{1cm}
+
+\noindent\textbf{2. 隧道结与一般pn结的异同（8分）}
+
+\textbf{解：}\quad
+
+\begin{center}
+\begin{tabular}{p{2.5cm}|p{5cm}|p{5cm}}
+\toprule
+\textbf{对比项目} & \textbf{隧道结（隧道二极管）} & \textbf{一般pn结} \\
+\midrule
+掺杂浓度 & 两侧均为重掺杂（$\sim10^{19}\,\text{cm}^{-3}$） & 中等或轻掺杂（$\sim10^{15}$--$10^{17}\,\text{cm}^{-3}$） \\
+耗尽层宽度 & 极薄（$\sim5$--$10\,\text{nm}$） & 较宽（$\sim0.1$--$1\,\mu\text{m}$） \\
+正向I-V & 出现NDR（先隧穿峰→谷→扩散上升） & 标准指数规律 \\
+反向特性 & 反向隧穿电流大（低$V_R$即击穿） & 反向饱和电流小，击穿电压高 \\
+击穿机制 & 齐纳击穿（隧穿），$V_B$低 & $V_B > 4E_g/q$为雪崩，否则可能齐纳 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{NDR成因}：隧道结正向I-V曲线分三段——(1)小偏压：n区导带电子隧穿进入p区价带空态→隧穿电流随$V$↑而↑。(2)偏压增大：n区导带与p区价带能态交叠减少→隧穿通道"失配"→电流下降到谷值。(3)偏压进一步增大：与普通pn结相同的扩散电流机制主导→电流再次指数上升。峰→谷之间出现$\text{d}I/\text{d}V < 0$的NDR区。
+
+\textbf{典型应用}：微波振荡器（利用NDR产生高频振荡）、高速开关器件、记忆元件。
+
+\vspace{0.5cm}
+
+\noindent\textbf{3. 热电子发射理论与扩散理论的适用条件（8分）}
+
+\textbf{解：}\quad
+
+\textbf{热电子发射理论I-V方程}：
+\[
+J = J_{ST}\left[\exp\left(\frac{qV}{k_0T}\right) - 1\right],\quad
+J_{ST} = A^* T^2 \exp\left(-\frac{q\phi_B}{k_0T}\right)
+\]
+$A^* = 4\pi q m^* k_0^2/h^3$为有效Richardson常数。
+
+\textbf{两种理论适用条件}：
+
+\begin{center}
+\begin{tabular}{p{3cm}|p{4.5cm}|p{4.5cm}}
+\toprule
+\textbf{} & \textbf{扩散理论} & \textbf{热电子发射理论} \\
+\midrule
+适用条件 & 势垒宽度$X_D \gg \lambda$（平均自由程） & 势垒宽度$X_D \ll \lambda$ \\
+物理图像 & 电子在势垒区多次碰撞→扩散输运 & 电子不经碰撞直接越过势垒 \\
+$J_{ST}$特征 & 与偏压和电场有关 & 与偏压无关 \\
+典型材料 & 低迁移率半导体（Cu$_2$O等） & \textbf{高迁移率半导体（Si、Ge、GaAs）} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Si、Ge、GaAs适用热电子发射理论}：这些材料载流子迁移率高→平均自由程$\lambda$长（室温$\sim10^{-5}$--$10^{-4}\,\text{cm}$）。典型肖特基结耗尽层宽度$X_D \sim 10^{-6}$--$10^{-5}\,\text{cm}$。$\lambda$与$X_D$可比拟甚至更小→电子在势垒区基本不碰撞→热电子发射图像适用。
+
+实际上，对Si、Ge、GaAs肖特基二极管，两种机制都有贡献，通常用扩散-发射复合理论分析。
+
+\vspace{0.5cm}
+
+\noindent\textbf{4. MIS结构的平带电压与固定电荷（8分）}
+
+\textbf{解：}\quad
+
+\textbf{平带电压$V_{FB}$定义}：使半导体表面能带恢复平直（$\psi_s = 0$，表面无空间电荷层）所需加的栅压。理想MIS结构（无界面电荷）$V_{FB} = 0$（$V_G = 0$时能带平直）。
+
+\textbf{Si-SiO$_2$界面固定电荷$Q_f$}：来源是氧化过程中Si-SiO$_2$界面处过剩的硅离子（Si$^+$），面密度$Q_f/q \sim 10^{10}$--$10^{12}\,\text{cm}^{-2}$，位于距界面$\sim 1$--$3\,\text{nm}$处。
+
+\textbf{对平带电压的影响}：固定正电荷$Q_f > 0$→即使$V_G = 0$已有电场穿过氧化层→p型Si表面已有能带弯曲（向下）→需加负栅压抵消$Q_f$的影响才能恢复平带。平带电压偏移：
+\[
+V_{FB} = -\frac{Q_f}{C_{ox}}
+\]
+$Q_f > 0$→$V_{FB} < 0$→C-V曲线整体向负栅压方向平移。
+
+\textbf{可动Na$^+$离子的BTS效应}：氧化层中Na$^+$在高温（$\sim 200$--$300\,^\circ$C）和正偏压应力下漂移至Si-SiO$_2$界面→附加正电荷→$V_{FB}$向更负的方向偏移→C-V曲线进一步左移。这是MOS器件可靠性（BTS不稳定性）的经典检测方法——对比BTS前后C-V曲线的$V_{FB}$偏移量可知Na$^+$污染浓度。
+
+\newpage
+
+% ============================================================
+\section*{四、计算题（14分）}
+
+\noindent\textbf{杂质补偿半导体的载流子浓度与电阻率}
+
+\vspace{4pt}
+
+\textbf{解：}
+
+\noindent\textbf{(1) 判断全电离条件和导电类型（3分）}
+
+净杂质浓度：$N_D - N_A = 1.5\times10^{16} - 1.1\times10^{16} = 4.0\times10^{15}\,\text{cm}^{-3} > 0$。
+
+室温（$T = 300\,\text{K}$，$k_0T = 0.026\,\text{eV}$）下，磷的$\Delta E_D = 0.044\,\text{eV}$。$1.69k_0T = 1.69 \times 0.026 \approx 0.044 = \Delta E_D$，室温下$k_0T$与$\Delta E_D$同量级。又$N_D \sim 10^{16}\,\text{cm}^{-3} < 3\times10^{17}\,\text{cm}^{-3}$（全电离判据），且$n_i(1.5\times10^{10}) \ll N_D - N_A$（约5个数量级）→室温下杂质基本全电离，处于饱和区。
+
+导电类型：$N_D > N_A$→净施主→\textbf{n型半导体}，多子为电子。
+
+\vspace{6pt}
+
+\noindent\textbf{(2) 计算$n_0$和$p_0$（4分）}
+
+饱和区近似（杂质全电离）：
+\[
+n_0 = N_D - N_A = 1.5 \times 10^{16} - 1.1 \times 10^{16}
+= \boxed{4.0 \times 10^{15}\ \text{cm}^{-3}}
+\]
+
+由质量作用定律 $n_0 p_0 = n_i^2$：
+\[
+p_0 = \frac{n_i^2}{n_0} = \frac{(1.5 \times 10^{10})^2}{4.0 \times 10^{15}}
+= \frac{2.25 \times 10^{20}}{4.0 \times 10^{15}}
+\]
+
+\[
+\boxed{p_0 = 5.63 \times 10^4\ \text{cm}^{-3}}
+\]
+
+\textbf{验证}：$n_0 p_0 = 4.0\times10^{15} \times 5.63\times10^{4} = 2.25\times10^{20} = (1.5\times10^{10})^2 = n_i^2$ ✓
+
+$n_0 \gg p_0$（约11个数量级）→n型特征明确。
+
+\vspace{6pt}
+
+\noindent\textbf{(3) 计算$E_F - E_i$（3分）}
+
+由$n_0 = n_i \exp((E_F - E_i)/k_0T)$得：
+\[
+E_F - E_i = k_0T \ln\frac{n_0}{n_i}
+= 0.026 \times \ln\frac{4.0 \times 10^{15}}{1.5 \times 10^{10}}
+\]
+
+\[
+\frac{n_0}{n_i} = \frac{4.0 \times 10^{15}}{1.5 \times 10^{10}} = 2.67 \times 10^5
+\]
+
+\[
+\ln(2.67 \times 10^5) = \ln 2.67 + \ln 10^5 = 0.982 + 11.513 = 12.495
+\]
+
+\[
+\boxed{E_F - E_i \approx 0.325\ \text{eV}}
+\]
+
+$E_F - E_i > 0$→$E_F$在$E_i$上方→确认为n型半导体。$E_F$距$E_i$约0.33 eV，大于$k_0T$（0.026 eV），处于非简并状态。
+
+\vspace{6pt}
+
+\noindent\textbf{(4) 计算电阻率和高度补偿情况（4分）}
+
+电导率：
+\[
+\sigma = q(n_0\mu_n + p_0\mu_p) \approx q n_0 \mu_n \quad (\text{省略少子贡献})
+\]
+\[
+\sigma = 1.6 \times 10^{-19} \times 4.0 \times 10^{15} \times 1350
+= 1.6 \times 10^{-19} \times 5.4 \times 10^{18}
+\]
+\[
+\sigma = 0.864\ (\Omega\cdot\text{cm})^{-1}
+\]
+
+电阻率：
+\[
+\boxed{\rho = \frac{1}{\sigma} \approx 1.16\ \Omega\cdot\text{cm}}
+\]
+
+\textbf{若$N_D = N_A = 1.1\times10^{16}\,\text{cm}^{-3}$（高度补偿情况）}：
+
+净杂质浓度$N_D - N_A = 0$→半导体进入高度补偿状态。虽然杂质浓度很高（总数$>2\times10^{16}\,\text{cm}^{-3}$），但施主电子刚好填充受主能级→导带和价带均无额外载流子→$n_0 \approx p_0 \approx n_i = 1.5\times10^{10}\,\text{cm}^{-3}$（类本征）。
+
+此时电阻率为：
+\[
+\rho_{\text{comp}} \approx \frac{1}{q n_i (\mu_n + \mu_p)}
+= \frac{1}{1.6\times10^{-19} \times 1.5\times10^{10} \times 1850}
+\approx \frac{1}{4.44\times10^{-6}}
+\approx 2.3\times10^5\ \Omega\cdot\text{cm}
+\]
+
+\textbf{结论}：高度补偿使电阻率从约$1\,\Omega\cdot\text{cm}$暴增至约$2\times10^5\,\Omega\cdot\text{cm}$（增加5个数量级）。虽然杂质浓度很高，但有效载流子浓度极低，材料呈高阻态。这就是补偿型"类本征"高阻材料的物理基础。
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+\begin{center}
+\textit{--- 答案完 ---}
+\end{center}
+
+\end{document}

@@ -1,0 +1,279 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhf{}
+\fancyhead[L]{\small 半导体物理学 期末练习卷（三）}
+\fancyhead[R]{\small 姓名：\underline{\hspace{4cm}} 学号：\underline{\hspace{4cm}}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\setlength{\parskip}{4pt plus 2pt minus 1pt}
+
+\newcounter{qcounter}
+\newcommand{\选择题}{\stepcounter{qcounter}\arabic{qcounter}.\,}
+\newcommand{\填空题}{\stepcounter{qcounter}\arabic{qcounter}.\,}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{半导体物理学\quad 期末练习卷（三）}}\\[6pt]
+{\large 考试时间：120分钟\quad 满分：100分}\\[4pt]
+{\normalsize 适用教材：刘恩科《半导体物理学》第8版}
+\end{center}
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+% ============================================================
+\section*{一、单项选择题（本大题共10小题，每小题3分，共30分）}
+
+\textbf{请将正确答案填写在每题后的横线上。}
+
+\vspace{6pt}
+
+\选择题 关于半导体和绝缘体的能带结构，下列说法正确的是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 半导体：上面是空带，下面是满带，中间隔着较窄的禁带；绝缘体：上面是空带，下面是满带，中间隔着较宽的禁带
+\item 半导体：上面是半满带，下面是满带，中间隔着较窄的禁带；绝缘体：上面是满带，下面是满带，中间隔着较宽的禁带
+\item 半导体：上面是空带，下面是满带，中间隔着较宽的禁带；绝缘体：上面是空带，下面是满带，中间隔着较窄的禁带
+\item 半导体和绝缘体的能带结构完全相同，差别仅在于掺杂浓度
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 本征激发指的是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 施主能级上的电子跃迁到导带
+\item 受主能级上的电子跃迁到价带
+\item 导带电子跃迁到价带（复合）
+\item 价带电子跃迁到导带
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 施主杂质电离的过程是指（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 导带电子落入施主能级
+\item 施主能级上的电子跃迁到导带
+\item 价带电子跃迁到受主能级
+\item 受主能级上的空穴跃迁到价带
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 某Si半导体掺有$2\times10^{17}\,\text{cm}^{-3}$的硼原子以及$3\times10^{16}\,\text{cm}^{-3}$的磷原子，则此Si半导体主要是（\quad）导电。
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 电子
+\item 空穴
+\item 电子和空穴同等贡献
+\item 声子
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 对p型半导体，随掺杂浓度增加，费米能级$E_F$将（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 向价带顶$E_v$移动
+\item 向导带底$E_c$移动
+\item 向禁带中央$E_i$移动
+\item 保持不变
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 T>0K时，位于$E_F$以上的能级，随着温度升高，电子占据该能级的几率（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 不变
+\item 增加
+\item 下降
+\item 不确定
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 对于工作在\textbf{强电场}下（速度饱和区）的半导体，决定迁移率的主要散射机制是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 电离杂质散射
+\item 声学波声子散射
+\item 光学波声子散射
+\item 库仑散射
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 金属与n型半导体接触形成肖特基势垒，若外加正压于金属，随电压增加，半导体表面电子势垒高度将（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 不变
+\item 减小
+\item 增加
+\item 无法确定
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 MIS结构表面发生\textbf{强反型}时，表面处的导电类型与体材料相比（\quad），表面势$\psi_s$与$\psi_B$的关系为（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 相同；$\psi_s < \psi_B$
+\item 不同；$\psi_s > 2\psi_B$
+\item 相同；$\psi_s = \psi_B$
+\item 不同；$0 < \psi_s < \psi_B$
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 在硅基MOS器件中，Si-SiO$_2$界面处的\textbf{固定电荷}通常为（\quad），使半导体表面能带（\quad）弯曲，平带电压向（\quad）偏移。
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 钠离子Na$^+$；向上；正向电压方向
+\item 过剩的硅离子Si$^+$；向下；负向电压方向
+\item 过剩的硅离子Si$^+$；向上；正向电压方向
+\item 钠离子Na$^+$；向下；负向电压方向
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\newpage
+
+% ============================================================
+\section*{二、填空题（本大题共6小题，每小题4分，共24分）}
+
+\textbf{将答案填写在题中横线上。}
+
+\vspace{6pt}
+
+\setcounter{qcounter}{0}
+
+\填空题 对于只含一种杂质的\textbf{非简并n型半导体}，费米能级$E_F$随温度升高而\underline{\hspace{2cm}}；本征费米能级$E_i$位于\underline{\hspace{3cm}}，当$T \to \infty$时$E_F \to \underline{\hspace{1.5cm}}$。
+
+\vspace{14pt}
+
+\填空题 半导体Si、Ge中起主要散射作用的两种机构为\underline{\hspace{2.5cm}}和\underline{\hspace{2.5cm}}。其中，\underline{\hspace{2.5cm}}散射在长波且为纵波时起主要作用。多种散射共存时，总散射几率为各散射几率之\underline{\hspace{1.5cm}}。
+
+\vspace{14pt}
+
+\填空题 隧道结（隧道二极管）与一般pn结的主要区别在于：隧道结两侧均为\underline{\hspace{2.5cm}}掺杂，耗尽层极\underline{\hspace{1.5cm}}（$\sim$\underline{\hspace{2cm}}），正向I-V特性出现\underline{\hspace{2.5cm}}区域。
+
+\vspace{14pt}
+
+\填空题 金属和半导体接触时，\underline{\hspace{2.5cm}}效应和\underline{\hspace{2.5cm}}效应对反向特性的影响特别显著，它们引起势垒高度\underline{\hspace{1.5cm}}，从而使反向电流\underline{\hspace{1.5cm}}。
+
+\vspace{14pt}
+
+\填空题 理想pn结在\textbf{反向偏压}下，势垒区宽度比平衡态\underline{\hspace{1.5cm}}。突变$n^+$p结中耗尽区主要在\underline{\hspace{2cm}}一侧。反向饱和电流密度$J_s$与少子寿命的关系为：少子寿命越\underline{\hspace{1.5cm}}，反向漏电流越\underline{\hspace{1.5cm}}。
+
+\vspace{14pt}
+
+\填空题 在\textbf{不考虑表面态}影响时，金属与半导体接触形成的阻挡层或反阻挡层取决于\underline{\hspace{3cm}}。已知Au的功函数为5.2 eV，p型Si的功函数为4.2 eV，则接触时形成\underline{\hspace{2.5cm}}层。
+
+\newpage
+
+% ============================================================
+\section*{三、简答题（本大题共4小题，每小题8分，共32分）}
+
+\textbf{请简要回答下列问题，写出关键公式和物理分析。}
+
+\vspace{4pt}
+
+\setcounter{qcounter}{0}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）电阻率随温度的变化}
+
+下图为中等掺杂Si的电阻率$\rho$随温度$T$的变化关系（分为A、B、C、D四段）。请分析各段的物理机制，说明载流子浓度和迁移率在各段对电阻率的主导贡献，并分别指出n型和p型半导体的曲线是否相同。
+
+\vspace{11cm}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）隧道结与一般pn结的异同}
+
+说明隧道二极管（重掺杂pn结）与普通pn结在掺杂浓度、耗尽层宽度、正向I-V特性、击穿机制方面的异同。解释为什么隧道结正向I-V特性会出现负微分电阻区，并给出隧道结的一种典型应用。
+
+\vspace{11cm}
+
+\newpage
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）热电子发射理论与扩散理论的适用条件}
+
+写出肖特基结热电子发射理论的I-V方程和饱和电流密度表达式。说明热电子发射理论与扩散理论各自的适用条件（势垒宽度与电子平均自由程的关系）。对Si、Ge、GaAs等高迁移率半导体，哪种理论更适用？为什么？
+
+\vspace{11cm}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）MIS结构的平带电压与固定电荷}
+
+说明MIS结构平带电压$V_{FB}$的定义。解释Si-SiO$_2$界面固定电荷的来源及其对平带电压的影响（使C-V曲线如何平移）。若氧化层中存在可动钠离子Na$^+$，在偏压-温度应力（BTS）测试中C-V曲线将如何变化？
+
+\newpage
+
+% ============================================================
+\section*{四、计算题（本大题共1小题，共14分）}
+
+\textbf{写出完整的推导过程，保留必要的中间步骤。}
+
+\vspace{4pt}
+
+\setcounter{qcounter}{0}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （14分）杂质补偿半导体的载流子浓度与电阻率}
+
+室温下（$T = 300\,\text{K}$），某硅样品中掺有施主杂质磷（P）浓度 $N_D = 1.5 \times 10^{16}\,\text{cm}^{-3}$ 和受主杂质硼（B）浓度 $N_A = 1.1 \times 10^{16}\,\text{cm}^{-3}$。已知：
+
+\begin{itemize}[nosep]
+\item 本征载流子浓度 $n_i = 1.5 \times 10^{10}\,\text{cm}^{-3}$
+\item 导带有效状态密度 $N_c = 2.8 \times 10^{19}\,\text{cm}^{-3}$，价带有效状态密度 $N_v = 1.1 \times 10^{19}\,\text{cm}^{-3}$
+\item $k_0T = 0.026\,\text{eV}$，电子电荷 $q = 1.6 \times 10^{-19}\,\text{C}$
+\item 电子迁移率 $\mu_n = 1350\,\text{cm}^2/(\text{V·s})$，空穴迁移率 $\mu_p = 500\,\text{cm}^2/(\text{V·s})$
+\end{itemize}
+
+\begin{enumerate}[label=(\arabic*),nosep,leftmargin=0em]
+\item （3分）室温下杂质是否全电离？计算净杂质浓度，判断半导体的导电类型。
+\item （4分）在饱和区近似下，计算热平衡多子浓度$n_0$（或$p_0$）和少子浓度$p_0$（或$n_0$）。用质量作用定律验证。
+\item （3分）计算费米能级$E_F$相对于本征费米能级$E_i$的位置（即$E_F - E_i$），并指出$E_F$在$E_i$的上方还是下方。
+\item （4分）计算此半导体的电阻率$\rho$。若施主浓度改为 $N_D = 1.1 \times 10^{16}\,\text{cm}^{-3}$（与$N_A$相同），此时电阻率会如何变化？（定性说明即可）
+\end{enumerate}
+
+\vspace{18cm}
+
+\hrule
+\vspace{8pt}
+
+\begin{center}
+\textit{--- 祝考试顺利 ---}
+\end{center}
+
+\end{document}

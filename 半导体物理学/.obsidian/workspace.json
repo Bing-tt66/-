@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "3c6cf239f2d13442",
+    "type": "split",
+    "children": [
+      {
+        "id": "9bee0de62295f3a6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "067d44fcd98c7636",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "半导体物理学.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "半导体物理学"
+            }
+          },
+          {
+            "id": "471d5fa2d4685c6a",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "未命名.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "未命名"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d20e81603121da8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "8118555a05f091c2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b1691b3d25c9dd4d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "2d9d2c63c52ca492",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "6353aa949c515350",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4544d24f2af33c10",
+    "type": "split",
+    "children": [
+      {
+        "id": "ba21787fd97619cb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "07edbc55c3d020ca",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "c3bffef86a27b0d9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "309b6a8399ab8086",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "bb934e8964046ef8",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "dae643a5c453d518",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "471d5fa2d4685c6a",
+  "lastOpenFiles": [
+    "半导体物理学.md",
+    "未命名.canvas",
+    "练习卷/半导体物理学_期末练习卷三_答案.pdf",
+    "练习卷/半导体物理学_期末练习卷三_答案.aux",
+    "练习卷/半导体物理学_期末练习卷三_答案.log",
+    "练习卷/半导体物理学_期末练习卷三.pdf",
+    "练习卷/半导体物理学_期末练习卷三.aux",
+    "练习卷/半导体物理学_期末练习卷三.log",
+    "练习卷/半导体物理学_期末练习卷三_答案.tex",
+    "练习卷/半导体物理学_期末练习卷三.tex",
+    "练习卷/半导体物理学_期末练习卷二_答案.pdf",
+    "练习卷/半导体物理学_期末练习卷二_答案.aux",
+    "重点（录音）.md",
+    "CLAUDE.md"
+  ]
+}

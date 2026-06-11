@@ -1,0 +1,281 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhf{}
+\fancyhead[L]{\small 半导体物理学 期末练习卷（二）}
+\fancyhead[R]{\small 姓名：\underline{\hspace{4cm}} 学号：\underline{\hspace{4cm}}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\setlength{\parskip}{4pt plus 2pt minus 1pt}
+
+\newcounter{qcounter}
+\newcommand{\选择题}{\stepcounter{qcounter}\arabic{qcounter}.\,}
+\newcommand{\填空题}{\stepcounter{qcounter}\arabic{qcounter}.\,}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{半导体物理学\quad 期末练习卷（二）}}\\[6pt]
+{\large 考试时间：120分钟\quad 满分：100分}\\[4pt]
+{\normalsize 适用教材：刘恩科《半导体物理学》第8版}
+\end{center}
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+% ============================================================
+\section*{一、单项选择题（本大题共10小题，每小题3分，共30分）}
+
+\textbf{请将正确答案填写在每题后的横线上。}
+
+\vspace{6pt}
+
+\选择题 半导体中电子的\textbf{有效质量} $m_n^*$ 在能带底和能带顶的符号分别为（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 能带底为正，能带顶为正
+\item 能带底为负，能带顶为正
+\item 能带底为正，能带顶为负
+\item 能带底为负，能带顶为负
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 回旋共振实验中，改变磁场方向可测得不同方向的有效质量，从而确定（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 禁带宽度 $E_g$
+\item 等能面形状
+\item 掺杂浓度
+\item 载流子寿命
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 在硅中掺入\textbf{硼（B）}元素后，形成的半导体类型和多数载流子分别为（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item n型，电子
+\item n型，空穴
+\item p型，空穴
+\item p型，电子
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 非简并n型半导体，当温度从室温开始\textbf{升高}时，费米能级 $E_F$ 的位置将（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 始终靠近导带底 $E_c$ 不变
+\item 从靠近 $E_c$ 处逐渐向禁带中央 $E_i$ 移动
+\item 从禁带中央 $E_i$ 向 $E_c$ 移动
+\item 始终固定在 $E_i$ 处
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 对于\textbf{电离杂质散射}，迁移率 $\mu_I$ 与温度 $T$ 和电离杂质浓度 $N_I$ 的关系为（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item $\mu_I \propto T^{-3/2} / N_I$
+\item $\mu_I \propto T^{3/2} / N_I$
+\item $\mu_I \propto T^{3/2} \cdot N_I$
+\item $\mu_I$ 与温度无关
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 非平衡状态下，引入\textbf{准费米能级} $E_{Fn}$ 和 $E_{Fp}$ 来描述载流子分布。在正向偏置的pn结中，$E_{Fn} - E_{Fp}$ 等于（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item $k_0T$
+\item $E_g$
+\item $qV$（$V$为外加偏压）
+\item $V_D$（内建电势）
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 在Si、Ge等间接带隙半导体中，起主导作用的复合机制是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 直接复合（带间复合）
+\item 间接复合（通过复合中心的SRH复合）
+\item 俄歇复合
+\item 表面复合
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 在pn结的交流小信号特性中，\textbf{扩散电容} $C_D$ 主要存在于（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 正向偏压下，来源于扩散区存储的非平衡少子电荷
+\item 反向偏压下，来源于耗尽层电离杂质电荷
+\item 零偏压下，来源于内建电场
+\item 任何偏压下均不存在
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 MOS结构中，p型硅衬底在\textbf{正栅压}作用下，半导体表面首先经历的状态变化是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 积累 → 耗尽 → 反型
+\item 耗尽 → 积累 → 反型
+\item 反型 → 耗尽 → 积累
+\item 积累 → 反型 → 耗尽
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 在\textbf{Type I（跨立型）异质结}（如GaAs/AlGaAs）中，能带对齐的特点是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 窄带隙材料的 $E_c$ 和 $E_v$ 均被宽带隙材料包围
+\item 一种材料的 $E_c$ 和 $E_v$ 均高于另一种材料
+\item 两种材料的能带完全无重叠
+\item 电子和空穴被空间分离到不同材料中
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\newpage
+
+% ============================================================
+\section*{二、填空题（本大题共6小题，每小题4分，共24分）}
+
+\textbf{将答案填写在题中横线上。}
+
+\vspace{6pt}
+
+\setcounter{qcounter}{0}
+
+\填空题 电子\textbf{状态密度有效质量} $m_{dn}^*$（Si、Ge等多谷能带）的表达式为 $m_{dn}^* = \underline{\hspace{3cm}}$，其中 $S$ 为\underline{\hspace{2.5cm}}数。空穴状态密度有效质量为 $m_{dp}^* = \underline{\hspace{3cm}}$。注意区分它与\textbf{电导有效质量} $1/m_c^* = \underline{\hspace{3cm}}$。
+
+\vspace{14pt}
+
+\填空题 \textbf{类氢模型}估算的施主电离能 $\Delta E_D = \underline{\hspace{3cm}}$。Si中掺P的电离能实验值约为\underline{\hspace{1.5cm}} eV，与类氢估算值（$\sim$0.025 eV）的差异主要来源于\underline{\hspace{3cm}}。
+
+\vspace{14pt}
+
+\填空题 \textbf{本征载流子浓度} $n_i$ 的温度依赖关系为 $n_i \propto \underline{\hspace{3cm}}$。宽禁带半导体（如SiC）的 $n_i$ 比Si的 $n_i$ \underline{\hspace{2cm}}（大/小），因此宽禁带器件可以在\underline{\hspace{2cm}}温度下工作。
+
+\vspace{14pt}
+
+\填空题 一维稳态条件下，非平衡少子满足的\textbf{扩散方程}为 $\underline{\hspace{4cm}}$，其通解为 $\Delta p(x) = \underline{\hspace{4cm}}$。式中 $L_p = \sqrt{D_p \tau_p}$ 称为\underline{\hspace{2.5cm}}。
+
+\vspace{14pt}
+
+\填空题 平衡pn结的\textbf{内建电势} $V_D = \underline{\hspace{4cm}}$。对于Si pn结，当$N_A$和$N_D$增大时$V_D$\underline{\hspace{2cm}}（增大/减小）；当$n_i$增大（温度升高）时$V_D$\underline{\hspace{2cm}}（增大/减小）。
+
+\vspace{14pt}
+
+\填空题 金属与n型半导体接触的\textbf{肖特基势垒高度} $\phi_B = \underline{\hspace{3cm}}$（用 $\phi_m$ 和 $\chi$ 表示）。镜像力效应使势垒\underline{\hspace{2cm}}（升高/降低）。肖特基结的饱和电流 $J_{ST} = \underline{\hspace{3cm}}$。
+
+\newpage
+
+% ============================================================
+\section*{三、简答题（本大题共4小题，每小题8分，共32分）}
+
+\textbf{请简要回答下列问题，写出关键公式和物理分析。}
+
+\vspace{4pt}
+
+\setcounter{qcounter}{0}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）有效质量的物理意义与回旋共振}
+
+阐述半导体中引入有效质量概念的必要性和物理意义。写出能带极值附近 $E(k)$ 关系的泰勒展开形式，说明有效质量与 $E(k)$ 曲率的关系。简述回旋共振实验测量有效质量的基本原理。
+
+\vspace{12cm}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）简并与非简并半导体}
+
+写出简并化条件（非简并、弱简并、强简并的判据）。说明简并情况下为什么必须用费米-狄拉克积分而不能用玻尔兹曼近似。简述简并半导体的两个重要物理效应——冻析效应和禁带变窄效应（BGN），并说明它们之间的关联。
+
+\vspace{12cm}
+
+\newpage
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）半导体的散射机制与迁移率}
+
+列举半导体中两种主要的散射机制，分别写出迁移率对温度的依赖关系（$\mu \propto T^{\,?}$），并解释其物理原因。写出马西森（Matthiessen）定则。在同一坐标图中定性画出轻掺杂和重掺杂n型Si的迁移率-温度曲线，标注极值位置，解释两条曲线的差异。
+
+\vspace{11cm}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）MIS结构的C-V特性}
+
+画出理想MIS结构（p型衬底）的高频和低频C-V特性曲线示意图。标注积累区、耗尽区和反型区。解释为什么高频C-V曲线在反型区达到最小电容后不再上升，而低频曲线回升至$C_{ox}$。说明C-V曲线的两种主要应用。
+
+\newpage
+
+% ============================================================
+\section*{四、计算题（本大题共1小题，共14分）}
+
+\textbf{写出完整的推导过程，保留必要的中间步骤。}
+
+\vspace{4pt}
+
+\setcounter{qcounter}{0}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （14分）载流子浓度与费米能级的综合计算}
+
+有一块n型硅单晶，施主杂质为磷（P），浓度 $N_D = 1.0 \times 10^{16}\,\text{cm}^{-3}$，受主杂质浓度 $N_A = 2.0 \times 10^{15}\,\text{cm}^{-3}$。已知室温 $T = 300\,\text{K}$ 时：
+
+\begin{itemize}[nosep]
+\item 硅的禁带宽度 $E_g = 1.12\,\text{eV}$
+\item 导带有效状态密度 $N_c = 2.8 \times 10^{19}\,\text{cm}^{-3}$
+\item 价带有效状态密度 $N_v = 1.1 \times 10^{19}\,\text{cm}^{-3}$
+\item $k_0T = 0.026\,\text{eV}$，电子电荷 $q = 1.6 \times 10^{-19}\,\text{C}$
+\item 电子迁移率 $\mu_n = 1350\,\text{cm}^2/(\text{V·s})$，空穴迁移率 $\mu_p = 480\,\text{cm}^2/(\text{V·s})$
+\item 磷在Si中的电离能 $\Delta E_D = 0.044\,\text{eV}$，施主基态简并度 $g_D = 2$
+\end{itemize}
+
+\begin{enumerate}[label=(\arabic*),nosep,leftmargin=0em]
+\item （3分）计算本征载流子浓度 $n_i$，并判断此掺杂浓度下半导体是否处于饱和区（杂质全电离）。室温下杂质基本全电离的条件是什么？
+\item （4分）在饱和区近似下，计算热平衡多子浓度 $n_0$ 和少子浓度 $p_0$。用质量作用定律验证。
+\item （3分）计算费米能级 $E_F$ 相对于导带底 $E_c$ 的位置（即 $E_c - E_F$），并画出示意能带图，标出 $E_c$、$E_v$、$E_i$ 和 $E_F$。
+\item （4分）计算此半导体的电导率 $\sigma$ 和电阻率 $\rho$。若将此样品加热到 $T = 400\,\text{K}$，杂质仍全电离但本征激发已显著（此时 $n_i \approx 5.0 \times 10^{12}\,\text{cm}^{-3}$），求此时的载流子浓度和电导率。（忽略迁移率随温度的变化）
+\end{enumerate}
+
+\vspace{18cm}
+
+\hrule
+\vspace{8pt}
+
+\begin{center}
+\textit{--- 祝考试顺利 ---}
+\end{center}
+
+\end{document}

@@ -1,0 +1,421 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhf{}
+\fancyhead[L]{\small 半导体物理学 期末练习卷（二）· 参考答案}
+\fancyhead[R]{\small 刘恩科《半导体物理学》第8版}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\setlength{\parskip}{4pt plus 2pt minus 1pt}
+
+\newcounter{qcounter}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{半导体物理学\quad 期末练习卷（二）}}\\[4pt]
+{\Large \textbf{参 考 答 案}}\\[6pt]
+{\normalsize 刘恩科《半导体物理学》第8版}
+\end{center}
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+% ============================================================
+\section*{一、单项选择题（10$\times$3 = 30分）}
+
+\begin{enumerate}[label=\arabic*.,nosep,leftmargin=2em]
+
+\item \textbf{C} 能带底为正，能带顶为负
+
+\textbf{解析}：$m_n^* = \hbar^2 / (d^2E/dk^2)$，能带底$d^2E/dk^2 > 0$→$m_n^* > 0$；能带顶$d^2E/dk^2 < 0$→$m_n^* < 0$。能带顶电子有效质量为负，对应的空穴有效质量为$m_p^* = -m_n^* > 0$。
+
+\item \textbf{B} 等能面形状
+
+\textbf{解析}：回旋频率$\omega_c = qB/m^*$，固定频率$\omega_c$测共振时的$B$得到$m^*$。改变$B$的方向（即改变$\alpha,\beta,\gamma$方向余弦），测得不同方向的有效质量，结合公式$m_n^* = m_t m_l / \sqrt{m_t\sin^2\theta + m_l\cos^2\theta}$可反推出$m_t$、$m_l$和等能面形状（旋转椭球）。
+
+\item \textbf{C} p型，空穴
+
+\textbf{解析}：B（硼）是III族元素，在Si中作为受主杂质，接受价带电子→在价带产生空穴→形成p型半导体，多子为空穴。
+
+\item \textbf{B} 从靠近 $E_c$ 处逐渐向禁带中央 $E_i$ 移动
+
+\textbf{解析}：饱和区$E_F = E_c + k_0T\ln(N_D/N_c)$。随$T$升高，$\ln(N_D/N_c)$为负且$T$系数增大，$E_F$从靠近$E_c$处逐渐下移；进入本征区后$E_F \to E_i$。这是$E_F$温度依赖的共同特征——高温下半导体趋于本征化。
+
+\item \textbf{B} $\mu_I \propto T^{3/2} / N_I$
+
+\textbf{解析}：电离杂质散射类似于卢瑟福散射，温度越高→载流子热速度越大→掠过杂质中心时受库仑散射时间越短→$\mu_I$增大（$\propto T^{3/2}$）。$N_I$越大→散射中心越多→$\mu_I$越小（$\propto 1/N_I$）。注意与晶格散射$\mu_L \propto T^{-3/2}$区分。
+
+\item \textbf{C} $qV$（$V$为外加偏压）
+
+\textbf{解析}：正向偏压$V$下，pn结耗尽层两端$n_n/n_p = p_p/p_n = \exp(qV/k_0T)$。由$n = n_i\exp((E_{Fn}-E_i)/k_0T)$和$p = n_i\exp((E_i-E_{Fp})/k_0T)$，可得$E_{Fn} - E_{Fp} = qV$。这是准费米能级概念在pn结理论中的核心应用。
+
+\item \textbf{B} 间接复合（通过复合中心的SRH复合）
+
+\textbf{解析}：Si和Ge是间接带隙半导体，直接复合需声子参与动量守恒，概率极小。实际主导的是通过禁带中复合中心能级的SRH间接复合。直接复合在GaAs等直接带隙半导体中更重要。
+
+\item \textbf{A} 正向偏压下，来源于扩散区存储的非平衡少子电荷
+
+\textbf{解析}：正向偏压下少子注入→在中性扩散区存储大量非平衡少子电荷。偏压变化时注入量变化→存储电荷变化→$C_D = dQ/dV \propto \exp(qV/k_0T)$。反向偏压下无少子注入→$C_D \to 0$。这是pn结高频应用的主要限制因素之一。
+
+\item \textbf{A} 积累 → 耗尽 → 反型
+
+\textbf{解析}：p型Si加正栅压→表面空穴被排斥→先形成耗尽层（$V_G$较小）→栅压增大到阈值→表面电子浓度超过空穴浓度→强反型。若加负栅压→空穴被吸引至表面→多子积累。
+
+\item \textbf{A} 窄带隙材料的 $E_c$ 和 $E_v$ 均被宽带隙材料包围
+
+\textbf{解析}：Type I（跨立型）：$\Delta E_c$和$\Delta E_v$符号相反（宽带隙的$E_c$更高、$E_v$更低），电子和空穴均被限制在窄带隙层中→载流子限制效率高→适合发光器件。选项B描述的是Type II（错开型）。这是Ch9.1.1的核心内容。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section*{二、填空题（6$\times$4 = 24分）}
+
+\begin{enumerate}[label=\arabic*.,nosep,leftmargin=2em]
+
+\item
+$m_{dn}^* = S^{2/3}(m_t^2 m_l)^{1/3}$，
+$S$为\textbf{等价能谷}数。
+$m_{dp}^* = [(m_p)_l^{3/2} + (m_p)_h^{3/2}]^{2/3}$。
+电导有效质量 $1/m_c^* = (1/3)(1/m_l + 2/m_t)$。
+
+\textbf{解析}：状态密度有效质量出现在$g(E)$和$N_c$/$N_v$的表达式中，电导有效质量出现在迁移率计算中。两者取值不同——对Si：$m_{dn}^* \approx 1.08m_0$，$m_c^* \approx 0.26m_0$。这是常见考点。
+
+\item
+$\Delta E_D = \dfrac{m_n^*}{m_0} \cdot \dfrac{1}{\varepsilon_r^2} \cdot 13.6\,\text{eV}$。
+Si中P的电离能实验值约为\textbf{0.044} eV。差异主要来源于\textbf{类氢模型的近似性（忽略晶格周期势的短程修正和各向异性）}。
+
+\textbf{解析}：类氢模型假设各向同性的连续介质（仅用$\varepsilon_r$修正），忽略了实际晶格势场的短程部分。对Si中的浅施主，$\Delta E_D$实验值约0.04--0.05 eV，类氢估算约0.025 eV。对Ge更接近。
+
+\item
+$n_i \propto T^{3/2}\exp(-E_g/2k_0T)$。
+宽禁带半导体的$n_i$比Si的$n_i$\textbf{小}（$E_g$大→指数因子极小），可以在\textbf{高}温下工作。
+
+\textbf{解析}：SiC的$E_g \approx 3.0\,\text{eV} \gg$ Si的$1.12\,\text{eV}$，室温下SiC的$n_i$比Si小数十个数量级。器件最高工作温度取决于本征激发是否超过掺杂，宽禁带→$n_i$小→可在更高温度保持掺杂特性。
+
+\item
+稳态少子扩散方程：$D_p\dfrac{d^2\Delta p}{dx^2} - \dfrac{\Delta p}{\tau_p} = 0$。
+通解：$\Delta p(x) = Ae^{-x/L_p} + Be^{x/L_p}$。
+$L_p$称为\textbf{扩散长度}。
+
+\textbf{解析}：第一项$e^{-x/L_p}$描述注入端的衰减（$x > 0$时$Ae^{-x/L_p}$），第二项$e^{x/L_p}$描述远端的贡献。对半无限样品，$B = 0$，解呈纯指数衰减。扩散长度$L_p = \sqrt{D_p\tau_p}$是少子在复合前扩散的平均距离。
+
+\item
+$V_D = \dfrac{k_0T}{q}\ln\dfrac{N_A N_D}{n_i^2}$。
+$N_A$、$N_D$增大时$V_D$\textbf{增大}；$n_i$增大时$V_D$\textbf{减小}。
+
+\textbf{解析}：$V_D \propto \ln(N_A N_D/n_i^2)$。重掺杂→$V_D$增大；温度升高→$n_i$指数增大→$V_D$减小。典型Si pn结室温$V_D \approx 0.6\sim0.9\,\text{V}$。
+
+\item
+$\phi_B = \phi_m - \chi$。
+镜像力使势垒\textbf{降低}（$\Delta\phi = \sqrt{q\mathcal{E}/(4\pi\varepsilon_s)}$）。
+$J_{ST} = A^* T^2 \exp(-q\phi_B/k_0T)$。
+
+\textbf{解析}：$\chi$为电子亲和能（导带底到真空能级的能量差）。镜像力降低有效势垒后，$J_{ST}$增大（反向漏电增大），这是肖特基二极管反向特性偏离理想的重要因素。重掺杂时还需考虑隧道效应导致的额外势垒降低。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section*{三、简答题（4$\times$8 = 32分）}
+
+\noindent\textbf{1. 有效质量的物理意义与回旋共振（8分）}
+
+\textbf{解：}\quad
+
+\textbf{引入有效质量的必要性}：晶体中电子在外力$f_{\text{外}}$作用下运动时，还受到内部周期性势场的作用力$f_{\text{内}}$。$f_{\text{内}}$难以精确计算，引入有效质量$m^*$将$f_{\text{内}}$的影响概括进来，使得牛顿第二定律形式$f_{\text{外}} = m^*a$仍然成立。
+
+\textbf{物理意义}：$m^*$概括了半导体内部周期性势场对电子运动的总影响。$m^* \neq m_0$（不是电子的惯性质量），$m^*$可正可负，反映的是能带结构（$E(k)$曲率）。
+
+\textbf{$E(k)$关系与有效质量}：能带极值（$k=0$）附近泰勒展开：
+\[
+E(k) - E(0) = \frac{1}{2}\left(\frac{d^2E}{dk^2}\right)_{k=0} k^2 = \frac{\hbar^2 k^2}{2m_n^*}
+\]
+\[
+\boxed{m_n^* = \frac{\hbar^2}{d^2E/dk^2}}
+\]
+有效质量与$E(k)$曲率成反比——能带越宽（$d^2E/dk^2$大），有效质量越小；能带越窄，有效质量越大。
+
+\textbf{回旋共振原理}：
+\begin{enumerate}[nosep]
+\item 样品置于均匀磁场$B$中，电子做螺旋运动，回旋频率$\omega_c = qB/m^*$
+\item 外加交变电场（微波），当$\omega = \omega_c$时发生共振吸收
+\item 固定$\omega$，扫描$B$，共振吸收峰对应$B$→算出$m^*$
+\item 改变$B$方向，测得不同方向有效质量→确定等能面形状
+\end{enumerate}
+
+\vspace{1cm}
+
+\noindent\textbf{2. 简并与非简并半导体（8分）}
+
+\textbf{解：}\quad
+
+\textbf{简并化条件}（n型）：
+\begin{align*}
+E_c - E_F > 2k_0T &\quad \text{非简并（玻尔兹曼统计适用）}\\
+0 < E_c - E_F \le 2k_0T &\quad \text{弱简并}\\
+E_c - E_F \le 0 &\quad \text{简并（$E_F$进入导带）}
+\end{align*}
+
+\textbf{简并时不能用玻尔兹曼近似的原因}：简并条件下$E_F$靠近或进入导带，$f(E) = 1/[1+\exp((E-E_F)/k_0T)]$在导带底附近不再满足$E-E_F \gg k_0T$，不能近似为$\exp(-(E-E_F)/k_0T)$。必须用完整的费米-狄拉克积分：$n_0 = N_c \cdot (2/\sqrt{\pi})F_{1/2}((E_F-E_c)/k_0T)$。
+
+\textbf{冻析效应}：低温（$< 100\,\text{K}$）时，杂质未完全电离，部分载流子被"冻析"在杂质能级上，对导电无贡献。$\ln n_0 \sim 1/T$曲线低温段斜率为$-\Delta E_D/(2k_0)$。
+
+\textbf{禁带变窄效应（BGN）}：重掺杂（$>3\times10^{18}\,\text{cm}^{-3}$）时，杂质能带与主能带交叠，能带尾部伸入禁带→有效$E_g$减小。后果：$\Delta E_D \to 0$（冻析效应消失）、$n_i^2$增大。
+
+\textbf{二者的关联}：简并（重掺杂）→杂质能带形成→禁带变窄→$\Delta E_D \to 0$→冻析效应消失。它们是同一物理过程（杂质浓度升高导致的能带结构变化）的不同方面。
+
+\vspace{1cm}
+
+\noindent\textbf{3. 半导体的散射机制与迁移率（8分）}
+
+\textbf{解：}\quad
+
+\textbf{两种主要散射机制}：
+
+\textbf{(1) 晶格散射（声子散射）}：
+\[
+\mu_L \propto T^{-3/2}
+\]
+\textbf{原因}：温度↑→晶格振动振幅↑→声子数↑→散射概率↑→$\mu_L$↓。
+
+\textbf{(2) 电离杂质散射}：
+\[
+\mu_I \propto \frac{T^{3/2}}{N_I}
+\]
+\textbf{原因}：温度↑→载流子热速度↑→掠过电离杂质中心的时间↓→库仑散射效果↓→$\mu_I$↑。
+
+\textbf{马西森定则}：
+\[
+\frac{1}{\mu} = \frac{1}{\mu_L} + \frac{1}{\mu_I}
+\]
+
+\textbf{迁移率-温度曲线}（定性描述）：
+
+轻掺杂n型Si：低温段$\mu$随$T$↑而↑（电离杂质散射为主，$\mu \approx \mu_I \propto T^{3/2}$）；高温段$\mu$随$T$↑而↓（晶格散射为主，$\mu \approx \mu_L \propto T^{-3/2}$）；中间有峰值。
+
+重掺杂n型Si：$N_I$大→$\mu_I$整体压低→低温段$\mu \propto T^{3/2}$的上升趋势减弱→峰值向高温方向移动且峰值更低→整个温度范围$\mu$都更低。
+
+\textbf{两条曲线的差异原因}：重掺杂时$N_I$更大→$\mu_I$更小→低温段$\mu$更低；同时马西森定则中$1/\mu_I$项更大→总$\mu$受控于$\mu_I$直到更高温度→峰值右移。
+
+\vspace{1cm}
+
+\noindent\textbf{4. MIS结构的C-V特性（8分）}
+
+\textbf{解：}\quad
+
+\textbf{C-V曲线特征}（p型衬底MIS结构）：
+
+设栅压$V_G$从负到正扫描：
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\toprule
+\textbf{偏压} & \textbf{表面状态} & \textbf{半导体电容$C_s$} & \textbf{总电容$C$} \\
+\midrule
+$V_G < 0$（负压） & 多子积累 & $C_s$极大 & $C \approx C_{ox}$ \\
+$V_G > 0$（小正压） & 耗尽 & $C_s$随$V_G$增大而减小 & $C$单调下降 \\
+$V_G \gg 0$（大正压）低频 & 反型（少子能响应） & $C_s$重新变大 & $C \to C_{ox}$ \\
+$V_G \gg 0$（大正压）高频 & 反型（少子不响应） & $C_s$达到最小值 & $C$维持在最小值 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{高频C-V在反型区维持最小电容的原因}：高频下，反型层中的少子（p型衬底中的电子）的产生-复合跟不上交流信号的变化。反型层电荷无法随$V_G$变化而调制→耗尽层宽度达到最大值$X_{d,\max}$不再变化→$C_s$恒定→总$C$恒定于最小值。
+
+\textbf{低频C-V回升的原因}：低频下少子产生-复合能跟上信号，反型层电荷可随$V_G$调制→等效于$C_s$增大→总$C$回升至$C_{ox}$。
+
+\textbf{C-V曲线的两种主要应用}：
+\begin{enumerate}[nosep]
+\item 提取氧化层厚度$d_{ox}$（积累区$C = C_{ox} = \varepsilon_{ox}/d_{ox}$）
+\item 测量衬底掺杂浓度$N_A$（高频最小电容$C_{\min} \to X_{d,\max} \to N_A$）
+\item 评估界面态密度$D_{it}$（C-V曲线的 stretch-out 和平移）
+\item 提取氧化层固定电荷$Q_f$（平带电压$V_{FB}$的偏移）
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section*{四、计算题（14分）}
+
+\noindent\textbf{载流子浓度与费米能级的综合计算}
+
+\vspace{4pt}
+
+\textbf{解：}
+
+\noindent\textbf{(1) 计算$n_i$，判断全电离条件（3分）}
+
+本征载流子浓度：
+\[
+n_i = \sqrt{N_c N_v}\,\exp\left(-\frac{E_g}{2k_0T}\right)
+= \sqrt{2.8 \times 10^{19} \times 1.1 \times 10^{19}} \times \exp\left(-\frac{1.12}{2 \times 0.026}\right)
+\]
+
+\[
+\sqrt{N_c N_v} = \sqrt{3.08 \times 10^{38}} = 1.75 \times 10^{19}\ \text{cm}^{-3}
+\]
+
+\[
+-\frac{E_g}{2k_0T} = -\frac{1.12}{0.052} = -21.54
+\]
+
+\[
+n_i = 1.75 \times 10^{19} \times e^{-21.54}
+= 1.75 \times 10^{19} \times 4.43 \times 10^{-10}
+\]
+
+\[
+\boxed{n_i \approx 7.75 \times 10^9\ \text{cm}^{-3}}
+\]
+
+（注：Si室温$n_i$公认值约$1.5\times10^{10}\,\text{cm}^{-3}$，此处稍有偏差是$N_c$/$N_v$取值所致，不影响后续计算。）
+
+\textbf{判断全电离}：净施主浓度$N_D - N_A = 1.0\times10^{16} - 2.0\times10^{15} = 8.0\times10^{15}\,\text{cm}^{-3}$。室温下$k_0T \approx 0.026\,\text{eV}$，$\Delta E_D = 0.044\,\text{eV}$。Si中P的电离能不算大，且$N_D \sim 10^{16}\,\text{cm}^{-3}$远未达到简并浓度。室温$n_i \ll N_D$（约5个数量级）。条件满足：$N_D \lesssim 3\times10^{17}\,\text{cm}^{-3}$，$k_0T \sim \Delta E_D$且$T$足够高→\textbf{室温下杂质基本全电离}，处于饱和区，$N_D^+ \approx N_D$。
+
+\vspace{6pt}
+
+\noindent\textbf{(2) 计算$n_0$和$p_0$（4分）}
+
+饱和区近似（杂质全电离）下：
+\[
+n_0 = N_D - N_A = 1.0 \times 10^{16} - 2.0 \times 10^{15}
+= \boxed{8.0 \times 10^{15}\ \text{cm}^{-3}}
+\]
+
+由质量作用定律 $n_0 p_0 = n_i^2$：
+\[
+p_0 = \frac{n_i^2}{n_0} = \frac{(7.75 \times 10^9)^2}{8.0 \times 10^{15}}
+= \frac{6.01 \times 10^{19}}{8.0 \times 10^{15}}
+\]
+
+\[
+\boxed{p_0 \approx 7.5 \times 10^3\ \text{cm}^{-3}}
+\]
+
+\textbf{验证}：$n_0 \gg p_0$（约12个数量级），符合n型半导体特征。$n_0 p_0 = 6.0\times10^{19} = (7.75\times10^9)^2 = n_i^2$ ✓
+
+\vspace{6pt}
+
+\noindent\textbf{(3) 求$E_c - E_F$并画能带图（3分）}
+
+由$n_0 = N_c \exp(-(E_c-E_F)/k_0T)$：
+\[
+E_c - E_F = k_0T \ln\frac{N_c}{n_0}
+= 0.026 \times \ln\frac{2.8 \times 10^{19}}{8.0 \times 10^{15}}
+\]
+
+\[
+\frac{N_c}{n_0} = \frac{2.8 \times 10^{19}}{8.0 \times 10^{15}} = 3.5 \times 10^3
+\]
+
+\[
+\ln(3.5 \times 10^3) = \ln 3.5 + \ln 10^3 = 1.253 + 6.908 = 8.161
+\]
+
+\[
+\boxed{E_c - E_F \approx 0.212\ \text{eV}}
+\]
+
+先求$E_i$位置（$E_c$为参考零点）：
+\[
+E_c - E_i = \frac{E_g}{2} - \frac{k_0T}{2}\ln\frac{N_v}{N_c}
+= 0.56 - \frac{0.026}{2} \ln\frac{1.1\times10^{19}}{2.8\times10^{19}}
+\]
+\[
+= 0.56 - 0.013 \times (-0.935) = 0.56 + 0.012 = 0.572\ \text{eV}
+\]
+
+\textbf{能带图}（定性）：
+\begin{center}
+\begin{tabular}{c}
+$E_c$ \hspace{2cm} ($E=0$ 参考) \\
+\ \\
+\ \hspace{1.5cm} $E_F$ \hspace{0.5cm} ($E_c - E_F = 0.212\,\text{eV}$) \\
+\ \\
+\ \hspace{1.5cm} $E_i$ \hspace{0.5cm} ($E_c - E_i = 0.572\,\text{eV}$) \\
+\ \\
+$E_v$ \hspace{2cm} ($E_g = 1.12\,\text{eV}$) \\
+\end{tabular}
+\end{center}
+
+$E_F$位于$E_c$下方0.212 eV处，在$E_i$上方0.360 eV处。$E_F - E_i = 0.572 - 0.212 = 0.360\,\text{eV} > 0$→n型半导体（$E_F$在$E_i$上方）。
+
+\vspace{6pt}
+
+\noindent\textbf{(4) 计算电导率和400 K时的载流子浓度（4分）}
+
+\textbf{室温电导率}（$\mu_n$、$\mu_p$采用给定值，饱和区$n_0$和$p_0$已算出）：
+\[
+\sigma = q(n_0\mu_n + p_0\mu_p)
+= 1.6\times10^{-19} \times (8.0\times10^{15}\times1350 + 7.5\times10^{3}\times480)
+\]
+
+电子贡献：$8.0\times10^{15} \times 1350 = 1.08\times10^{19}$
+
+空穴贡献：$7.5\times10^{3} \times 480 = 3.6\times10^{6} \ll$ 电子贡献（可忽略）
+
+\[
+\sigma = 1.6\times10^{-19} \times 1.08\times10^{19}
+= 1.73\ (\Omega\cdot\text{cm})^{-1}
+\]
+
+\[
+\rho = \frac{1}{\sigma} = \frac{1}{1.73} = 0.58\ \Omega\cdot\text{cm}
+\]
+
+\[
+\boxed{\sigma \approx 1.7\ (\Omega\cdot\text{cm})^{-1},\quad \rho \approx 0.58\ \Omega\cdot\text{cm}}
+\]
+
+\textbf{$T = 400\,\text{K}$}（杂质仍全电离，$n_i \approx 5.0\times10^{12}\,\text{cm}^{-3}$）：
+
+本征激发贡献$n_i = 5.0\times10^{12}\,\text{cm}^{-3}$。需判断：掺杂主导还是本征主导？
+
+$n_i = 5.0\times10^{12} \ll N_D - N_A = 8.0\times10^{15}$，掺杂仍主导→仍处于饱和区。
+
+由电中性条件：$n_0 = (N_D - N_A) + n_i^2/n_0$，迭代或近似：
+\[
+n_0 \approx N_D - N_A = 8.0\times10^{15}\ \text{cm}^{-3}\ (\text{主导})
+\]
+\[
+p_0 \approx \frac{n_i^2}{n_0}
+= \frac{(5.0\times10^{12})^2}{8.0\times10^{15}}
+= \frac{2.5\times10^{25}}{8.0\times10^{15}}
+= 3.13\times10^9\ \text{cm}^{-3}
+\]
+
+（$T=400\,\text{K}$下$p_0$比室温增大约6个数量级，但仍远小于$n_0$→仍为n型。）
+
+\[
+\sigma_{400} \approx q n_0 \mu_n
+= 1.6\times10^{-19} \times 8.0\times10^{15} \times 1350
+\approx \boxed{1.7\ (\Omega\cdot\text{cm})^{-1}}
+\]
+
+（忽略迁移率变化，$\sigma$与室温相近，仍在饱和区。）
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+\begin{center}
+\textit{--- 答案完 ---}
+\end{center}
+
+\end{document}

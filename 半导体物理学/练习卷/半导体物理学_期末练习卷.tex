@@ -1,0 +1,288 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhf{}
+\fancyhead[L]{\small 半导体物理学 期末练习卷}
+\fancyhead[R]{\small 姓名：\underline{\hspace{4cm}} 学号：\underline{\hspace{4cm}}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\setlength{\parskip}{4pt plus 2pt minus 1pt}
+
+\newcounter{qcounter}
+\newcommand{\选择题}{\stepcounter{qcounter}\arabic{qcounter}.\,}
+\newcommand{\填空题}{\stepcounter{qcounter}\arabic{qcounter}.\,}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{半导体物理学\quad 期末练习卷}}\\[6pt]
+{\large 考试时间：120分钟\quad 满分：100分}\\[4pt]
+{\normalsize 适用教材：刘恩科《半导体物理学》第8版}
+\end{center}
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+% ============================================================
+\section*{一、单项选择题（本大题共10小题，每小题3分，共30分）}
+
+\textbf{在每小题列出的四个备选项中只有一个是符合题目要求的，请将其选出，并将答案填写在每题后的横线上。}
+
+\vspace{6pt}
+
+\选择题 硅的导带底位于布里渊区的（\quad）方向，等能面为旋转椭球，具有6个等价能谷。
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item $\langle100\rangle$
+\item $\langle110\rangle$
+\item $\langle111\rangle$
+\item $\langle000\rangle$
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 下列半导体材料中，属于\textbf{直接带隙}半导体的是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item Si
+\item Ge
+\item GaAs
+\item SiC（3C型）
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 在硅中掺入下列哪种元素可形成\textbf{n型}半导体？（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item B（硼）
+\item Al（铝）
+\item P（磷）
+\item In（铟）
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 非简并n型半导体处于\textbf{饱和区}时，载流子浓度约为（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item $n_0 \approx n_i$
+\item $n_0 \approx N_D$
+\item $n_0 \approx \sqrt{N_c N_D/2} \cdot \exp(-\Delta E_D/2k_0T)$
+\item $n_0 \approx N_c$
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 温度升高时，半导体中\textbf{晶格散射}导致的迁移率变化为（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item $\mu \propto T^{-3/2}$（下降）
+\item $\mu \propto T^{3/2}$（增大）
+\item $\mu$ 与温度无关
+\item $\mu \propto T^{-1}$
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 对于n型半导体中的非平衡少子（空穴），其浓度\textbf{指数衰减}到初始值的 $1/e$ 所需时间等于（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 扩散长度 $L_p$
+\item 复合率 $U$
+\item 少子寿命 $\tau_p$
+\item 扩散系数 $D_p$
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 PN结反向饱和电流密度 $J_s$ 与本征载流子浓度 $n_i$ 的关系为（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item $J_s \propto n_i$
+\item $J_s \propto n_i^2$
+\item $J_s \propto \sqrt{n_i}$
+\item $J_s$ 与 $n_i$ 无关
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 雪崩击穿与隧道击穿（齐纳击穿）的\textbf{温度系数}分别为（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item 雪崩正温度系数，隧道正温度系数
+\item 雪崩负温度系数，隧道负温度系数
+\item 雪崩正温度系数，隧道负温度系数
+\item 雪崩负温度系数，隧道正温度系数
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 金属与n型半导体接触形成\textbf{肖特基整流接触}的条件是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item $\phi_m < \phi_s$（金属功函数小于半导体功函数）
+\item $\phi_m > \phi_s$（金属功函数大于半导体功函数）
+\item $\phi_m = \phi_s$
+\item 与功函数无关，仅取决于掺杂浓度
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\vspace{10pt}
+
+\选择题 AlGaAs/GaAs异质结中形成\textbf{二维电子气（2DEG）}的关键原因是（\quad）
+
+\begin{enumerate}[label=(\Alph*),nosep,leftmargin=2em]
+\item GaAs的禁带宽度大于AlGaAs
+\item 电子从AlGaAs转移到GaAs并被限制在界面势阱中，且与电离杂质空间分离
+\item 两种材料的晶格常数相同
+\item GaAs是本征半导体
+\end{enumerate}
+
+\noindent\textbf{答案：}\underline{\hspace{3cm}}
+
+\newpage
+
+% ============================================================
+\section*{二、填空题（本大题共6小题，每小题4分，共24分）}
+
+\textbf{将答案填写在题中横线上。}
+
+\vspace{6pt}
+
+\setcounter{qcounter}{0}
+
+\填空题 非简并半导体中，热平衡电子浓度 $n_0 = N_c \exp\left(\underline{\hspace{3cm}}\right)$，其中 $N_c$ 称为\underline{\hspace{3cm}}，其温度依赖关系为 $N_c \propto \underline{\hspace{2cm}}$。该式成立的\textbf{非简并条件}为 $E_c - E_F \underline{\hspace{2cm}}$。
+
+\vspace{14pt}
+
+\填空题 扩散系数 $D$ 与迁移率 $\mu$ 之间的\textbf{爱因斯坦关系}为：$\dfrac{D_n}{\mu_n} = \dfrac{D_p}{\mu_p} = \underline{\hspace{3cm}}$。室温（$T = 300\,\text{K}$）下，该比值约为\underline{\hspace{2cm}} V。扩散长度的表达式为 $L = \underline{\hspace{3cm}}$。
+
+\vspace{14pt}
+
+\填空题 肖特基-里德-霍尔（SRH）\textbf{间接复合}的稳态净复合率公式为：
+\[
+U = \frac{np - n_i^2}{\underline{\hspace{3cm}} \cdot (n + n_1) + \underline{\hspace{3cm}} \cdot (p + p_1)}
+\]
+最有效的复合中心能级位于禁带中\underline{\hspace{2cm}}附近。$\tau_p = \underline{\hspace{2.5cm}}$。
+
+\vspace{14pt}
+
+\填空题 突变PN结的\textbf{耗尽层宽度} $X_D = \sqrt{\dfrac{2\varepsilon_s}{q}\cdot\dfrac{N_A + N_D}{N_A N_D}\cdot\underline{\hspace{2cm}}}$。单边突变结的 $1/C_T^2$ 与偏压 $V$ 成\underline{\hspace{3cm}}关系，由斜率可求\underline{\hspace{2cm}}。
+
+\vspace{14pt}
+
+\填空题 n型半导体的\textbf{电阻率随温度变化}呈现三段特征：低温区电阻率\underline{\hspace{2cm}}（杂质电离增强），饱和区电阻率\underline{\hspace{2cm}}（晶格散射使迁移率下降），本征区电阻率\underline{\hspace{2cm}}（本征激发主导）。
+
+\vspace{14pt}
+
+\填空题 \textbf{马西森定则}给出：$\dfrac{1}{\mu} = \underline{\hspace{2.5cm}}$。晶格散射 $\mu_L \propto \underline{\hspace{1.5cm}}$，电离杂质散射 $\mu_I \propto \underline{\hspace{1.5cm}}$。
+
+\newpage
+
+% ============================================================
+\section*{三、简答题（本大题共4小题，每小题8分，共32分）}
+
+\textbf{请简要回答下列问题，写出关键公式和物理分析。}
+
+\vspace{4pt}
+
+\setcounter{qcounter}{0}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）掺杂半导体的三温区特性}
+
+以n型半导体为例，在 $\ln n_0 \sim 1/T$ 坐标系中画出载流子浓度随温度变化的曲线示意图，标出三个温区（低温电离区、饱和区、本征区）及各段的近似表达式，并说明费米能级 $E_F$ 在各区的变化趋势。
+
+\vspace{12cm}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）SRH间接复合模型}
+
+写出 Shockley-Read-Hall 间接复合的稳态净复合率公式，说明式中各符号的物理意义。分析为什么能级位于禁带中央附近的深能级杂质是最有效的复合中心，并说明陷阱与复合中心的区别。
+
+\vspace{12cm}
+
+\newpage
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）PN结的理想I-V特性与偏离因素}
+
+写出理想PN结的电流-电压方程（肖克利方程），说明四个理想假设条件。列举至少三种导致实际I-V特性偏离理想方程的因素，并简要解释其物理机制。
+
+\vspace{11cm}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （8分）肖特基结与PN结的对比}
+
+从载流子输运机制、开关速度、正向压降和I-V关系四个方面对比肖特基结与PN结的异同。给出肖特基结热电子发射理论的I-V方程和饱和电流密度表达式。说明形成欧姆接触的两种主要方法。
+
+\newpage
+
+% ============================================================
+\section*{四、计算题（本大题共1小题，共14分）}
+
+\textbf{写出完整的推导过程，保留必要的中间步骤。}
+
+\vspace{4pt}
+
+\setcounter{qcounter}{0}
+
+\noindent\textbf{\stepcounter{qcounter}\arabic{qcounter}. （14分）PN结C-V分析与掺杂浓度提取}
+
+某一 $p^+$n 单边突变硅结，结面积 $A = 1.0 \times 10^{-3}\,\text{cm}^2$，温度 $T = 300\,\text{K}$。在不同反向偏压下测得势垒电容如下：
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+\toprule
+$V_R$ (V) & 0 & 2.0 & 4.0 & 6.0 & 8.0 \\
+\midrule
+$C_T$ (pF) & 18.0 & 11.3 & 8.5 & 7.0 & 6.0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+已知硅的相对介电常数 $\varepsilon_r = 11.9$，真空介电常数 $\varepsilon_0 = 8.85 \times 10^{-14}\,\text{F/cm}$，电子电荷 $q = 1.6 \times 10^{-19}\,\text{C}$。
+
+\begin{enumerate}[label=(\arabic*),nosep,leftmargin=0em]
+\item （4分）导出单边突变结的 $1/C_T^2 \sim V_R$ 线性关系式（其中 $V_R = -V$ 为反向偏压的绝对值），并说明该关系的物理基础。
+\item （4分）利用表中数据，绘制 $1/C_T^2 \sim V_R$ 关系（可在草稿纸上作图，此处只需写出计算数据和拟合结果），由斜率求出n区掺杂浓度 $N_D$。
+\item （3分）由直线截距求出内建电势 $V_D$。
+\item （3分）若此结的反向饱和电流密度 $J_s = 5.0 \times 10^{-11}\,\text{A}/\text{cm}^2$，计算在正向偏压 $V = 0.6\,\text{V}$ 时的电流密度。（$k_0T = 0.026\,\text{eV}$）
+\end{enumerate}
+
+\vspace{18cm}
+
+\hrule
+\vspace{8pt}
+
+\begin{center}
+\textit{--- 祝考试顺利 ---}
+\end{center}
+
+\end{document}

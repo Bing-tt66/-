@@ -1,0 +1,380 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhf{}
+\fancyhead[L]{\small 半导体物理学 期末练习卷 · 参考答案}
+\fancyhead[R]{\small 刘恩科《半导体物理学》第8版}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\setlength{\parskip}{4pt plus 2pt minus 1pt}
+
+\newcounter{qcounter}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{半导体物理学\quad 期末练习卷}}\\[4pt]
+{\Large \textbf{参 考 答 案}}\\[6pt]
+{\normalsize 刘恩科《半导体物理学》第8版}
+\end{center}
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+% ============================================================
+\section*{一、单项选择题（10$\times$3 = 30分）}
+
+\begin{enumerate}[label=\arabic*.,nosep,leftmargin=2em]
+\item \textbf{A} $\langle100\rangle$
+
+\textbf{解析}：Si的导带底位于$\Delta$轴即$\langle100\rangle$方向，距布里渊区中心$0.85(\pi/a)$处，有6个等价的旋转椭球等能面。
+
+\item \textbf{C} GaAs
+
+\textbf{解析}：GaAs的导带底和价带顶均位于$\Gamma$点（$k=0$），是直接带隙半导体。Si和Ge为间接带隙，3C-SiC也是间接带隙。
+
+\item \textbf{C} P（磷）
+
+\textbf{解析}：P是V族元素，在Si中作为施主杂质，提供多余电子形成n型半导体。B、Al、In均为III族受主杂质。
+
+\item \textbf{B} $n_0 \approx N_D$
+
+\textbf{解析}：饱和区（耗尽区）中杂质全部电离，$N_D^+ \approx N_D$，本征激发尚未显著，故$n_0 \approx N_D$。选项A对应本征区，选项C对应低温电离区。
+
+\item \textbf{A} $\mu \propto T^{-3/2}$（下降）
+
+\textbf{解析}：温度升高→晶格振动增强→声子散射加剧→迁移率按$T^{-3/2}$规律下降。$\mu \propto T^{3/2}$是电离杂质散射的特征。
+
+\item \textbf{C} 少子寿命 $\tau_p$
+
+\textbf{解析}：非平衡少子浓度指数衰减$\Delta p(t) = \Delta p(0)e^{-t/\tau}$，当$t=\tau$时衰减到初始值的$1/e$。$\tau$是寿命的定义。
+
+\item \textbf{B} $J_s \propto n_i^2$
+
+\textbf{解析}：$J_s = qn_i^2(D_n/L_nN_A + D_p/L_pN_D) \propto n_i^2 \propto \exp(-E_g/k_0T)$，因此$J_s$对温度和禁带宽度非常敏感。
+
+\item \textbf{C} 雪崩正温度系数，隧道负温度系数
+
+\textbf{解析}：雪崩击穿中，温度升高→晶格散射增强→载流子难以积累足够动能→需要更高电压才能发生碰撞电离→正温度系数。隧道击穿中，温度升高→$E_g$减小→隧穿概率增大→击穿电压降低→负温度系数。
+
+\item \textbf{B} $\phi_m > \phi_s$（金属功函数大于半导体功函数）
+
+\textbf{解析}：$\phi_m > \phi_s$时，电子从半导体流向金属，n型半导体表面形成电子耗尽层（阻挡层），能带向上弯曲，构成肖特基整流接触。$\phi_m < \phi_s$则形成欧姆接触（积累层）。
+
+\item \textbf{B} 电子从AlGaAs转移到GaAs并被限制在界面势阱中，且与电离杂质空间分离
+
+\textbf{解析}：调制掺杂使电子与其母体电离施主空间分离，消除了电离杂质散射，因此2DEG迁移率极高（低温可达$10^6\,\text{cm}^2/(\text{V·s})$），这是HEMT器件的物理基础。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section*{二、填空题（6$\times$4 = 24分）}
+
+\begin{enumerate}[label=\arabic*.,nosep,leftmargin=2em]
+
+\item
+$n_0 = N_c \exp\left(-\dfrac{E_c - E_F}{k_0T}\right)$，
+$N_c$称为\textbf{导带有效状态密度}，
+$N_c \propto T^{3/2}$。
+非简并条件为$E_c - E_F \gg k_0T$（或$E_c - E_F > 2k_0T$）。
+
+\textbf{解析}：非简并条件下费米分布退化为玻尔兹曼分布，$n_0$和$p_0$的表达式是计算所有载流子统计问题的基础。有效状态密度将复杂的态密度积分归结为等效的能级简并数，其$T^{3/2}$依赖来自$k$空间态密度的三维积分。
+
+\item
+$\dfrac{D_n}{\mu_n} = \dfrac{D_p}{\mu_p} = \dfrac{k_0T}{q}$。
+室温下约为\textbf{0.026} V。
+扩散长度 $L = \sqrt{D\tau}$。
+
+\textbf{解析}：爱因斯坦关系建立了扩散系数与迁移率之间的联系，源自平衡条件下漂移电流与扩散电流的抵消。$k_0T/q$称为热电压，室温$T=300\,\text{K}$时等于$0.0259\,\text{V} \approx 0.026\,\text{V}$。
+
+\item
+$U = \dfrac{np - n_i^2}{\tau_p \cdot (n + n_1) + \tau_n \cdot (p + p_1)}$
+
+最有效的复合中心能级位于禁带中\textbf{央}（$E_t \approx E_i$）附近。
+$\tau_p = \dfrac{1}{\sigma_p v_{th} N_t}$。
+
+\textbf{解析}：当$E_t \approx E_i$时，$n_1 \approx p_1 \approx n_i$，在通常掺杂条件下$n_1$、$p_1$远小于多子浓度，分母最小，净复合率最大。$\tau_p = 1/(\sigma_p v_{th} N_t)$是小注入强n型的简化结果。
+
+\item
+$X_D = \sqrt{\dfrac{2\varepsilon_s}{q}\cdot\dfrac{N_A + N_D}{N_A N_D}\cdot(V_D - V)}$。
+
+$1/C_T^2$ 与偏压$V$成\textbf{线性}关系，由斜率可求\textbf{掺杂浓度$N_D$}。
+
+\textbf{解析}：由泊松方程解出耗尽层电荷与偏压的关系，$C_T = dQ/dV$导出$1/C_T^2 \propto (V_D - V)$。这是C-V法测量掺杂分布的基本原理。
+
+\item
+低温区电阻率\textbf{下降}；
+饱和区电阻率\textbf{缓慢上升}；
+本征区电阻率\textbf{急剧下降}。
+
+\textbf{解析}：低温区杂质电离增强→$n_0$增大→$\rho$下降。饱和区$n_0$基本不变，晶格散射使$\mu$下降→$\rho$缓慢上升。本征区本征激发使$n_0$指数增大→$\rho$急剧下降。
+
+\item
+$\dfrac{1}{\mu} = \dfrac{1}{\mu_L} + \dfrac{1}{\mu_I}$。
+$\mu_L \propto T^{-3/2}$，
+$\mu_I \propto T^{3/2}/N_I$。
+
+\textbf{解析}：马西森定则表明多种散射并存时，总迁移率的倒数等于各散射贡献倒数之和，总迁移率受制于最小的$\mu_i$。两个特征温度指数分别反映了声子散射和库仑散射的物理本质。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section*{三、简答题（4$\times$8 = 32分）}
+
+\noindent\textbf{1. 掺杂半导体的三温区特性（8分）}
+
+\textbf{解：}\quad 以n型半导体为例，$\ln n_0 \sim 1/T$曲线示意图如下（定性描述）：
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\toprule
+温区 & 温度范围 & $n_0$表达式 & $E_F$位置 \\
+\midrule
+低温电离区 & $k_0T \ll \Delta E_D$ & $n_0 \approx \sqrt{\frac{N_c N_D}{2}}e^{-\Delta E_D/2k_0T}$ & $E_F$在$E_D$附近 \\
+\multirow{2}{*}{饱和区} & 杂质全电离 & \multirow{2}{*}{$n_0 \approx N_D$} & $E_F$从靠近$E_c$ \\
+& 本征激发未显著 & & 向$E_i$移动 \\
+本征区 & 高温 & $n_0 \approx n_i \propto T^{3/2}e^{-E_g/2k_0T}$ & $E_F \to E_i$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{曲线特征}：三条线段组成的折线（或平滑过渡曲线）：
+\begin{itemize}[nosep]
+\item \textbf{低温段}：斜率为$-\Delta E_D/(2k_0)$，可由斜率测杂质电离能
+\item \textbf{饱和段}：近似水平（$n_0 \approx N_D$常数）
+\item \textbf{本征段}：斜率为$-E_g/(2k_0)$，更陡（$E_g > \Delta E_D$）
+\end{itemize}
+
+\noindent\textbf{$E_F$变化}：低温区$E_F$从$E_D$附近开始，随$T$升高先略升高再降低；饱和区$E_F$从靠近$E_c$逐渐向禁带中央$E_i$移动；本征区$E_F \to E_i$。掺杂浓度越高，饱和区$E_F$越靠近带边。
+
+\vspace{1cm}
+
+\noindent\textbf{2. SRH间接复合模型（8分）}
+
+\textbf{解：}\quad
+
+\textbf{SRH净复合率公式：}
+\[
+U = \frac{np - n_i^2}{\tau_p(n + n_1) + \tau_n(p + p_1)}
+\]
+其中：
+\begin{itemize}[nosep]
+\item $n_1 = n_i\exp(\frac{E_t - E_i}{k_0T})$：$E_F = E_t$时导带的平衡电子浓度
+\item $p_1 = n_i\exp(\frac{E_i - E_t}{k_0T})$：$E_F = E_t$时价带的平衡空穴浓度
+\item $\tau_p = 1/(\sigma_p v_{th} N_t)$：空穴寿命（$N_t$为复合中心浓度，$\sigma_p$为空穴俘获截面）
+\item $\tau_n = 1/(\sigma_n v_{th} N_t)$：电子寿命
+\end{itemize}
+
+\textbf{为什么$E_t \approx E_i$时复合效率最高：}
+当$\sigma_n \approx \sigma_p$时，小注入（n型）条件下寿命$\tau \approx \tau_p(n_0 + n_1 + p_1)/(n_0 + p_0)$。当$E_t = E_i$时，$n_1 = p_1 = n_i \ll n_0$（饱和区），$\tau$最小。若$E_t$远离$E_i$，则$n_1$（或$p_1$）指数增大→复合中心被一种载流子长期占据→"堵住"了另一种载流子的俘获通道→复合效率下降。
+
+\textbf{陷阱与复合中心的区别：}
+\begin{itemize}[nosep]
+\item \textbf{复合中心}：$\sigma_n \approx \sigma_p$，能级靠近禁带中央（$E_t \approx E_i$）。同时有效俘获电子和空穴，促进电子-空穴对复合
+\item \textbf{陷阱}：一种俘获截面远大于另一种（如$\sigma_n \gg \sigma_p$为电子陷阱），能级靠近带边。俘获一种载流子后长期不释放，不促进复合但影响瞬态响应和载流子动力学
+\end{itemize}
+
+\noindent\textbf{3. PN结的理想I-V特性与偏离因素（8分）}
+
+\textbf{解：}\quad
+
+\textbf{肖克利方程（理想PN结I-V）：}
+\[
+J = J_s\left[\exp\left(\frac{qV}{k_0T}\right) - 1\right],\quad
+J_s = qn_i^2\left(\frac{D_n}{L_n N_A} + \frac{D_p}{L_p N_D}\right)
+\]
+
+\textbf{四个理想假设：}
+\begin{enumerate}[nosep]
+\item \textbf{小注入条件}：注入少子浓度$\ll$平衡多子浓度
+\item \textbf{突变耗尽层条件}：少子在扩散区做纯扩散运动（耗尽层外无电场）
+\item \textbf{耗尽层无产生-复合}：通过耗尽层的载流子电流为常量
+\item \textbf{玻尔兹曼条件}：耗尽层两端载流子分布满足玻尔兹曼统计
+\end{enumerate}
+
+\textbf{实际偏离因素：}
+\begin{enumerate}[nosep]
+\item \textbf{势垒区产生-复合电流}：正向时耗尽层中的SRH复合贡献额外电流（$n$因子介于1和2之间）；反向时耗尽层产生额外反向电流（$n_i$小的材料更显著，如Si的反向漏电主要由耗尽层产生电流决定）
+\item \textbf{大注入效应}：注入少子浓度接近或超过多子浓度时，需考虑电中性耦合（双极输运），$n$因子趋近于2，还有串联电阻效应
+\item \textbf{串联电阻效应}：中性区和接触电阻使外加电压不完全降落在结上，大电流下$J \sim V$偏离指数规律趋于线性
+\item \textbf{表面效应}：表面态和表面漏电通道增大反向电流，降低整流比
+\end{enumerate}
+
+\noindent\textbf{4. 肖特基结与PN结的对比（8分）}
+
+\textbf{解：}\quad
+
+\begin{center}
+\begin{tabular}{p{3cm}|p{5cm}|p{5cm}}
+\toprule
+\textbf{对比项目} & \textbf{肖特基结} & \textbf{PN结} \\
+\midrule
+载流子输运 & 多子器件，热电子发射 & 少子注入，扩散机制 \\
+开关速度 & 快（无少子存储效应） & 慢（少子存储电荷需时间清除） \\
+正向压降 & 低（Si: $\sim 0.3$ V） & 较高（Si: $\sim 0.7$ V） \\
+I-V关系 & $J = J_{ST}[\exp(qV/k_0T)-1]$ & $J = J_s[\exp(qV/k_0T)-1]$ \\
+饱和电流 & $J_{ST} = A^*T^2e^{-q\phi_B/k_0T}$ & $J_s \propto n_i^2 \propto e^{-E_g/k_0T}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{肖特基二极管优势}：高频应用（多子器件无存储时间）、功率整流（正向压降低→导通损耗小）。
+
+\textbf{欧姆接触的两种主要方法：}
+\begin{enumerate}[nosep]
+\item \textbf{选择低势垒金属}：使$\phi_m < \phi_s$（n型），半导体表面形成积累层而非耗尽层
+\item \textbf{半导体表面重掺杂}：耗尽层极薄（$<10\,\text{nm}$），载流子通过量子隧穿（场致发射）输运——实践中用$p^+$层+Al实现Si的欧姆接触
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section*{四、计算题（14分）}
+
+\noindent\textbf{PN结C-V分析与掺杂浓度提取}
+
+\vspace{4pt}
+
+\textbf{解：}
+
+\noindent\textbf{(1) 导出$1/C_T^2 \sim V_R$线性关系（4分）}
+
+对于$p^+$n单边突变结（$N_A \gg N_D$），耗尽层几乎全在n区一侧。由泊松方程：
+\[
+\frac{d^2V}{dx^2} = \frac{qN_D}{\varepsilon_s}
+\]
+
+耗尽层宽度：$X_D = \sqrt{\dfrac{2\varepsilon_s(V_D - V)}{qN_D}} = \sqrt{\dfrac{2\varepsilon_s(V_D + V_R)}{qN_D}}$ （反向时$V = -V_R$）
+
+势垒电容：$C_T = A\dfrac{\varepsilon_s}{X_D} = A\sqrt{\dfrac{q\varepsilon_s N_D}{2(V_D + V_R)}}$
+
+两侧平方取倒数：
+\[
+\boxed{\frac{1}{C_T^2} = \frac{2(V_D + V_R)}{A^2 q \varepsilon_s N_D}}
+\]
+
+\textbf{物理基础}：耗尽层近似下，空间电荷区的不可动电离施主电荷随偏压线性变化（$Q = A\sqrt{2q\varepsilon_s N_D (V_D + V_R)}$），微分求电容即得上式。
+
+\vspace{8pt}
+
+\noindent\textbf{(2) 计算$1/C_T^2$并求$N_D$（4分）}
+
+首先计算各偏压下的$1/C_T^2$：
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+\toprule
+$V_R$ (V) & 0 & 2.0 & 4.0 & 6.0 & 8.0 \\
+\midrule
+$C_T$ (pF) & 18.0 & 11.3 & 8.5 & 7.0 & 6.0 \\
+\midrule
+$C_T$ (F) & $1.80\!\times\!10^{-11}$ & $1.13\!\times\!10^{-11}$ & $8.50\!\times\!10^{-12}$ & $7.00\!\times\!10^{-12}$ & $6.00\!\times\!10^{-12}$ \\
+\midrule
+$1/C_T^2$ ($\text{F}^{-2}$) & $3.09\!\times\!10^{21}$ & $7.83\!\times\!10^{21}$ & $1.38\!\times\!10^{22}$ & $2.04\!\times\!10^{22}$ & $2.78\!\times\!10^{22}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+由$1/C_T^2 = \dfrac{2}{A^2 q \varepsilon_s N_D} V_R + \dfrac{2V_D}{A^2 q \varepsilon_s N_D}$，斜率$k = \dfrac{2}{A^2 q \varepsilon_s N_D}$。
+
+取相邻两点近似求斜率（也可线性拟合）：
+
+\begin{itemize}[nosep]
+\item 点$(0, 3.09\!\times\!10^{21})$和$(8.0, 2.78\!\times\!10^{22})$
+\item 斜率$k = \dfrac{2.78 \times 10^{22} - 3.09 \times 10^{21}}{8.0 - 0} = \dfrac{2.47 \times 10^{22}}{8.0} = 3.09 \times 10^{21}\ \text{F}^{-2}/\text{V}$
+\end{itemize}
+
+代入$A = 1.0 \times 10^{-3}\ \text{cm}^2$，$\varepsilon_s = \varepsilon_r\varepsilon_0 = 11.9 \times 8.85 \times 10^{-14} = 1.053 \times 10^{-12}\ \text{F/cm}$：
+
+\[
+k = \frac{2}{A^2 q \varepsilon_s N_D} \quad\Rightarrow\quad
+N_D = \frac{2}{k A^2 q \varepsilon_s}
+\]
+
+\[
+N_D = \frac{2}{3.09 \times 10^{21} \times (1.0 \times 10^{-3})^2 \times 1.6 \times 10^{-19} \times 1.053 \times 10^{-12}}
+\]
+
+\[
+N_D = \frac{2}{3.09 \times 10^{21} \times 1.0 \times 10^{-6} \times 1.685 \times 10^{-31}}
+= \frac{2}{5.21 \times 10^{-16}}
+= 3.84 \times 10^{15}\ \text{cm}^{-3}
+\]
+
+\[
+\boxed{N_D \approx 3.8 \times 10^{15}\ \text{cm}^{-3}}
+\]
+
+\vspace{8pt}
+
+\noindent\textbf{(3) 求内建电势$V_D$（3分）}
+
+由$1/C_T^2$截距$b = \dfrac{2V_D}{A^2 q \varepsilon_s N_D} = \dfrac{V_D}{A^2 q \varepsilon_s N_D} \cdot 2 = V_D \cdot k$。
+
+当$V_R = 0$时$1/C_T^2 = 3.09 \times 10^{21}\ \text{F}^{-2}$，它就是截距$b$（严格说若$V_R$和$1/C_T^2$是理想直线，$b$为$V_R=0$时的$1/C_T^2$值）。
+
+由截距（$V_R = 0$时）：$b = \dfrac{2V_D}{A^2 q \varepsilon_s N_D} = V_D \cdot k = 3.09 \times 10^{21}$
+
+\[
+V_D = \frac{b}{k} = \frac{3.09 \times 10^{21}}{3.09 \times 10^{21}} = 1.0\ \text{V}
+\]
+
+实际上由于$V_R=0$时耗尽层中仍有少量载流子（偏离纯耗尽），截距应略小于$V_R=0$处的值。更精确的线性拟合（用所有5个点）给出截距约$b \approx 3.1 \times 10^{21}$，因此：
+\[
+\boxed{V_D \approx 1.0\ \text{V}}
+\]
+
+\vspace{8pt}
+
+\noindent\textbf{(4) 计算正向电流密度（3分）}
+
+正向偏压$V = 0.6\ \text{V}$，$J_s = 5.0 \times 10^{-11}\ \text{A/cm}^2$：
+
+\[
+J = J_s\left[\exp\left(\frac{qV}{k_0T}\right) - 1\right]
+= 5.0 \times 10^{-11} \times \left[\exp\left(\frac{0.6}{0.026}\right) - 1\right]
+\]
+
+\[
+\frac{0.6}{0.026} \approx 23.08
+\]
+
+\[
+e^{23.08} \approx 1.05 \times 10^{10}
+\]
+
+\[
+J = 5.0 \times 10^{-11} \times (1.05 \times 10^{10} - 1)
+\approx 5.0 \times 10^{-11} \times 1.05 \times 10^{10}
+= 5.25 \times 10^{-1}\ \text{A/cm}^2
+\]
+
+\[
+\boxed{J \approx 0.53\ \text{A/cm}^2}
+\]
+
+\vspace{8pt}
+\hrule
+\vspace{8pt}
+
+\begin{center}
+\textit{--- 答案完 ---}
+\end{center}
+
+\end{document}

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(xelatex -interaction=nonstopmode \"半导体物理学_期末练习卷.tex\")",
+      "Bash(xelatex -interaction=nonstopmode \"半导体物理学_期末练习卷_答案.tex\")",
+      "Bash(xelatex -interaction=nonstopmode \"半导体物理学_期末练习卷二.tex\")",
+      "Bash(xelatex -interaction=nonstopmode \"半导体物理学_期末练习卷二_答案.tex\")",
+      "Bash(xelatex -interaction=nonstopmode \"半导体物理学_期末练习卷三.tex\")",
+      "Bash(xelatex -interaction=nonstopmode \"半导体物理学_期末练习卷三_答案.tex\")"
+    ]
+  }
+}
