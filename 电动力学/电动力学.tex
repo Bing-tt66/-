@@ -1,0 +1,389 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+% 基本宏包
+\usepackage[utf8]{inputenc}   % UTF-8 编码
+\usepackage[T1]{fontenc}      % 更好的英文字体输出
+\usepackage{lmodern}          % Latin Modern 字体
+\usepackage{amsmath, amssymb, amsthm} % 数学环境
+\usepackage{geometry}         % 控制页边距
+\usepackage{hyperref}         % 超链接
+\usepackage{enumitem}         % 列表控制
+\usepackage{graphicx}         % 插图
+\usepackage{tcolorbox}        % 彩色方框，做重点标注
+\usepackage{fancyhdr}         % 页眉页脚
+\usepackage{physics}
+
+\numberwithin{equation}{subsection}
+
+% 页边距
+\geometry{margin=1in}
+
+% 页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Electrodynamics}  % 左页眉
+\rhead{\today}     % 右页眉
+\cfoot{\thepage}   % 页脚居中页码
+
+% 彩色框样式
+\tcbset{colback=blue!5!white, colframe=blue!75!black, boxrule=0.8pt, arc=4pt, left=6pt, right=6pt, top=6pt, bottom=6pt}
+
+% 定理环境
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\title{电动力学}
+\author{Bing}
+\date{\today}
+\maketitle
+
+\tableofcontents  % 目录
+\newpage
+
+\section{电磁现象的普遍规律}
+\subsection{电荷和电场}
+\subsubsection{库仑定律}
+真空中静止点电荷$Q$对另一个静止点电荷$Q'$的作用力$F$为
+\begin{equation}
+\mathbf{F}=\frac{QQ'}{4\pi\varepsilon r^3} \mathbf{r}
+\end{equation}
+两种解释
+\begin{itemize}
+    \item 直接的超距作用
+    \item 相互作用通过场来传递
+\end{itemize}
+假设：一个电荷周围的空间存在着一种特殊的物质，称为电场。
+\begin{align}
+\mathbf{F} &= Q'\mathbf{E} \\
+\mathbf{E} &= \frac{Q\mathbf{r}}{4\pi\varepsilon_0 r^3}\\
+\mathbf{E} &= \sum_i\frac{Q_i\mathbf{r_i}}{4\pi\varepsilon_0r_i^3}
+\end{align}
+电荷连续分布：
+\begin{equation}
+\begin{aligned}
+dQ &= \rho(\mathbf{x'})d\mathbf{V'}\\
+\mathbf{E}(x) &= \int_V\frac{\rho(\mathbf{x'})\mathbf{r}}{4\pi\varepsilon_0r^3}d\mathbf{V'}
+\end{aligned}
+\end{equation}
+
+\subsubsection{高斯定理和电场的散度}
+一个电荷$Q$发出的电场强度通量总是正比于Q，与附近有没有存在其他电荷无关。
+通过闭合曲面$S$的电场强度$\mathbf{E}$的通量定义为
+$$
+\oint_S\mathbf{E} \cdot d\mathbf{S}
+$$
+高斯定理：
+$$
+\oint_S\mathbf{E} \cdot d\mathbf{S}=\frac{Q}{\varepsilon_0}
+$$
+证明：
+设曲面内有一电荷$Q$,其电场强度通过面元$d\mathbf{S}$的通量为：
+$$
+\mathbf{E}\cdot d\mathbf{S}=E\cos\theta dS = \frac{Q}{4\pi\varepsilon_0r^2}\cos\theta dS
+$$
+$$
+\oint_S\mathbf{E} \cdot d\mathbf{S}=\frac{Q}{4\pi\varepsilon_0}\oint d\Omega=\frac{Q}{\varepsilon_0}
+$$
+离散分布：
+\begin{equation}
+\oint_S\mathbf{E} \cdot d\mathbf{S}=\sum_i\frac{Q_i}{\varepsilon_0}
+\end{equation}
+连续分布：
+\begin{equation}
+\oint_S\mathbf{E} \cdot d\mathbf{S}=\frac{1}{\varepsilon_0}\int_V\rho dV
+\end{equation}
+微分形式：
+\begin{equation}
+\mathbf{\nabla} \cdot \mathbf{E}=\frac{\rho}{\varepsilon_0}
+\end{equation}
+
+\textbf{空间某领域上场的散度只和该点上的电荷密度有关，而和其他地点的电荷分布无关；电荷只直接激发其邻近的场，而远处的场则是通过场本身的内部作用传递出去。}
+\subsubsection{静电场的旋度}
+\textbf{静电场是无旋的。}
+$$
+\oint_L\mathbf{E}\cdot d\mathbf{l}=\frac{Q}{4\pi\varepsilon_0}\oint_L\frac{dr}{r^2}=-\frac{Q}{4\pi\varepsilon_0}\oint d(\frac{1}{r})
+$$
+\begin{equation}
+\oint_L\mathbf{E}\cdot d\mathbf{l}
+\end{equation}
+微分形式：
+\begin{equation}
+\nabla\times\mathbf{E}=0
+\end{equation}
+
+电荷是电场的源，电场线从正电荷发出而终止于负电荷，在自由空间中电场线连续通过；
+在静电情形下电场没有涡旋结构。
+
+\subsection{电流和磁场}
+\subsubsection{电荷守恒定律}
+$d\mathbf{S}$为某曲面上的一个面元，$\mathbf{J}$为电流密度
+\begin{equation}
+d\mathbf{I}=JdS\cos\theta=\mathbf{J}\cdot d\mathbf{S}
+\end{equation}
+\begin{equation}
+I=\int_S\mathbf{J}\cdot d\mathbf{S}
+\end{equation}
+如果电流是由一种带电粒子组成，密度为$\rho$，平均速度为$v$，则电流密度为
+\begin{equation}
+\begin{aligned}
+\mathbf{J}&=\rho v\\
+\mathbf{J}&=\sum_i\rho_i v_i
+\end{aligned}
+\end{equation}
+通过界面流出的总电流应该等于$V$内电流的减小率，即
+\begin{equation}
+\oint_S\mathbf{J}\cdot d\mathbf{S}=-\int_V\frac{\partial \rho}{\partial t}dV
+\end{equation}
+高斯定理，有
+$$
+\oint_S\mathbf{J}\cdot d\mathbf{S}=\int_V\nabla\cdot\mathbf{J}dV
+$$
+微分形式
+\begin{equation}
+\nabla\cdot\mathbf{J}+\frac{\partial \rho}{\partial t}=0
+\end{equation}
+全空间电荷守恒。\\
+恒定电流情况
+\begin{equation}
+\nabla\cdot\mathbf{J}=0
+\end{equation}
+
+\subsubsection{毕萨定律}
+一个电流元$Id\mathbf{l}$在磁场中所受的力可以表示为
+\begin{equation}
+d\mathbf{F}=Id\mathbf{l}\times\mathbf{B}
+\end{equation}
+$\mathbf{J}(\mathbf{x'})$为源点上的电流密度，$\mathbf{r}$为$\mathbf{x'}$点到场点$\mathbf{x}$的矢径，则
+\begin{equation}
+\mathbf{B}(\mathbf{x})=\frac{\mu_0}{4\pi}\int_V\frac{\mathbf{J}(\mathbf{x'})\times\mathbf{r}}{r^3}dV'
+\end{equation}
+细导线上恒定电流激发的磁场为
+$$
+\mathbf{B}(\mathbf{x})=\frac{\mu_0}{4\pi}\oint_L\frac{Id\mathbf{l}\times\mathbf{r}}{r^3}
+$$
+
+\subsubsection{磁场的环量和旋度}
+\textbf{安培环路定律}
+\begin{equation}
+\oint_L\mathbf{B}\cdot d\mathbf{l}=\mu_0I
+\end{equation}
+由毕萨定律导出，
+考虑毕奥萨伐尔定律给出的磁场表达式：
+\[
+\vb{B}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{I \dd{\vb{l}'} \times (\vb{r} - \vb{r}')}{|\vb{r} - \vb{r}'|^3}
+\]
+计算磁场沿闭合路径 $\Gamma$ 的环量：
+\[
+\oint_\Gamma \vb{B} \cdot \dd{\vb{l}} = \frac{\mu_0}{4\pi} \oint_\Gamma \left[ \int \frac{I \dd{\vb{l}'} \times (\vb{r} - \vb{r}')}{|\vb{r} - \vb{r}'|^3} \right] \cdot \dd{\vb{l}}
+\]
+交换积分次序：
+\[
+= \frac{\mu_0 I}{4\pi} \int \left[ \oint_\Gamma \frac{\dd{\vb{l}} \times (\vb{r} - \vb{r}')}{|\vb{r} - \vb{r}'|^3} \right] \cdot \dd{\vb{l}'}
+\]
+注意到：
+\[
+\frac{\vb{r} - \vb{r}'}{|\vb{r} - \vb{r}'|^3} = -\grad \left( \frac{1}{|\vb{r} - \vb{r}'|} \right)
+\]
+因此：
+\[
+\oint_\Gamma \frac{\dd{\vb{l}} \times (\vb{r} - \vb{r}')}{|\vb{r} - \vb{r}'|^3} = -\oint_\Gamma \dd{\vb{l}} \times \grad \left( \frac{1}{|\vb{r} - \vb{r}'|} \right)
+\]
+利用恒等式 $\oint_\Gamma \dd{\vb{l}} \times \grad f = 0$（对任意标量场 $f$ 成立），但需注意当 $\vb{r}'$ 位于 $\Gamma$ 内部时存在奇点。严格处理可得：
+\[
+\oint_\Gamma \frac{\dd{\vb{l}} \times (\vb{r} - \vb{r}')}{|\vb{r} - \vb{r}'|^3} = 
+\begin{cases}
+4\pi \hat{\vb{n}} & \text{若 } \vb{r}' \text{ 在 } \Gamma \text{ 内} \\
+0 & \text{若 } \vb{r}' \text{ 在 } \Gamma \text{ 外}
+\end{cases}
+\]
+其中 $\hat{\vb{n}}$ 为与电流方向相同的单位矢量。代入原式：
+\[
+\oint_\Gamma \vb{B} \cdot \dd{\vb{l}} = \frac{\mu_0 I}{4\pi} \int 4\pi \hat{\vb{n}} \cdot \dd{\vb{l}'} = \mu_0 I \int \dd{l'}_{\parallel}
+\]
+最终得到安培环路定理：
+\[
+\oint_\Gamma \vb{B} \cdot \dd{\vb{l}} = \mu_0 I_{\text{enc}}
+\]
+其中 $I_{\text{enc}}$ 为穿过闭合路径 $\Gamma$ 的总电流。\\
+连续电流分布$\mathbf{J}$,环路定理为
+\begin{equation}
+\oint_L\mathbf{B}\cdot d\mathbf{l}=\mu_0\int_S\mathbf{J}\cdot d\mathbf{S}
+\end{equation}
+\begin{equation}
+\nabla\times\mathbf{B}=\mu_0\mathbf{J}
+\end{equation}
+
+\subsubsection{磁场的散度}
+\textbf{磁感应强度是无源场。}
+\begin{align}
+\oint_S\mathbf{B}\cdot d\mathbf{S}&=0\\
+\nabla\cdot\mathbf{B}&=0
+\end{align}
+从毕奥萨伐尔定律出发：
+\[
+\vb{B}(\vb{r}) = \frac{\mu_0}{4\pi} \int \frac{I \dd{\vb{l}'} \times (\vb{r} - \vb{r}')}{|\vb{r} - \vb{r}'|^3}
+\]
+计算磁场的散度：
+\[
+\div \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi} \int \div \left[ \frac{\dd{\vb{l}'} \times (\vb{r} - \vb{r}')}{|\vb{r} - \vb{r}'|^3} \right] I
+\]
+利用矢量恒等式：
+\[
+\div (\vb{A} \times \vb{B}) = \vb{B} \cdot (\curl \vb{A}) - \vb{A} \cdot (\curl \vb{B})
+\]
+令 $\vb{A} = \dd{\vb{l}'}$（与场点坐标无关），$\vb{B} = \frac{\vb{r} - \vb{r}'}{|\vb{r} - \vb{r}'|^3}$，则：
+\[
+\div \left[ \dd{\vb{l}'} \times \frac{\vb{r} - \vb{r}'}{|\vb{r} - \vb{r}'|^3} \right] = 
+\frac{\vb{r} - \vb{r}'}{|\vb{r} - \vb{r}'|^3} \cdot (\curl \dd{\vb{l}'}) - \dd{\vb{l}'} \cdot \left( \curl \frac{\vb{r} - \vb{r}'}{|\vb{r} - \vb{r}'|^3} \right)
+\]
+由于 $\dd{\vb{l}'}$ 是常矢量，$\curl \dd{\vb{l}'} = 0$，且：
+\[
+\curl \frac{\vb{r} - \vb{r}'}{|\vb{r} - \vb{r}'|^3} = 0 \quad (\text{因为这是无旋场})
+\]
+因此：
+\[
+\div \left[ \dd{\vb{l}'} \times \frac{\vb{r} - \vb{r}'}{|\vb{r} - \vb{r}'|^3} \right] = 0
+\]
+代入原式：
+\[
+\div \vb{B}(\vb{r}) = \frac{\mu_0}{4\pi} \int 0 \cdot I = 0
+\]
+由此证明了磁场的散度为零：
+\[
+\div \vb{B} = 0
+\]
+\subsection{麦克斯韦方程组}
+\subsubsection{电磁感应定律}
+\textbf{闭合线圈中的感应电动势与通过该线圈内部的磁通量变化率成正比。}
+\begin{align}
+\mathcal{E}&=-\frac{d}{d t}\int_S \mathbf{B}\cdot d\mathbf{S}\\
+\oint_L\mathbf{E}\cdot d\mathbf{l}&=-\frac{d}{d t}\int_S\mathbf{B}\cdot d\mathbf{S}
+\end{align}
+若回路$L$是空间中的一条固定回路，
+\[
+\oint_L\mathbf{E}\cdot d\mathbf{l}=-\int_S\frac{\partial\mathbf{B}}{\partial t}\cdot d\mathbf{S}
+\]
+微分形式
+\begin{equation}
+\nabla\times\mathbf{E}=-\frac{\partial B}{\partial t}
+\end{equation}
+\textbf{感应电场是有旋场。}
+\subsubsection{位移电流}
+假设存在一个称为位移电流的物理量$\mathbf{J}_D$
+\begin{align}
+\nabla\cdot(\mathbf{J}+\mathbf{J}_D)&=0\\
+\nabla\times\mathbf{B}&=\mu_0(\mathbf{J}+\mathbf{J}_D)\\
+\nabla\cdot\mathbf{J}+\frac{\partial \rho}{\partial t}&=0\\
+\nabla\cdot\mathbf{E}&=\frac{\rho}{\epsilon_0}\\
+\nabla\cdot(\mathbf{J}+\epsilon_0\frac{\partial\mathbf{E}}{\partial t})&=0\\
+\mathbf{J}_D&=\epsilon_0\frac{\partial\mathbf{E}}{\partial t}
+\end{align}
+
+\subsubsection{麦克斯韦方程组}
+\begin{equation}
+\begin{aligned}
+\nabla\times\mathbf{E}&=-\frac{\partial\mathbf{B}}{\partial t}\\
+\nabla\times\mathbf{B}&=\mu_0\mathbf{J}+\mu_0\epsilon_0\frac{\partial\vb{E}}{\partial t}\\
+\nabla\cdot\mathbf{E}&=\frac{\rho}{\epsilon_0}\\
+\nabla\cdot\mathbf{B}&=0
+\end{aligned}
+\end{equation}
+
+\subsubsection{洛伦兹力公式}
+静止电荷$Q$收到静电场作用力$\vb{F}=Q\vb{E}$,恒定电流元$\mathbf{J}dV$受到磁场作用力$d\vb{F}=\mathbf{J}\times\mathbf{B}dV$。
+若电荷为连续分布，其密度为$\rho$，则电荷系统单位体积所受的力密度$\mathbf{f}$为
+\begin{equation}
+\vb{f}=\rho\mathbf{E}+\vb{J}\times\vb{B}
+\end{equation}
+\textbf{洛伦兹力公式}
+\begin{equation}
+\vb{F}=q\vb{E}+\vb{qv}\times\vb{B}
+\end{equation}
+
+\subsection{介质的电磁性质}
+\subsubsection{介质的概念}
+介质由分子组成，分子内部有带正电的原子核和绕核运动的带负电的电子（带电粒子体系）。
+介质的极化和磁化现象：有外场时，介质中的带电粒受场的作用，正负电子发生相对位移，有极分子\textbf{(原来正负电中心不重合的分子)}的取向以及
+分子电流的取向呈现出一定的规则性质。（束缚电荷和磁化电流）
+
+\subsubsection{介质的极化}
+\begin{definition}
+\textbf{电偶极矩}：电偶极矩$\mathbf{p}$定义为
+\begin{equation}
+\mathbf{p}=q\mathbf{l}
+\end{equation}
+其中$q$为电荷量，$\mathbf{l}$为从负电荷指向正电荷的矢量。
+\end{definition}
+宏观电偶极矩的分布用电极化强度矢量$\mathbf{P}$表示
+\begin{definition}
+\textbf{电极化强度}：单位体积内的电偶极矩之和称为电极化强度$\mathbf{P}$，其定义为
+\begin{equation}
+\mathbf{P}=\frac{\sum_i \mathbf{p}_i}{\Delta V}
+\end{equation}
+\end{definition}
+设单位体积分子数为n，则穿过$d\mathbf{S}$外面的正电荷为
+\begin{equation}
+nq\mathbf{l}\cdot d\mathbf{S}=n\mathbf{p}\cdot d\mathbf{S}=\mathbf{P}\cdot d\mathbf{S}
+\end{equation}
+由于极化而出现的电荷分布称为束缚电荷，以$\rho_p$表示束缚电荷密度。
+\begin{equation}
+\begin{aligned}
+\int_V \rho_p dV &= -\oint_S \mathbf{P}\cdot d\mathbf{S}\\
+\rho_p &= -\nabla\cdot\mathbf{P}
+\end{aligned}
+\end{equation}
+\textbf{非均匀介质的极化后一般在整个介质内部都出现束缚电荷；在均匀介质内，束缚电荷只出现在
+自由电荷附近以及介质界面。}
+
+
+
+\subsubsection{介质的磁化}
+
+\subsubsection{介质中的麦克斯韦方程组}
+\begin{equation}
+\begin{aligned}
+\nabla\times\mathbf{E}&=-\frac{\partial\mathbf{B}}{\partial t}\\
+\nabla\times\mathbf{H}&=\mathbf{J}+\frac{\partial\mathbf{D}}{\partial t}\\
+\nabla\cdot\mathbf{D}&=\rho\\
+\nabla\cdot\mathbf{B}&=0
+\end{aligned}
+\end{equation}
+关于介质电磁性质的实验关系（\textbf{介质的电磁性质方程}）：
+\begin{align}
+\mathbf{D}&=\epsilon\mathbf{E}=\epsilon_0\epsilon_r\mathbf{E}\\
+\mathbf{B}&=\mu\mathbf{H}=\mu_0\mu_r\mathbf{H}\\
+\mathbf{J}&=\sigma\mathbf{E}
+\end{align}
+各向同性的线性介质。
+
+各向异性介质（线性）：
+\begin{equation}
+\begin{aligned}
+D_i&=\sum_j \epsilon_{ij}E_j\\
+B_i&=\sum_j \mu_{ij}H_j\\
+J_i&=\sum_j \sigma_{ij}E_j
+\end{aligned}
+\end{equation}
+用张量去表示。
+
+\subsection{电磁场的边值关系}
+\subsubsection{法向分量的跃变}
+
+\subsubsection{切向分量的跃变}
+
+\subsection{电磁场的能量和能流}
+\subsubsection{场和电荷系统的能量守恒定律的一般形式}
+\section{习题}
+\subsection{第一次作业}
+\begin{enumerate}
+    \item 在半径为$R$的$\frac{1}{8}$的球体$(0\leqslant\theta\leqslant\frac{\pi}{2},0\leqslant\phi\leqslant\frac{\pi}{2})$中，对函数$\vb{f}=r^2\cos\theta\vb{e_r}+r^2\cos\phi\vb{e_\theta}-r^2\cos\theta\sin\phi\vb{e_\phi}$，验证高斯定理。
+    \item 定义积分$\vb{S}=\int_\Omega d\vb{S}$为曲面$\Omega$的矢量面积，$d\vb{S}$为有向面积元。\\
+    \begin{enumerate}
+        \item 求半径为$R$的半球面的矢量面积。
+        \item 证明对于任意常矢量$\vb{c}$有$\int_{\partial S} d\vb{l}\cdot\vb{c}=\vb{S}\times\vb{c}$。
+    \end{enumerate}
+\end{enumerate}
+
+    \end{document}

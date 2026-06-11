@@ -1,0 +1,312 @@
+\documentclass[12pt,a4paper]{article}
+
+% 基本宏包
+\usepackage[utf8]{inputenc}   % UTF-8 编码
+\usepackage[T1]{fontenc}      % 更好的英文字体输出
+\usepackage{lmodern}          % Latin Modern 字体
+\usepackage{amsmath, amssymb, amsthm} % 数学环境
+\usepackage{geometry}         % 控制页边距
+\usepackage{hyperref}         % 超链接
+\usepackage{enumitem}         % 列表控制
+\usepackage{graphicx}         % 插图
+\usepackage{tcolorbox}        % 彩色方框，做重点标注
+\usepackage{fancyhdr}         % 页眉页脚
+\usepackage{braket}           % Dirac notation: \ket, \bra, etc.
+
+\numberwithin{equation}{subsection}
+
+% 页边距
+\geometry{margin=1in}
+
+% 页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Quantum field theory}   % 左页眉
+\rhead{\today}     % 右页眉
+\cfoot{\thepage}   % 页脚居中页码
+
+% 彩色框样式
+\tcbset{colback=blue!5!white, colframe=blue!75!black, boxrule=0.8pt, arc=4pt, left=6pt, right=6pt, top=6pt, bottom=6pt}
+
+% 定理环境
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\title{Learning Notes (Quantum field theory)}
+\author{Bing}
+\date{\today}
+\maketitle
+
+\tableofcontents  % 目录
+\newpage
+
+\section{Spin Zero}
+
+\subsection{Attempts at relativistic quantum mechanics}
+The axiom we need to focus on is the one that says the time
+evolution of the state of the system is governed by the
+Schrödinger equation
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}|\psi,t\rangle =\hat{H}|\psi,t\rangle
+\end{equation}
+A spinless,nonrelativistic particle with no forces acting on it.
+The hamiltonian is
+\begin{equation}
+H = \frac{1}{2m}\mathbf{P}^2
+\end{equation}
+Eq.(1.1.1) becomes
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}\psi(\mathbf{x},t)=-\frac{\hbar^2}{2m}\nabla^2\psi(\mathbf{x},t)
+\end{equation}
+Generalize this to relativistic motion.
+\begin{equation}
+H=+\sqrt{\mathbf{P}^2c^2+m^2c^4}
+\end{equation}
+Expand this hamiltonian in inverse powers of the speed of light c.
+\begin{equation}
+H=mc^2+\frac{1}{2m}\mathbf{P^2}+\dots
+\end{equation}
+The Schrödinger becomes
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}\psi(\mathbf{x},t)=+\sqrt{-\hbar^2c^2\nabla^2+m^2c^4}\psi(\mathbf{x},t)
+\end{equation}
+Difficulties:
+\begin{itemize}
+    \item It apparently treats treats space and time on difference footing.
+    \item If we expand the square root in powers of $\nabla^2$, we get an infinite number of spatial
+derivatives acting on $\psi(\mathbf{x},t)$ which implies that eq.(1.1.6) is not local in space.
+\end{itemize}
+Squaring the differential operators on each side of eq.(1.1.6).\\
+
+\textit{Klein-Gordon equation}
+\begin{equation}
+-\hbar^2\frac{\partial^2}{\partial t^2}\psi(\mathbf{x},t)=(-\hbar^2c^2\nabla^2+m^2c^4)\psi(\mathbf{x},t)
+\end{equation}
+It is secomd-order in both space and time derivatives,
+and they appear in a symmetric fashion.\\
+Special relativity tells us taht physical looks like the same in all interial frames.
+Suppose that a certain spacetime coordinate system $(ct,\mathbf{x})$ represents an inertial frame.
+Define:
+$$
+x^0=ct,x^\mu\text{ in place of} (ct,\mathbf{x})\quad\mu=0,1,2,3
+$$
+$$
+x_0=-x^0,x_i=x^i
+$$
+The Minkowsiki netric:
+\begin{equation}
+g_{\mu\nu}=
+\begin{pmatrix}
+-1&&&\\
+&+1&\\
+&&+1&\\
+&&&+1
+\end{pmatrix}
+\end{equation}
+
+$$
+x_\mu=g_{\mu\nu}x^\nu
+$$
+
+\begin{equation}
+g_{\mu\nu}=
+\begin{pmatrix}
++1&&&\\
+&-1&\\
+&&-1&\\
+&&&-1
+\end{pmatrix}
+\end{equation}
+$$
+x^\mu=g^{\mu\nu}x_\nu
+$$
+
+$$
+g^{\mu\nu}g_{\nu\rho}=\delta^\mu_\rho\text{ (Kronecker delta)}
+$$
+Coordinates $x^\mu$ represent an intertial frame,then so do any other
+coordinates $\overline{x}^\mu$ that are related by 
+\begin{equation}
+\overline{x}^\mu=\Lambda^\mu_\nu x^\nu+a^\mu
+\end{equation}
+where,
+\begin{itemize}
+    \item $\Lambda^\mu_\nu$ is a \textit{Lorentz transformation matrix}.
+    \item $a^\mu$ is a translation vector.
+    \item Both of two are constant.
+\end{itemize}
+$\Lambda^\mu_\nu$ must obey 
+\begin{equation}
+g_{\mu\nu}\Lambda^\mu_\rho\Lambda^\nu_\sigma =g_{\rho\sigma}
+\end{equation}
+The interval between two different spacetime points that are labeled by
+$x^\mu$ and $x'^\mu$ in one other frame.
+The interval:
+\begin{equation}
+    \begin{aligned}
+(x-x')^2&=g_{\mu\nu}(x-x')^\mu(x-x')^\nu\\
+&=(\mathbf{x}-\mathbf{x}')-c^2(t-t')^2
+    \end{aligned}
+\end{equation}
+In other frame,
+\begin{equation}
+    \begin{aligned}
+    (\overline{x}-\overline{x}')^2 &= g_{\mu\nu}(\overline{x}-\overline{x}')^\mu(\overline{x}-\overline{x}')^\nu\\
+    &=g_{\mu\nu}\Lambda^\mu_\rho\Lambda^\nu_\sigma()(x-x')^\rho(x-x')^\sigma\\
+    &=g_{\rho\sigma}(x-x')^\rho(x-x')\sigma\\
+    &=(x-x')^2
+    \end{aligned}
+\end{equation}
+Useful notation for spacetime derivates:
+\begin{align}
+\partial_\mu &=\frac{\partial}{\partial x^\mu}=(+\frac{1}{c}\frac{\partial}{\partial t},\nabla)\\
+\partial^\mu &=\frac{\partial}{\partial x_\mu}=(-\frac{1}{c}\frac{\partial}{\partial t},\nabla)
+\end{align}
+\begin{equation}
+\partial^\mu x^\nu=g^{\mu\nu}
+\end{equation}
+Because of eq.(1.10),
+\begin{equation}
+\overline{\partial}^\mu=\Lambda^\mu_\nu\partial^\nu
+\end{equation}
+\begin{equation}
+\overline{\partial}^\rho\overline{x}^\sigma=(\Lambda^\mu_\nu\partial^\nu)(\Lambda^\sigma_\nu x^\nu+a^\mu)=\Lambda^\rho_\mu\Lambda^\sigma_\nu(\partial^\mu x^\nu)=\Lambda^\rho_\mu\Lambda^\sigma_\nu g^{\mu\nu}=g^{\rho\sigma}
+\end{equation}
+Write eq.(1.1.7) as 
+\begin{equation}
+-\hbar^2c^2\partial^2_0\psi(x)=(-\hbar^2c^2\nabla^2+m^2c^4)\psi(x)
+\end{equation}
+Rearrange and identify $\partial^2=\partial^\mu\partial_\mu=-\partial^2_0+\nabla^2$,
+\begin{align}
+(-\partial^2+\frac{m^2c^2}{\hbar^2})\psi(x)&=0\\
+(-\partial^2+\frac{m^2c^2}{\hbar^2})\overline{\psi}(\overline{x}) &=0
+\end{align}
+We set $\overline{\psi}(\overline{x})=\psi(x)$,
+\begin{equation}
+\overline{\partial}^2=g_{\mu\nu}\overline{\partial}^\mu\overline{\partial}^\nu=g_{\mu\nu}\Lambda^\mu_\rho\Lambda^\nu_\sigma\partial^\rho\partial^\sigma=\partial^2
+\end{equation}
+Detailed proof:
+\begin{enumerate}
+    \item In the new reference frame, the d'Alembert operator is defined as:
+    \[\partial^2=\partial^\mu\partial_\mu=g_{\mu\nu}\partial^\mu\partial^\nu
+    \]
+    \[
+    \overline{\partial}^2 = g_{\mu\nu} \overline{\partial}^\mu \overline{\partial}^\nu
+    \]
+
+    \item The derivative operator transforms under Lorentz transformations by the inverse vector transformation:
+    \[
+    \overline{\partial}^\mu = \Lambda^\mu_\rho \partial^\rho, \quad 
+    \overline{\partial}^\nu = \Lambda^\nu_\sigma \partial^\sigma
+    \]
+    \[
+    \overline{\partial}^2 = g_{\mu\nu} (\Lambda^\mu_\rho \partial^\rho) (\Lambda^\nu_\sigma \partial^\sigma) 
+    = g_{\mu\nu} \Lambda^\mu_\rho \Lambda^\nu_\sigma \partial^\rho \partial^\sigma
+    \]
+
+    \item Utilizing the metric invariance of the Lorentz transformation:
+    \[
+    g_{\mu\nu} \Lambda^\mu_\rho \Lambda^\nu_\sigma = g_{\rho\sigma}
+    \]
+    \[
+    \overline{\partial}^2 = g_{\rho\sigma} \partial^\rho \partial^\sigma
+    \]
+
+    \item Finally, we notice
+    \[
+    g_{\rho\sigma} \partial^\rho \partial^\sigma = \partial_\sigma \partial^\sigma = \partial^2
+    \]
+    Therefore：
+    \[
+    \overline{\partial}^2 = \partial^2
+    \]
+\end{enumerate}
+Therefore,The Klevin-Gordon equation is manifestly consistent with relativeity:it takes the same form in every inertial frame.
+But,the abstract Schrödinger equation has the fundamental property of being first order in the time derivatve, whereas the Klevin-Gordon
+equation is second order.
+
+The norm of the state is not in general time independent.
+\begin{equation}
+\langle\psi,t|\psi,t\rangle=\int d^3x\langle\psi,t|\mathbf{x}\rangle\langle\mathbf{x}|\psi,t\rangle=\int d^3x\psi^*(x)\psi(x)
+\end{equation} 
+Introduce an extra discrete label on the wave function to account for spin:$\psi_a(x),a=1,2$.
+
+Diac equation:
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}\psi_a(x)=\left(-i\hbar c(\alpha^j)_{ab}\partial_j+mc^2(\beta)_{ab}\right)\psi_b(x)
+\end{equation}
+where all repeated indices are summed,and $\alpha^j$ and $\beta$ are matrices in spinspace.
+
+The state $|\psi,a,t\rangle$ carries a spin label $a$, and the hamiltonian is
+\begin{equation}
+H_{ab}=c\hat{P_j}(\alpha^j)_{ab}+mc^2(\beta)_{ab}
+\end{equation}
+where $P_j$ is a component of the momentrum operator.
+
+Square the hamiltonian
+\begin{equation}
+(H^2)_{ab}=c^2P_jP_k(\alpha^j\alpha^k)_{ab}+mc^3P_j(\alpha^j\beta+\beta\alpha^j)_{ab}+(mc^2)^2(\beta^2)_{ab}
+\end{equation}
+Since $P_jP_K$ is symmetric on exchange of $j$ and $k$, we can replace $\alpha^j\alpha^k$
+by its symmetric part, $\frac{1}{2}\{\alpha^j,\alpha^k\}$,where $\{A,B\}=AB+BA$ is the anticommutator.
+\begin{equation}
+\{\alpha^j,\alpha^k\}_{ab}=2\delta^{jk}\delta_{ab},\quad\{\alpha^j,\beta\}_{ab}=0,\quad (\beta^2)_{ab}=\delta_{ab}
+\end{equation}
+\begin{equation}
+(H^2)_{ab}=(\mathbf{P}^2c^2+m^2c^4)\delta_{ab}
+\end{equation}
+Thus, the eigenstates of $H^2$ are momentum eigenstates, with $H^2$ eigenvalue $\mathbf{p}^2c^2 + m^2c^4$.
+
+We would like the Dirac matrices to be $2\times2$, in order to account for alectron spin.But they must in fact be larger and we find that the trace of this matrix is zero.Thus the
+four eigenvalues must be $+E(\mathbf{p}),+E(\mathbf{p}),-E(\mathbf{p}),-E(\mathbf{p})$.The negative eigenvalues indicate that is no gound state which is a serious problem.
+Diac sea of electrons: all the negative energy states were already occupied.In this case, a positive
+energy electron could not drop into one of these states.The concept of a hole was interpreted as a positron, predicting the existence of antimatter.
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item A single relativistc particle to a theory that apparently requires an infinite number of particles.
+    \item How can we solve the problem of how to describe particles wave equation like photons or pions or alpha nuclei that do not obey Pauli exclusion.
+\end{itemize}
+
+\noindent\textbf{Root Cause:} The fundamental obstacle is the inherent \textbf{asymmetric treatment of space and time} in quantum mechanics. \textbf{Space is an operator} ($\hat{\mathbf{X}}$), while \textbf{time is a parameter} ($t$). This asymmetry conflicts with Special Relativity's requirement of spacetime symmetry.
+
+\noindent\textbf{Resolution Paths:} To reconcile QM with relativity, space and time must be put on an equal footing:
+\begin{enumerate}
+    \item \textbf{Promote Time to an Operator}: Use proper time ($\tau$) as the evolution parameter (complex, leads to string theory).
+    \item \textbf{Demote Position to a Label}: \textbf{This is Quantum Field Theory}. Associate operators with spacetime points. Both $\mathbf{x}$ and $t$ become labels on operators, establishing equal footing.
+\end{enumerate}
+
+\noindent\textbf{QFT Framework:} Non-relativistic QM for multiple particles can be rewritten as a field theory:
+\begin{itemize}
+    \item Introduce field operators: annihilation $a(\mathbf{x})$ and creation $a^\dagger(\mathbf{x})$
+    \item (Anti-)commutation relations define statistics:
+    \begin{align*}
+        \textbf{Bosons:} \quad & [a(\mathbf{x}), a(\mathbf{x}')] = 0, \quad [a^\dagger(\mathbf{x}), a^\dagger(\mathbf{x}')] = 0 \\
+        \textbf{Fermions:} \quad & \{a(\mathbf{x}), a(\mathbf{x}')\} = 0, \quad \{a^\dagger(\mathbf{x}), a^\dagger(\mathbf{x}')\} = 0
+    \end{align*}
+    \item Hamiltonian in terms of fields:
+    \begin{align*}
+        H = \int d^3x\, a^\dagger(\mathbf{x})\left(-\frac{\hbar^2}{2m}\nabla^2 + U(\mathbf{x})\right)a(\mathbf{x}) \\
+        + \frac{1}{2}\int d^3x\, d^3y\, V(\mathbf{x}-\mathbf{y})a^\dagger(\mathbf{x})a^\dagger(\mathbf{y})a(\mathbf{y})a(\mathbf{x})
+    \end{align*}
+    \item $n$-particle state from vacuum $\ket{0}$ ($a(\mathbf{x})\ket{0} = 0$):
+    \begin{equation}
+    \ket{\psi,t} = \int d^3x_1 \ldots d^3x_n\, \psi(\mathbf{x}_1, \ldots, \mathbf{x}_n; t)\, a^\dagger(\mathbf{x}_1) \ldots a^\dagger(\mathbf{x}_n) \ket{0}
+    \end{equation}
+    \item \textbf{Key advantage:} Variable particle number through terms like
+    \begin{equation}
+    \Delta H \propto \int d^3x\, \left[ a^\dagger(\mathbf{x})a^2(\mathbf{x}) + \text{h.c.} \right]
+    \end{equation}
+    which describes creation/annihilation processes.
+\end{itemize}
+
+\noindent\textbf{Summary:} Quantum Field Theory is the inevitable framework consistent with both QM and SR, where particles are excitations of fields and particle number is dynamical.
+
+This section argues that \textbf{Quantum Field Theory is not merely an advanced topic but the inevitable framework} required to construct a theory that is consistent with both the principles of quantum mechanics and the laws of special relativity.
+\subsection{Lorentz Invariance}
+
+\section{Spin One Half}
+
+\end{document}

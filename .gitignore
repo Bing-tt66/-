@@ -20,6 +20,20 @@
 .DS_Store
 Thumbs.db
 
+# Binary/document files (excluded per vault conventions)
+*.pdf
+*.docx
+*.ppt
+*.pptx
+*.doc
+
+# LaTeX auxiliary
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
 # Temporary files
 *.kdtmp
 *.tmp
