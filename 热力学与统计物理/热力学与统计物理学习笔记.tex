@@ -1,0 +1,556 @@
+\documentclass[12pt,a4paper]{article}
+
+% ====== 页面设置 ======
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.25}
+\usepackage{parskip}
+
+% ====== 中文支持（建议用 XeLaTeX 编译）======
+\usepackage{ctex}
+
+% ====== 数学与物理公式 ======
+\usepackage{amsmath, amssymb, amsfonts, bm, mathtools}
+\usepackage{physics}
+\usepackage{siunitx}
+
+% ====== 图片与表格 ======
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+
+% ====== 颜色与盒子 ======
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+% ====== 超链接 ======
+\usepackage[hidelinks]{hyperref}
+
+% ====== 列表环境 ======
+\usepackage{enumitem}
+
+% ====== 页眉页脚 ======
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{热力学与统计物理}
+\rhead{\thepage}
+\cfoot{}
+
+% ====== 标题格式 ======
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{第\,\thesection\,章}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.8em}{}
+
+% ====== 自定义常用命令 ======
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\RR}{\mathbf{R}}
+\usepackage[T1]{fontenc}
+% ====== 笔记盒子样式 ======
+\newtcolorbox{definitionbox}{
+    colback=blue!5,
+    colframe=blue!60!black,
+    title=定义,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{formulabox}{
+    colback=red!5,
+    colframe=red!60!black,
+    title=核心公式,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{notebox}{
+    colback=yellow!8,
+    colframe=orange!70!black,
+    title=理解与备注,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{examplebox}{
+    colback=green!5,
+    colframe=green!50!black,
+    title=例题/应用,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{warningbox}{
+    colback=gray!8,
+    colframe=black!70,
+    title=易错点,
+    fonttitle=\bfseries
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{热力学与统计物理}}\\[0.5em]
+    {\large Bing }\\[0.3em]
+    {\normalsize \today}
+\end{center}
+
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\section{热力学的基本规律}
+\subsection{热力学系统的平衡状态及其描述}
+\textbf{孤立系：}与外界既没有物质交换也没有能量交换。\\
+\textbf{闭系：}没有物质交换，但有能量交换。\\
+\textbf{开系：}即有物质交换，又有能量交换。\\
+\textbf{热力学平衡（热动平衡）：}系统的各种宏观性质在长时间内不发生任何变化。\\
+\textbf{弛豫时间：}由初始状态达到平衡状态所经历的时间，不考虑涨落，微小变化可以忽略。\\
+状态参量:几何参量、力学参量\\
+\textbf{均匀系：}一个系统的各个部分的性质是完全一样的。
+
+\subsection{热平衡定律和温度}
+\textbf{绝热壁：}当两个物体通过器壁相互接触时，两物体的状态可以完全独立地改变，彼此互不影响。\\
+\textbf{透热壁：}非绝热的器壁。\\
+\textbf{热平衡定律}：如果物体A和物体B各自与处在同一状态的物体C达到热平衡，若令A与B进行热接触，他们也将处在热平衡。（经验事实）\\
+\textbf{温度：}两个物体达到热平衡时具有相同的冷热程度。计算如下，\\
+A,C热平衡，满足函数关系\(f_{AC}(p_A,V_A;p_C,V_C)=0\)可得\(p_C=F_{AC}(p_A,V_A;V_C)\)\\
+B,C热平衡，满足函数关系\(f_{BC}(p_B,V_B;p_C,V_C)=0\)可得\(p_c=F_{BC}(p_B,V_B;V_C)\)\\
+\[
+F_{AC}(p_A,V_A;V_C)=F_{BC}(p_B,V_B;V_C)
+\]
+可以消去\(V_C\) \quad \(g_A(p_A,V_A)=g_B(p_B,V_B)\)\\
+温标：对不同的冷热程度给予一定的数值表示。
+\begin{enumerate}
+    \item 气体温标：纯水三相点点温度为273.16k
+    \(p_t\)为三相点下温度计中气体的压强
+    \[
+    T_V=\frac{p}{p_t}\times 273.16
+    \]
+    \item 理想气体温标
+    \[
+    T=273.16K\times \lim_{p_t\rightarrow0}(\frac{p}{p_t})
+    \]
+    \item 热力学温标 \(\leftarrow\) 热力学第二定律
+\end{enumerate}
+\subsection{物态方程}
+简单系统（只需\(p,V\)即可确定系统的状态）物态方程 \(f(p,B,T)=0\)
+\begin{enumerate}
+    \item \textbf{体胀系数：}\(\alpha\)给出在压强保持不变的情况下，温度升高1K所引起物体体积的相对变化。
+    \[
+    \alpha=\frac{1}{V}(\frac{\partial V}{\partial T})_p
+    \] 
+    \item \textbf{压强系数：}\(\beta\)给出在体积保持不变的条件下，温度升高1K所引起的物体压强的相对变化。
+    \[
+    \beta=\frac{1}{p}(\frac{\partial p}{\partial V})_V
+    \]
+    \item \textbf{等温压缩系数：}\(\kappa_T\)给出在温度保持不变的条件下，增加单位压强所引起的物体体积的相对变化。
+    \[
+    \kappa_T=-\frac{1}{V}(\frac{\partial V}{\partial p})_T
+    \]
+\end{enumerate}
+循环偏导数关系：
+\[
+(\frac{\partial V}{\partial p})_T(\frac{\partial p}{\partial T})_V(\frac{\partial T}{\partial V})_p=-1
+\]
+由此可得：\(\alpha=\kappa_T\beta p\)
+\begin{enumerate}
+    \item 气体\\
+    玻意耳定律：对于固定质量的气体，在温度不变时其压强p和体积V的乘积是一个常量\(pV=C\)\\
+    阿伏伽德罗定律：在相同的温度和压强下，相等体积所含各种气体的物质的量相等。\\
+    \textbf{理想气体的物态方程：}\(pV=nRT\)\\
+    \textbf{范德瓦尔斯方程（实际气体）：}\((p+\frac{an^2}{V^2})(V-nb)=nRT\)\\
+    位力展开（昂内斯）：\(p=(\frac{nRT}{V})[1+\frac{n}{V}B(T)+(\frac{n}{V})^2C(T)+...\)
+    \item 简单固体的和液体的物态方程
+    \[
+    V(T,p)=V_0(T_0,0)[1+\alpha(T-T_0)-\kappa p]
+    \]
+    \item 顺磁性固体\\
+    \textbf{居里定律}：\(\mathcal{M}=\frac{c}{T}\mathcal{H}\)\\
+    \textbf{局里-外斯定律}：\(\mathcal{M}=\frac{c}{T-\theta}\mathcal{H}\)
+\end{enumerate}
+\textbf{广延量}：一类与系统的质量或物质的量成正比。
+\textbf{强度量}：一类与质量或物质的量无关。\\
+\textbf{广延量除以质量、物质的量或体积便成为强度量}
+
+\subsection{功}
+外界对系统做功
+\[
+\mathrm{đ}W=-pdV
+\]
+准静态过程：\(W=\int_A^B-pdV\)\\
+液体薄膜：\(\mathrm{đ}W=\sigma dA=2\sigma ldx\)
+\[
+\mathrm{đ}W=\sum_iY_idy_i
+\]
+\(y_i\)为外参量，\(Y_i\)为对应的广义力。
+
+\subsection{热力学第一定律}
+
+\textbf{绝热过程}：在系统和外界之间没有热量交换的过程。
+\[
+U_B-U_A=W+Q
+\]
+\[
+dU=\mathrm{đ}Q+\mathrm{đ}W
+\]
+表述：自然界一切物质都具有能量，能量有各种不同的形式，可以从一种形式转化为另一种形式，从一个物体传递到另一个物体，在传递与转化中能量的数量不变。\\
+第一类永动机不可能制成。
+
+\subsection{热容和焓}
+\textbf{热容}：一个系统在某一过程中温度升高1k所吸收的热量
+\[
+C=\lim_{\Delta T\to0}\frac{\Delta Q}{\Delta T}
+\]
+\textbf{摩尔热容}：\(1mol\)物质的热容。\quad \(C=nC_m\)\\
+\textbf{比热容\(c\)}：单位质量的物质在某一过程的热容成为物质在该过程的比热容。\\
+\textbf{等容热容}：
+\[
+C_v=\lim_{\Delta T\to 0}(\frac{\Delta Q}{\Delta T})_V=\lim_{\Delta\to0}(\frac{\Delta U}{\Delta T})_V=(\frac{\partial U}{\partial T})_V
+\]
+\textbf{等压热容}：
+\[
+C_p=\lim_{\Delta T\to0}\left(\frac{\Delta U+p\Delta V}{\Delta T}\right)_p=\left(\frac{\partial U}{\partial T}\right)_p+p\left(\frac{\partial V}{\partial T}\right)_p
+\]
+状态函数焓：\(H=U+pV\)\quad
+在等压过程中系统从外界吸收的热量等于状态函数焓的增值。
+\[
+C_p=\left(\frac{\partial H}{\partial T}\right)_p
+\]
+
+\subsection{理想气体的内能}
+\[
+\left(\frac{\partial U}{\partial V}\right)_T\left(\frac{\partial V}{\partial T}\right)_U\left(\frac{\partial T}{\partial U}\right)_V=-1
+\] 
+\[
+\left(\frac{\partial U}{\partial V}\right)_T=-\left(\frac{\partial U}{\partial T}\right)_V\left(\frac{\partial T}{\partial V}\right)_U
+\]
+焦耳系数：\(\left(\frac{\partial T}{\partial V}\right)_U\)\quad 描述内能不变的过程中温度随体积的变化率（实验结果给出为0）。
+焦耳定律：气体的内能只是温度的函数，与体积无关。
+\[
+\left(\frac{\partial U}{\partial V}\right)_T=0
+\]
+理想气体
+\(
+C_v=\frac{dU}{dT}
+\)
+\quad 积分可得
+\[
+U=\int C-VdT+U_0
+\]
+理想气体的焓：\(H=U+pV=U+nRT\)\quad \(C_p=\frac{dH}{dT}\)
+\[
+H=\int C_pdT+H_0
+\]
+联立可得
+\[
+C_p-C_v=nR
+\]
+令\(\gamma=\frac{C_p}{C_v}\)
+\[
+C_v=\frac{nR}{\gamma-1},\quad C_p=\gamma\frac{nR}{\gamma-1}
+\]
+也有
+\[
+\begin{aligned}
+    U&=C_vdT+U_0\\
+    H&=C_pdT+H_0
+\end{aligned}
+\]
+\subsection{理想气体的绝热过程}
+理想气体绝热过程：
+\[
+C_VdT+pdV=0，\quad pV=nRT,\quad \gamma=\frac{C_p}{C_V}
+\]
+可得
+\[
+\frac{dp}{p}+\gamma\frac{dV}{V}=0
+\]
+绝热过程有
+\[
+\begin{aligned}
+    pV^\gamma&=Const\\
+    TV^{\gamma-1}&=Const\\
+    \frac{p^{\gamma-1}}{T^\gamma}&=Const
+\end{aligned}
+\]
+声速（牛顿的公式）：\(a=\sqrt{\frac{dp}{d\rho}}\)\quad 通过声速确定\(\gamma\)的公式
+\[
+a^2=\gamma p\nu=\gamma\frac{p}{\rho}
+\]
+\subsection{理想气体的卡诺循环}
+在等温过程中理想气体的内能不变，\(\Delta U\)=0，从热源吸收的热量为\(Q\)为
+\[
+Q=-W=RT\ln\frac{V_B}{V_A}
+\]
+在准静态绝热过程中外界做功是
+\[
+\begin{aligned}
+W&=-\int_{V_A}^{V_B}pdV=-C\int_{V_A}^{V_B}\frac{dV}{V^\gamma}=\frac{C}{\gamma-1}\left(\frac{1}{V_B^{\gamma-1}}-\frac{1}{V_A^{\gamma-1}}\right)=\frac{p_BV_B-p_AV_A}{\gamma-1}=\frac{R(T_B-T_A)}{\gamma-1}\\&=C_V(T_B-T_A)
+\end{aligned}
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{卡诺循环.png}
+    \caption{卡诺循环}
+    \label{fig:placeholder}
+\end{figure}
+\textbf{（一）等温膨胀过程}\quad
+气体吸收的热量为
+\[
+Q_1=RT_1\ln\frac{V_2}{V_!}
+\]\\
+\textbf{（二）绝热膨胀过程}\quad
+吸收的热量为0。\\
+\textbf{（三）等温压缩过程}\quad
+气体放出的热量为
+\[
+Q_2=RT_2\ln\frac{V_1}{V_2}
+\]
+\textbf{（四）绝热压缩过程}\quad
+\[
+W=Q_1-Q_2=RT_1\ln\frac{V_2}{V_1}-RT_2\ln\frac{V_3}{V_4}=R(T_1-T_2)\ln\frac{V_2}{V_1}
+\]
+热机转化效率为
+\[
+\eta=\frac{W}{Q_1}=1-\frac{T_2}{T_1}
+\]
+逆卡诺循环
+\[
+\eta^\prime=\frac{Q_2}{W}=\frac{T_2}{T_1-T_2}
+\]
+\subsection{热力学第二定律}
+\textbf{克劳修斯表述：不可能把热量从低温物体自发的传到高温物体而不引起其他变化。}
+\textbf{开尔文表述：不可能从单一热源吸热使之完全变成有用的功而不引起其他变化。（第二类永动机不可能制成。}
+\subsection{卡诺定理}
+\textbf{所有工作于两个确定温度之间的热机种，可逆热机的效率最高。}\\
+所有工作于两个确定温度之间的可逆热机，其效率相等。
+
+\subsection{热力学温标}
+
+\subsection{克劳修斯等式和不等式}
+\[
+\sum_{i=1}^n\frac{Q_i}{T_i}\le0
+\]
+\(Q_i\)是从第\(i\)个热源吸收的热量，
+积分形式为
+\[
+\oint\frac{dQ}{T}\le0
+\]
+
+\subsection{熵和热力学基本方程}
+\textbf{熵的定义}
+\[
+S_B-S_A=\int_A^B\frac{dQ}{T}
+\]
+微分形式\quad\(dS=\frac{dQ}{T}\)\\
+\textbf{热力学基本方程}
+\[
+dS=\frac{dU+pdV}{T},\quad 或\quad dU=TdS-pdV
+\]
+熵具有广延性质。\(S=S_1+S_2+S_3+\cdots\)
+\subsection{理想气体的熵}
+在\(C_{V,m}\)可以看作常量的时
+\[
+S_m=C_{V,m}\ln T+R\ln V_m+S_{m0}
+\]
+\[
+S=nC_{V,m}\ln T+nR\ln V+S_0
+\]
+其中\(S_0=n(S_{m0}-R\ln n)\)\\
+在\(C{p,m}\)可以看作常量时
+\[
+S_m=C_{p,m}\ln T-R\ln p+S_{m0}
+\]
+\[
+S=mC_{p,m}\ln T-nR\ln T+S_0
+\]
+\subsection{热力学第二定律的数学表述}
+\[
+S_B-S_A\ge\int_A^B\frac{dQ}{T}
+\]
+对于无穷小的过程则有\(dS\ge\frac{dQ}{T}\)\\
+熵增加原理：\(S_B-S_A\ge0\) \quad 系统经可逆绝热过程后熵不变，经不可逆绝热过程后熵增加。\\
+熵是系统中微观例子无规则运动的混乱程度的量度。熵增加原理的统计意义是孤立系统中发生的不可逆过程总是朝着混乱度增加的方向进行的。
+\subsection{自由能和吉布斯函数}
+\textbf{Helmholtz函数（Helmholtz自由能）}：\(F=U-TS\)\\
+等温条件下,\(-W\le F_A-F_B\),对外做功不大于其自由能的减小。\\
+在等温等容条件下，系统的自由能永不增加。\\
+\textbf{吉布斯函数}：\(G=F+pV=U-TS+pV\)\\
+在等温条件下，系统的吉布斯函数永不增加。
+\section{均匀物质的热力学性质}
+
+\subsection{内能、焓、自由能和吉布斯函数的全微分}
+\textbf{热力学基本方程：}
+\(
+dU=TdS-pdV
+\)\\
+可以把\(U\)看作\(S,V\)的函数，全微分为
+\[
+dU=(\frac{\partial U}{\partial S})_SdS+(\frac{\partial U}{\partial V})_SdV
+\]
+比较可得
+\[
+(\frac{\partial U}{\partial S})_V=T,\quad (\frac{\partial U}{\partial V})_S=-p
+\]
+交换偏导数次序可得
+\[
+(\frac{\partial T}{\partial V})_S=-(\frac{\partial p}{\partial s})_V
+\]
+
+\textbf{焓的定义：}\(H=U+pV\)
+\[
+\begin{aligned}
+    dH &= dU+pdV+Vdp\\
+    &=TdS-pdV+pdV+Vdp\\
+    &=TdS+Vdp
+\end{aligned}
+\]
+\(H\)作为\(S,p\)的函数，全微分为
+\[
+dH=(\frac{\partial H}{\partial S})_PdS+(\frac{\partial H}{\partial p})_Sdp
+\]
+比较可得
+\[
+(\frac{\partial H}{\partial S})_p=T,\quad (\frac{\partial H}{\partial p})_S=V
+\]
+交换偏导数次序可得
+\[
+(\frac{\partial T}{\partial p})_S=(\frac{\partial V}{\partial S})_p
+\]
+\textbf{自由能的定义：}\(F=U-TS\)
+\[
+dF=-SdT-pdV
+\]
+全微分为：
+\[
+dF=(\frac{\partial F}{\partial T})_VdT+(\frac{\partial F}{\partial V})_TdV
+\]
+比较可得
+\[
+(\frac{\partial T}{\partial T})_V=-S,\quad (\frac{\partial F}{\partial V})_T=-p
+\]
+交换偏导数次序
+\[
+(\frac{\partial S}{\partial V})_T=(\frac{\partial p}{\partial T})_V
+\]
+\textbf{吉布斯函数的定义：}\(G=U-TS+pV\)
+\[
+dG=-SdT+Vdp
+\]
+类似可得
+\[
+(\frac{\partial G}{\partial T})_p=-S,\quad (\frac{\partial G}{\partial p})_T=V
+\]
+\[
+(\frac{\partial S}{\partial p})_T=-(\frac{\partial V}{\partial T})_p
+\]
+
+\subsection{麦克斯韦关系的简单应用}
+麦克斯韦关系：
+\[
+(\frac{\partial T}{\partial p})_S=(\frac{\partial V}{\partial S})_p
+\]
+\[
+(\frac{\partial T}{\partial p})_S=(\frac{\partial V}{\partial S})_p
+\]
+\[
+(\frac{\partial S}{\partial V})_T=(\frac{\partial p}{\partial T})_V
+\]
+\[
+(\frac{\partial S}{\partial p})_T=-(\frac{\partial V}{\partial T})_p
+\]
+选\(T,V\)为状态参量，内能U的全微分为
+\[
+dU=(\frac{\partial U}{\partial T})_VdT+(\frac{\partial U}{\partial V})_TdV
+\]
+\[
+dU=TdS-pdV
+\]
+熵S的全微分为
+\[
+dS=(\frac{\partial S}{\partial T})_VdT+(\frac{\partial S}{\partial V})_TdV
+\]
+\[
+dU=T(\frac{\partial S}{\partial T})_VdT+[T(\frac{\partial S}{\partial V})_T-p]dV
+\]
+定压热容
+\[
+    C_V=(\frac{\partial U}{\partial T})_V=T(\frac{\partial S}{\partial T})_V
+\]
+温度保持不变时内能随体积的变化率与物态方程的关系
+\[
+\begin{aligned}
+(\frac{\partial U}{\partial V})_T&=T(\frac{\partial S}{\partial V})_T-p\\
+&=T(\frac{\partial p}{\partial T})_V-p
+\end{aligned}
+\]
+
+
+
+\section{单元系的相变}
+
+\subsection{热动平衡判据}
+
+\textbf{熵判据：}如果孤立系统已经达到了熵为极大的情况，就不可能再发生任何热力学意义上的变化，系统就达到了平衡态。\\
+孤立系统处在稳定平衡状态的充分必要条件为\(\Delta S<0\)
+\[
+\Delta S=\delta S+\frac{1}{2}\delta^2S
+\]
+\begin{itemize}
+    \item \(\delta S=0\)熵函数有极值，得到平衡条件
+    \item \(\delta^2S<0\)熵函数有极大值，得到平衡的稳定性条件
+\end{itemize}
+\textbf{亚稳平衡}：对于无穷小的变动是稳定的，对于有限大的变动则是不稳定的。如果发生较大的涨落或者通过某种触发作用，系统就可能由亚稳平衡状态过渡到更加稳定（熵更大）的平衡状态。
+
+\textbf{平衡的稳定性条件}
+\[
+C_v>0,\quad\left(\frac{\partial p}{\partial V}\right)_T<0
+\]
+
+\subsection{开系的热力学基本方程}
+物质的量发生变化时，吉布斯函数显然也将发生变化。吉布斯函数推广为
+\[
+dG=-SdT+Vdp+\mu dp
+\]
+\textbf{化学势}：在温度和压强不变的情况下，增加1mol物质时吉布斯函数的增量。
+\[
+\mu=\left(\frac{\partial G}{\partial n}\right)_{T,p}
+\]
+吉布斯函数是广延量。
+\[
+G(T,p,n)=nG_m(T,p)
+\]
+\[
+\mu=\left(\frac{\partial G}{\partial n}\right)_{T,p}=G_m
+\]
+化学势等于摩尔吉布斯函数。（适用于所有单元系）
+
+内能的全微分为
+\[
+dU=TdS-pdV+\mu dn
+\]
+焓的全微分为
+\[
+dH=TdS+Vdp+\mu dn
+\]
+自由能的全微分为
+\[
+dF=-SdT-pdV+\mu dn
+\]
+\textbf{巨热力势}：\(J=F-\mu n=F-G=-pV\),\quad 全微分为
+\[
+dJ=-SdT-pdV-nd\mu
+\]
+\[
+S=-\left(\frac{\partial J}{\partial T}\right)_{V,\mu},\quad p=-\left(\frac{\partial J}{\partial V}\right)_{T,\mu},\quad n=-\left(\frac{\partial J}{\partial\mu}\right)_{T,V}
+\]
+\subsection{单元系的复相平衡}
+
+
+\end{document}
+
