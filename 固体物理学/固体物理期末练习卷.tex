@@ -1,0 +1,278 @@
+\documentclass[12pt,a4paper,fontset=mac]{ctexart}
+
+% ====== 页面设置 ======
+\usepackage[a4paper,margin=2cm,headheight=15pt]{geometry}
+\usepackage{setspace}
+\setstretch{1.25}
+
+% ====== 数学与物理公式 ======
+\usepackage{amsmath, amssymb, amsfonts, bm, mathtools}
+\usepackage{physics}
+
+% ====== 超链接 ======
+\usepackage[hidelinks]{hyperref}
+
+% ====== 页眉页脚 ======
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{固体物理学 · 练习卷}
+\rhead{\thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ====== 自定义命令 ======
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\dd}{\mathrm{d}}
+
+% ====== 答题留空 ======
+\newcommand{\shortanswer}{\vspace{5cm}}
+\newcommand{\calcanswer}{\vspace{8cm}}
+
+\begin{document}
+
+% ============================================================
+%                       练习卷一
+% ============================================================
+\begin{center}
+{\LARGE \textbf{固体物理学 · 练习卷（一）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共5题，每题10分，共50分）}
+
+\begin{enumerate}
+\item 阐述单晶、多晶和非晶的差别。布拉菲格子中的格点都是等价的吗？为什么三维空间中只有14种布拉菲格子，而实际晶体结构却有成千上万种？
+\shortanswer
+
+\item 阐述离子键、共价键、金属键和范德瓦尔斯键的特点，由这几种键构成的晶体各有什么基本属性？为什么金属比离子晶体、共价晶体易于进行机械加工并且导电、导热性好？
+\shortanswer
+
+\item 以一维双原子链为例，阐述晶格振动所产生的格波的性质。解释为什么波矢 $k \to 0$ 时声学支格波的频率趋近于零，而光学支格波的频率却不趋近于零。声学支和光学支的本质区别是什么？
+\shortanswer
+
+\item 什么是简谐近似？简谐近似下不同格波模式间有没有相互作用？为什么简谐近似下的晶格振动理论解释不了晶体的热膨胀和热阻现象？阐述晶体热膨胀和热阻的微观来源。
+\shortanswer
+
+\item 阐述晶格比热的爱因斯坦模型和德拜模型的物理含义。为什么用德拜模型计算的比热在低温时能给出很好的结果（$C_V \propto T^3$），而用爱因斯坦模型计算的结果比较差（$C_V \propto e^{-\Theta_E/T}$）？
+\shortanswer
+
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共4题，前两题每题12分，后两题每题13分，共50分）}
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item 设有一简单立方格子，基矢分别为 $\mathbf{a}_1 = a\mathbf{i}$，$\mathbf{a}_2 = a\mathbf{j}$，$\mathbf{a}_3 = a\mathbf{k}$。
+\begin{enumerate}
+\item 求该晶体的倒格子基矢 $\mathbf{b}_1, \mathbf{b}_2, \mathbf{b}_3$；
+\item 求晶面指数为 $(111)$ 的晶面族的面间距；
+\item 写出第一布里渊区的形状，并求其体积。
+\end{enumerate}
+\calcanswer
+
+\item 设某离子晶体每对离子的总势能具有如下形式：
+\[
+u(r) = -\frac{\alpha e^2}{4\pi\varepsilon_0 r} + \frac{B}{r^n},
+\]
+其中 $\alpha$ 为马德隆常数，$B$ 和 $n$ 为常数。已知平衡间距为 $r_0$。
+\begin{enumerate}
+\item 利用平衡条件 $\dd u/\dd r|_{r_0}=0$，求常数 $B$ 的表达式（用 $\alpha, e, \varepsilon_0, r_0, n$ 表示）；
+\item 求平衡时的结合能 $u(r_0)$；
+\item 若该晶体的马德隆常数 $\alpha = 1.76$，$r_0 = 2.81\,\text{Å}$，$n = 8$，求每对离子的结合能（以 eV 为单位）。已知 $e^2/(4\pi\varepsilon_0) = 14.4\,\text{eV·Å}$。
+\end{enumerate}
+\calcanswer
+
+\newpage
+
+\item 考虑一个一维双原子链，两种原子的质量分别为 $m$ 和 $M$（设 $m < M$），原子间距为 $a$，最近邻力常数为 $c$。
+\begin{enumerate}
+\item 写出该系统的运动方程；
+\item 推导色散关系 $\omega(q)$；
+\item 求 $q = 0$ 时声学支和光学支的频率，并说明各自的物理含义。
+\end{enumerate}
+\calcanswer
+
+\item 应用德拜模型，计算一维情况下晶格振动的状态密度 $g(\omega)$ 和德拜温度 $\Theta_D$。设一维原子链的长度为 $L$，原子总数为 $N$，声速为 $v_s$。
+\calcanswer
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷二
+% ============================================================
+\begin{center}
+{\LARGE \textbf{固体物理学 · 练习卷（二）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共5题，每题10分，共50分）}
+
+\begin{enumerate}
+\item 倒格子描述的是什么空间？为什么要引入倒格子？倒格子中的维格纳-赛兹原胞（即第一布里渊区）有什么特点？倒格矢 $\mathbf{K}_h$ 与晶面族 $(hkl)$ 之间有什么关系？
+\shortanswer
+
+\item 什么是声子？声子满足什么统计规律？为什么声子体系的化学势为零？温度一定时，光学支格波的声子数目多还是声学支格波的声子数目多？为什么？
+\shortanswer
+
+\item 如何描述自由电子气体的基态？解释费米面的物理含义。为什么一般情况下只有费米面附近的电子能被激发？金属中自由电子气体的比热比经典理论给出的结果小很多，为什么？
+\shortanswer
+
+\item 固体能带理论中，将晶体中相互作用的电子和原子核构成的多粒子体系简化成周期场中运动的单电子模型，作了哪几种近似？阐述这些近似的物理含义。
+\shortanswer
+
+\item 阐述布洛赫定理。布洛赫波函数中波矢 $\kk$ 的物理含义是什么？一个布里渊区波矢 $\kk$ 有多少个取值？一个能带能容纳多少个电子？在周期性势场中运动的粒子，其本征态和本征值各有什么特点？
+\shortanswer
+
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共4题，前两题每题12分，后两题每题13分，共50分）}
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item 限制在边长为 $L$ 的正方形中的 $N$ 个自由电子（二维电子气），电子的能量为
+\[
+E = \frac{\hbar^2}{2m}(k_x^2 + k_y^2).
+\]
+\begin{enumerate}
+\item 求能量在 $E$ 到 $E + \dd E$ 之间的量子态数；
+\item 求此二维系统在绝对零度时的费米能量 $E_F$（用电子面密度 $n = N/L^2$ 表示）；
+\item 求 $T = 0\,\text{K}$ 时电子的平均能量 $\bar{E}$。
+\end{enumerate}
+\calcanswer
+
+\item 在低温下，金属钾的摩尔热容随温度 $T$ 变化的实验结果可写成
+\[
+C_V = (2.08\,T + 2.57\,T^3)\;\text{mJ/(mol·K)}.
+\]
+已知气体常数 $R = 8.314\,\text{J/(mol·K)}$。
+\begin{enumerate}
+\item 指出 $2.08\,T$ 项和 $2.57\,T^3$ 项分别来源于什么物理机制；
+\item 若 1 mol 钾有 $N_A = 6.02 \times 10^{23}$ 个电子，利用电子比热的公式 $C_V^e = \frac{\pi^2}{2}Nk_B\frac{T}{T_F}$，求钾的费米温度 $T_F$；
+\item 利用德拜模型的低温比热公式 $C_V^l = \frac{12\pi^4}{5}Nk_B(T/\Theta_D)^3$，求钾的德拜温度 $\Theta_D$。
+\end{enumerate}
+\calcanswer
+
+\newpage
+
+\item 已知紧束缚近似给出的能带结构表达式为
+\[
+E(\kk) = \varepsilon_0 - J_0 - \sum_{\RR \neq 0} J(\RR)\,e^{i\kk\cdot\RR},
+\]
+其中求和只针对最近邻原子。
+\begin{enumerate}
+\item 给出体心立方（BCC）结构元素晶体 $s$ 态电子的能带表达式（BCC有8个最近邻，坐标分别为 $(\pm a/2, \pm a/2, \pm a/2)$）；
+\item 求出第一布里渊区 $[100]$ 方向（即 $k_y = k_z = 0$）的能带曲线 $E(k_x)$，指出带底和带顶的位置，并求带宽；
+\item 求出带底处电子的有效质量，并说明引入有效质量的物理意义。
+\end{enumerate}
+\calcanswer
+
+\item 设 $N$ 个电子组成简并的自由电子气，体积为 $V$。试证明 $T = 0\,\text{K}$ 时：
+\begin{enumerate}
+\item 每个电子的平均能量 $\bar{E} = \frac{3}{5}E_F$；
+\item 自由电子气的压强 $p$ 满足关系式 $pV = \frac{2}{3}U$，其中 $U$ 为电子气的总内能。
+\end{enumerate}
+\calcanswer
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷三
+% ============================================================
+\begin{center}
+{\LARGE \textbf{固体物理学 · 练习卷（三）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共5题，每题10分，共50分）}
+
+\begin{enumerate}
+\item 平面波近似和紧束缚近似是计算晶体电子能带结构的两种方法，阐述这两种方法的物理思想以及它们各自所适用的对象。从近自由电子近似的角度出发，理解为什么在布里渊区边界会形成带隙。
+\shortanswer
+
+\item 阐述描述晶体中电子在外场作用下的半经典近似的物理思想。根据半经典近似描述晶体中电子在稳恒电场中的运动，并根据固体能带理论阐明满带电子和不满带电子的导电行为。
+\shortanswer
+
+\item 如何理解电子的负有效质量？在此基础上阐述空穴的概念——满带顶部附近的空状态为何等效于一个带正电荷、具有正有效质量的粒子？什么情况下金属固体中电子运动对热容量的贡献只是在极低温度时才不可忽略？
+\shortanswer
+
+\item 根据固体能带理论阐明满带电子和不满带电子的导电行为，描述导体、半导体和绝缘体的能带结构。本征半导体具有与绝缘体类似的能带结构，但为什么具有一定的导电性？
+\shortanswer
+
+\item 什么是朗道轨道？朗道轨道是怎么形成的？有什么特点？金属中自由电子形成强简并的费米气体，如何定量说明这一点？
+\shortanswer
+
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共4题，前两题每题12分，后两题每题13分，共50分）}
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item 利用刚球密堆模型，求证球可能占据的最大体积与总体积之比（堆积比）为：
+\begin{enumerate}
+\item 简单立方：$\pi/6$；
+\item 体心立方：$\sqrt{3}\pi/8$。
+\end{enumerate}
+（提示：简单立方最近邻距离为 $a$，体心立方最近邻距离为 $\sqrt{3}a/2$。）
+\calcanswer
+
+\item 在弛豫时间近似下，电子气体的漂移方程可写成
+\[
+m^*\left(\frac{\dd\mathbf{v}_d}{\dd t} + \frac{\mathbf{v}_d}{\tau}\right) = -e\mathbf{E}.
+\]
+\begin{enumerate}
+\item 说明 $\tau$、$m^*$ 和 $\mathbf{v}_d$ 的物理意义；
+\item 推导稳恒电场下的欧姆定律，并写出电导率 $\sigma$ 的表达式；
+\item 若某金属的电子浓度 $n = 8.5 \times 10^{28}\,\text{m}^{-3}$，弛豫时间 $\tau = 2.7 \times 10^{-14}\,\text{s}$，求该金属的电导率。（已知 $e = 1.60 \times 10^{-19}\,\text{C}$，$m_e = 9.11 \times 10^{-31}\,\text{kg}$）
+\end{enumerate}
+\calcanswer
+
+\newpage
+
+\item 已知某二维正方晶格（晶格常数为 $a$），在紧束缚近似下 $s$ 态电子的能带为
+\[
+E(\kk) = E_0 - 2J(\cos k_x a + \cos k_y a),
+\]
+其中 $J > 0$ 为最近邻迁移积分。
+\begin{enumerate}
+\item 求布里渊区中心 $\Gamma$ 点 $(0,0)$ 和布里渊区角点 $M$ 点 $(\pi/a, \pi/a)$ 处的能量；
+\item 求带宽；
+\item 求 $\Gamma$ 点处电子的有效质量张量 $m_{\alpha\beta}^*$；
+\item 判断 $\Gamma$ 点是能带的底部还是顶部，说明理由。
+\end{enumerate}
+\calcanswer
+
+\item 根据自由电子模型，计算金属钠的德哈斯-范阿尔芬效应的振荡周期。钠是体心立方结构，晶格常数 $a = 4.23\,\text{Å}$，每个原子贡献1个价电子。设外加磁场 $B = 2\,\text{T}$ 沿 $[100]$ 方向。
+\begin{enumerate}
+\item 求钠的自由电子浓度 $n$ 和费米波矢 $k_F$；
+\item 求费米面的极值截面积 $S_F$（自由电子费米面为球面，$S_F = \pi k_F^2$）；
+\item 利用公式 $\Delta(1/B) = 2\pi e/(\hbar S_F)$，求振荡周期。
+\end{enumerate}
+（已知 $\hbar = 1.054 \times 10^{-34}\,\text{J·s}$，$e = 1.602 \times 10^{-19}\,\text{C}$）
+\calcanswer
+
+\end{enumerate}
+
+\end{document}

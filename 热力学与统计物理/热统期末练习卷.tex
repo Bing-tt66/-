@@ -1,0 +1,256 @@
+\documentclass[12pt,a4paper,fontset=mac]{ctexart}
+
+% ====== 页面设置 ======
+\usepackage[a4paper,margin=2.2cm,headheight=15pt]{geometry}
+\usepackage{setspace}
+\setstretch{1.3}
+
+% ====== 数学与物理公式 ======
+\usepackage{amsmath, amssymb, amsfonts, bm, mathtools}
+\usepackage{physics}
+
+% ====== 超链接 ======
+\usepackage[hidelinks]{hyperref}
+
+% ====== 页眉页脚 ======
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{热力学与统计物理 · 练习卷}
+\rhead{\thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ====== 自定义命令 ======
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\đ}{\mathrm{đ}}
+
+% ====== 答题留空 ======
+\newcommand{\shortanswer}{\vspace{5.5cm}}
+\newcommand{\calcanswer}{\vspace{8.5cm}}
+
+\begin{document}
+
+% ============================================================
+%                       练习卷一
+% ============================================================
+\begin{center}
+{\LARGE \textbf{热力学与统计物理 · 练习卷（一）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共8题，每题8分，共64分）}
+
+\begin{enumerate}
+\item 简述热力学系统平衡状态的特点。孤立系、闭系、开系的概念分别是什么？广延量与强度量的概念有何区别？
+\shortanswer
+
+\item 简述热平衡定律（热力学第零定律），并证明处于平衡态下的热力学系统存在一个状态函数——温度。
+\shortanswer
+
+\item 写出体胀系数 $\alpha$、压强系数 $\beta$、等温压缩系数 $\kappa_T$ 的数学定义，并说明各自的物理意义。推导三者的关系 $\alpha = \kappa_T \beta p$。
+\shortanswer
+
+\item 内能的微观起源与组成是什么？简述热力学第一定律，指出其物理含义。定容热容和定压热容的数学表示式分别是什么？
+\shortanswer
+
+\item 简述热力学第二定律的两种表述，并证明两种表述等效。
+\shortanswer
+
+\item 从热力学基本微分方程出发，推导焓 $H$、自由能 $F$、吉布斯函数 $G$ 的全微分，并写出对应的麦克斯韦关系。
+\shortanswer
+
+\item 什么叫费米系统、玻色系统、玻耳兹曼系统？三类系统的粒子在占据个体量子态时各有什么特点？
+\shortanswer
+
+\item 写出熵的统计表达式 $S = k\ln\Omega$，说明熵的物理含义。简述能量均分定理并给予证明。
+\shortanswer
+
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共4题，每题9分，共36分）}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item 一理想气体经历卡诺循环，高温热源温度为 $T_1 = 400\,\text{K}$，低温热源温度为 $T_2 = 300\,\text{K}$。等温膨胀过程中气体从高温热源吸收热量 $Q_1 = 500\,\text{J}$。试求：
+\begin{enumerate}
+\item 该卡诺热机的效率；
+\item 气体向低温热源放出的热量 $Q_2$；
+\item 循环过程中气体对外做的净功 $W$。
+\end{enumerate}
+\calcanswer
+
+\item 已知某气体的物态方程为 $pV = nRT$，且其定容热容 $C_V$ 为常数。试以 $T,V$ 为状态参量，推导该气体内能 $U$ 和熵 $S$ 的表达式。
+\calcanswer
+
+\item 在体积 $V$ 内，在 $\varepsilon$ 到 $\varepsilon + \dd\varepsilon$ 的能量范围内，试证明三维自由粒子的量子态数为
+\[
+g(\varepsilon)\dd\varepsilon = \frac{2\pi V}{h^3}(2m)^{3/2}\sqrt{\varepsilon}\,\dd\varepsilon .
+\]
+\calcanswer
+
+\item 试推导玻耳兹曼分布：
+\[
+a_l = \omega_l\,\ee^{-\alpha - \beta\varepsilon_l},
+\]
+并说明 $\alpha$ 和 $\beta$ 的物理含义。
+\calcanswer
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷二
+% ============================================================
+\begin{center}
+{\LARGE \textbf{热力学与统计物理 · 练习卷（二）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共7题，每题8分，共56分）}
+
+\begin{enumerate}
+\item 理想气体的热力学定义是什么？从玻意耳定律、阿氏定律和焦耳定律说明。理想气体微观模型有哪些基本性质？
+\shortanswer
+
+\item 什么是准静态过程？其判据和重要性质是什么？
+\shortanswer
+
+\item 什么是焦耳定律？给出理想气体焦耳定律的物理解释。可逆过程与不可逆过程的定义和区别是什么？
+\shortanswer
+
+\item 简述克劳修斯等式和不等式，并利用卡诺定理给出证明。
+\shortanswer
+
+\item 简述单元复相系达到热平衡所需要满足的条件，并证明之。
+\shortanswer
+
+\item 证明描述两相平衡曲线斜率的克拉珀龙方程：
+\[
+\frac{\dd p}{\dd T} = \frac{L}{T(V_m^\beta - V_m^\alpha)} .
+\]
+\shortanswer
+
+\item 简述经典极限条件的三种表达方式。在哪些条件下经典极限条件愈易得到满足？满足经典极限条件时，费米系统、玻色系统、玻耳兹曼系统有何联系与区别？
+\shortanswer
+
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共4题，每题11分，共44分）}
+
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item 已知某气体的物态方程为 $pV = nRT$，且其定压热容 $C_p$ 为常数。试以 $T,p$ 为状态参量，推导该气体的焓 $H$ 和熵 $S$ 的表达式（可以含有 $C_p$）。
+\calcanswer
+
+\item 设 $N$ 个电子组成简并的自由电子气，体积为 $V$，试证明 $T = 0\,\text{K}$ 时：
+\begin{enumerate}
+\item 费米能级 $\varepsilon_F = \frac{\hbar^2}{2m}(3\pi^2 n)^{2/3}$，其中 $n = N/V$；
+\item 每个电子的平均能量 $\bar{E} = \frac{3}{5}\varepsilon_F$；
+\item 自由电子气的压强 $p$ 满足 $pV = \frac{2}{3}U$。
+\end{enumerate}
+\calcanswer
+
+\item 对于非相对论性的粒子 $\varepsilon = \frac{p^2}{2m}$，试根据公式 $p = -\sum_l a_l \frac{\partial\varepsilon_l}{\partial V}$ 证明
+\[
+p = \frac{2U}{3V},
+\]
+并说明上述结论对玻尔兹曼分布、玻色分布和费米分布都成立。
+\calcanswer
+
+\item 从粒子的观点，根据玻色统计推导普朗克辐射场内能密度的频率分布公式
+\[
+u(\nu,T)\dd\nu = \frac{8\pi h\nu^3}{c^3}\frac{1}{\ee^{h\nu/kT} - 1}\dd\nu ,
+\]
+并从波动观点阐释其物理图像。
+\calcanswer
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷三
+% ============================================================
+\begin{center}
+{\LARGE \textbf{热力学与统计物理 · 练习卷（三）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共8题，每题8分，共64分）}
+
+\begin{enumerate}
+\item 简述熵增加原理的内容及其统计意义。导出热力学第二定律的数学表述。
+\shortanswer
+
+\item 特性函数（马休定理）的概念是什么？以自由能 $F$ 为例证明马休定理。
+\shortanswer
+
+\item 什么叫一级相变和连续相变？各有什么特点？列举几个例子。
+\shortanswer
+
+\item 简述热力学第三定律的三种表述形式。非临界态平衡稳定性条件是什么？简述其物理含义。
+\shortanswer
+
+\item 什么叫 $\mu$ 空间与 $\Gamma$ 空间？两者有何区别？
+\shortanswer
+
+\item 简述玻色-爱因斯坦凝聚（BEC），凝聚体的热力学量有什么特点？
+\shortanswer
+
+\item 简述固体热容量的爱因斯坦理论与德拜理论的异同。
+\shortanswer
+
+\item 什么是涨落？在热力学极限下，为什么宏观系统的相对涨落通常可以忽略？哪些情况下涨落会很大？
+\shortanswer
+
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共3题，每题12分，共36分）}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item 利用熵判据证明孤立系统的热动平衡条件为整个系统的压强与温度是均匀的。进而证明热力学均匀系统平衡的稳定性条件为
+\[
+C_V > 0,\quad \left(\frac{\partial p}{\partial V}\right)_T < 0 .
+\]
+\calcanswer
+
+\item 试证明，在正则系综理论中，能量的相对涨落可以表述为
+\[
+\frac{\sqrt{\overline{(E - \bar{E})^2}}}{\bar{E}} \sim \frac{1}{\sqrt{N}},
+\]
+并由此说明对于宏观热力学系统，能量相对涨落很小。
+\calcanswer
+
+\item 从系综理论出发，推导范德瓦耳斯状态方程
+\[
+\left(p + \frac{aN^2}{V^2}\right)(V - Nb) = NkT,
+\]
+并说明参数 $a$ 与 $b$ 的物理意义。
+\calcanswer
+
+\end{enumerate}
+
+\end{document}

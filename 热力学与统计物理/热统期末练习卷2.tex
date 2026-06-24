@@ -1,0 +1,192 @@
+\documentclass[12pt,a4paper,fontset=mac]{ctexart}
+
+\usepackage[a4paper,margin=2cm,headheight=15pt]{geometry}
+\usepackage{setspace}\setstretch{1.25}
+\usepackage{amsmath, amssymb, amsfonts, bm, mathtools}
+\usepackage{physics}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{热力学与统计物理 · 练习卷（四–六）}
+\rhead{\thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\đ}{\mathrm{đ}}
+
+\newcommand{\shortanswer}{\vspace{5.5cm}}
+\newcommand{\calcanswer}{\vspace{8.5cm}}
+
+\begin{document}
+
+% ============================================================
+%                       练习卷四
+% ============================================================
+\begin{center}
+{\LARGE \textbf{热力学与统计物理 · 练习卷（四）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共8题，每题8分，共64分）}
+
+\begin{enumerate}
+\item 温标的三要素是什么？举例说明几种常见温标，并简述理想气体温标与热力学温标的区别与联系。
+
+\item 简述熵判据、自由能判据、吉布斯函数判据分别适用于什么条件，如何从这些判据确定系统的平衡条件与平衡的稳定性条件？
+
+\item 什么叫一级相变和连续相变？各有什么特点？从亚临界等温线的压强-体积图和化学势-压强图解释过饱和蒸气和过热液体的存在。
+
+\item 简述热力学第三定律的三种表述形式。能氏定理适用于凝聚系的哪些状态？不适用于哪些状态？各举一例说明。
+
+\item 写出吉布斯关系式并证明之。简述吉布斯相律 $f = k - \varphi + 2$ 并给予证明。
+
+\item 简述理想费米气体与理想玻色气体在绝对零度下热力学量的异同。
+
+\item 弱简并理想费米气体与玻色气体内能有何异同？从物理上给予解释。
+
+\item 简述微正则系综、正则系综、巨正则系综的分布函数的量子表达式与经典表达式。
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共4题，每题9分，共36分）}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item 证明下列平衡判据（假设 $S > 0$）：
+\begin{enumerate}
+\item 在 $S, V$ 不变的情形下，稳定平衡态的 $U$ 最小；
+\item 在 $S, p$ 不变的情形下，稳定平衡态的 $H$ 最小；
+\item 在 $F, V$ 不变的情形下，稳定平衡态的 $T$ 最小。
+\end{enumerate}
+
+\item 在极端相对论情形下，粒子的能量-动量关系为 $\varepsilon = cp$。试求在体积 $V$ 内，在 $\varepsilon$ 到 $\varepsilon + \dd\varepsilon$ 能量范围内三维粒子的量子态数 $g(\varepsilon)\dd\varepsilon$。
+
+\item 试根据公式 $p = -\sum_l a_l \frac{\partial\varepsilon_l}{\partial V}$，证明对于极端相对论粒子 $\varepsilon = cp$，有 $p = \frac{U}{3V}$，并说明上述结论对玻尔兹曼分布、玻色分布和费米分布都成立。
+
+\item 利用能氏定理证明：温度趋于绝对零度时，物质系统的热容量 $C_V$、体胀系数 $\alpha$、压强系数 $\beta$ 均趋于零，一级相变相平衡曲线斜率 $\dd p/\dd T \to 0$。
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷五
+% ============================================================
+\begin{center}
+{\LARGE \textbf{热力学与统计物理 · 练习卷（五）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共7题，每题8分，共56分）}
+
+\begin{enumerate}
+\item 理想气体的热力学定义是什么？从玻意耳定律、阿氏定律和焦耳定律说明。为什么这三个定律是相互独立的？理想气体的内能和焓各有什么特点？
+
+\item 什么是可逆过程与不可逆过程？准静态过程是否一定是可逆过程？为什么？
+
+\item 简述克劳修斯等式和不等式 $\oint \frac{\đ Q}{T} \le 0$，并利用卡诺定理给出严格证明。
+
+\item 用热力学理论证明：液气流体系统临界态的平衡稳定性条件为 $\left(\frac{\partial p}{\partial V}\right)_T = 0$ 和 $\left(\frac{\partial^2 p}{\partial V^2}\right)_T = 0$。非临界态平衡稳定性条件是什么？简述其物理含义。
+
+\item 写出熵的统计表达式 $S = k\ln\Omega$，说明熵的物理含义。怎么确定全同近独立粒子系统的微观运动状态？
+
+\item 试论述在室温范围内，金属中自由电子对热容量的贡献与离子振动的热容量相比可以忽略不计。为何金属固体中电子运动对热容量的贡献只是在极低温度时才不可忽略？
+
+\item 定量说明金属中的自由电子形成强简并的费米气体。为什么在一般情况下可以不考虑原子内电子的运动对热容量的贡献？
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共4题，每题11分，共44分）}
+
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item 两相共存时，两相系统的定压热容量 $C_p = T\left(\frac{\partial S}{\partial T}\right)_p$ 和等温压缩系数 $\kappa_T = -\frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_T$ 均趋于无穷，试加以说明。
+
+\item 试证明，在微正则系综理论中，熵可表示为
+\[
+S = -k\sum_s \rho_s\ln\rho_s,
+\]
+其中 $\rho_s = 1/\Omega$ 是系统处于微观状态 $s$ 的概率（$\Omega$ 为可能的微观状态数）。
+
+\item 试证明，在正则系综理论中，熵可表示为
+\[
+S = -k\sum_s \rho_s\ln\rho_s,
+\]
+其中 $\rho_s = \frac{1}{Z}e^{-\beta E_s}$ 为正则分布函数。由此说明上述形式是微正则系综和正则系综的统一表达式。
+
+\item 试证明巨正则系综中粒子数的相对涨落可以表述为
+\[
+\frac{\sqrt{\overline{(N - \bar{N})^2}}}{\bar{N}} \sim \frac{1}{\sqrt{\bar{N}}},
+\]
+并说明在热力学极限下该相对涨落可以忽略。
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷六
+% ============================================================
+\begin{center}
+{\LARGE \textbf{热力学与统计物理 · 练习卷（六）}}\\[0.5em]
+{\large 考试时间：90分钟 \quad 满分：100分}\\[0.3em]
+{\normalsize 闭卷考试 \quad 姓名：\underline{\hspace{3cm}} \quad 得分：\underline{\hspace{2cm}}}
+\end{center}
+\vspace{0.5em}
+
+\noindent\textbf{一、简答题（共8题，每题8分，共64分）}
+
+\begin{enumerate}
+\item 三个基本热力学函数是哪三个？为什么其他热力学函数均可由此导出？给定状态方程 $p = p(T,V)$ 和定容热容 $C_V$，如何确定系统的内能和熵？
+
+\item 利用熵判据证明孤立系统的热动平衡条件为整个系统的压强与温度是均匀的。并简述热力学均匀系统平衡的稳定性条件 $C_V > 0$，$\left(\frac{\partial p}{\partial V}\right)_T < 0$ 的物理含义。
+
+\item 证明描述两相平衡曲线斜率的克拉珀龙方程 $\frac{\dd p}{\dd T} = \frac{L}{T(V_m^\beta - V_m^\alpha)}$，并讨论其在固-液、液-气和固-气平衡中的应用。
+
+\item 比较热力学方法和统计物理方法研究宏观物质性质的基本思路。二者有什么联系？
+
+\item 什么叫 $\mu$ 空间与 $\Gamma$ 空间，各有什么性质，两者有何区别？简述经典极限条件的三种表达方式，在哪些条件下经典极限条件愈易得到满足？
+
+\item 从粒子的观点，根据玻色统计推导普朗克辐射场内能密度的频率分布公式
+\[
+u(\nu,T)\dd\nu = \frac{8\pi h\nu^3}{c^3}\frac{1}{\ee^{h\nu/kT} - 1}\dd\nu,
+\]
+并从波动观点阐释其物理图像。
+
+\item 简述玻色-爱因斯坦凝聚（BEC）。什么是费米能级和费米温度？试说明低温下理想费米气体热容与经典理论预言的差别。
+
+\item 试讨论液体—气体相变中临界点的物理意义。临界点附近物质性质有什么特点？什么是涨落？哪些情况下涨落会很大？
+\end{enumerate}
+
+\newpage
+
+\noindent\textbf{二、计算与推导题（共4题，每题9分，共36分）}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item 已知某气体的物态方程可写为 $pV = nRT + nBp$，其中 $B$ 为仅依赖于温度的第二位力系数。试以 $T,p$ 为状态参量，推导该气体的焓 $H$ 和熵 $S$ 的表达式（可以含有热容量和 $B(T)$）。
+
+\item 推导自由电子气体在 $0\,\text{K}$ 时的费米能级 $\varepsilon_F$、费米动量 $p_F$、费米速率 $v_F$；并计算 $0\,\text{K}$ 时自由电子气体的内能 $U_0$ 和压强 $p$。设电子数密度为 $n = N/V$。
+
+\item 从微正则分布出发，推导巨正则分布：
+\[
+\rho_{N,s} = \frac{1}{\Xi}e^{-\alpha N - \beta E_s},
+\]
+并说明 $\alpha$ 和 $\beta$ 的物理含义。
+
+\item 推导正则系综能量相对涨落公式
+\[
+\overline{(E - \bar{E})^2} = kT^2 C_V,
+\]
+并由此说明对于热力学系统能量相对涨落很小。解释为什么在临界点附近涨落会显著增大。
+\end{enumerate}
+
+\end{document}

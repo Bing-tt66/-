@@ -1,0 +1,861 @@
+\documentclass[12pt,a4paper,fontset=mac]{ctexart}
+
+% ====== 页面设置 ======
+\usepackage[a4paper,margin=2cm,headheight=15pt]{geometry}
+\usepackage{setspace}
+\setstretch{1.25}
+
+% ====== 数学与物理公式 ======
+\usepackage{amsmath, amssymb, amsfonts, bm, mathtools}
+\usepackage{physics}
+
+% ====== 超链接 ======
+\usepackage[hidelinks]{hyperref}
+
+% ====== 页眉页脚 ======
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{热力学与统计物理 · 练习卷答案}
+\rhead{\thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ====== 自定义命令 ======
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\đ}{\mathrm{đ}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{热力学与统计物理 · 练习卷参考答案}}\\[0.5em]
+{\normalsize 三套练习卷的完整解答}
+\end{center}
+
+\vspace{1em}
+
+% ============================================================
+%                       练习卷一 答案
+% ============================================================
+\section*{练习卷（一）参考答案}
+
+\subsection*{一、简答题}
+
+\begin{enumerate}
+
+\item \textbf{热力学系统平衡状态的特点、孤立系/闭系/开系、广延量与强度量}
+
+\textbf{平衡状态}：系统的各种宏观性质在长时间内不发生任何变化。特点：(1) 宏观量不随时间变化；(2) 是热动平衡（微观上仍有涨落）；(3) 无温差、压力差等势差。
+
+\textbf{孤立系}：与外界既无物质交换也无能量交换。\textbf{闭系}：无物质交换，有能量交换。\textbf{开系}：既有物质交换又有能量交换。
+
+\textbf{广延量}：与系统质量或物质的量成正比的量（$V$、$U$、$S$），具有可加性。\textbf{强度量}：与质量或物质的量无关的量（$p$、$T$、$\mu$）。广延量除以质量或体积即成为强度量。
+
+区分只在热力学极限（$N\to\infty, V\to\infty, N/V$有限）下严格成立——有限系统中表面效应和涨落会破坏这种区分。
+
+\item \textbf{热平衡定律（第零定律）与温度的存在性}
+
+\textbf{第零定律}：若物体A和B各自与同一状态的物体C达到热平衡，则A与B热接触时也将处于热平衡。
+
+\textbf{证明存在温度函数}：A、C热平衡 $\Rightarrow f_{AC}(p_A,V_A;p_C,V_C)=0 \Rightarrow p_C=F_{AC}(p_A,V_A;V_C)$。同理B、C热平衡 $\Rightarrow p_C=F_{BC}(p_B,V_B;V_C)$。联立消去$V_C$：$F_{AC}(p_A,V_A;V_C)=F_{BC}(p_B,V_B;V_C) \Rightarrow g_A(p_A,V_A)=g_B(p_B,V_B)$。此共同数值即为经验温度。因此处于平衡态的系统存在状态函数——温度。
+
+\item \textbf{体胀系数、压强系数、等温压缩系数}
+
+\[\alpha=\frac{1}{V}\!\left(\frac{\partial V}{\partial T}\right)_p,\quad \beta=\frac{1}{p}\!\left(\frac{\partial p}{\partial T}\right)_V,\quad \kappa_T=-\frac{1}{V}\!\left(\frac{\partial V}{\partial p}\right)_T\]
+
+物理意义：$\alpha$——恒压下温度升高1K引起体积的相对变化（热胀冷缩）；$\beta$——恒容下温度升高1K引起压强的相对变化；$\kappa_T$——恒温下增加单位压强引起体积的相对变化（可压缩性）。
+
+\textbf{推导关系}：由循环偏导数公式 $\left(\frac{\partial V}{\partial p}\right)_T\left(\frac{\partial p}{\partial T}\right)_V\left(\frac{\partial T}{\partial V}\right)_p=-1$。将$\left(\frac{\partial V}{\partial p}\right)_T=-V\kappa_T$，$\left(\frac{\partial p}{\partial T}\right)_V=p\beta$，$\left(\frac{\partial T}{\partial V}\right)_p=1/(V\alpha)$代入，得 $\alpha=\kappa_T\beta p$。
+
+\item \textbf{内能、热力学第一定律、热容}
+
+\textbf{内能}：系统中分子无规运动能量总和的统计平均值。包括分子动能、分子间相互作用势能、分子内部运动能量；视情况可包括或不包括外场中的势能。
+
+\textbf{第一定律}：$U_B-U_A=W+Q$，$\dd U=\đ Q+\đ W$。物理含义：能量守恒与转化定律在热现象中的体现。第一类永动机不可能制成。
+
+\textbf{定容热容}：$C_V=\left(\frac{\partial U}{\partial T}\right)_V$。\textbf{定压热容}：$C_p=\left(\frac{\partial H}{\partial T}\right)_p$，其中$H=U+pV$为焓。
+
+\item \textbf{热力学第二定律的两种表述及等效性}
+
+\textbf{克劳修斯表述}：不可能把热量从低温物体自发地传到高温物体而不引起其他变化。\textbf{开尔文表述}：不可能从单一热源吸热使之完全变成有用的功而不引起其他变化。
+
+\textbf{等效性证明}（反证法）：(1) 若克氏不成立，则热量可从$T_2$自发传至$T_1$。在$T_1,T_2$间运行卡诺热机，将向$T_2$放出的热量$Q_2$自发传回$T_1$，总效果为从单一热源$T_1$吸热全部变功——开氏也不成立。(2) 反之亦然。故两表述等价。
+
+\item \textbf{热力学势的全微分与麦克斯韦关系}
+
+热力学基本方程：$\dd U=T\dd S-p\dd V$。
+
+由$H=U+pV$：$\dd H=\dd U+p\dd V+V\dd p=T\dd S+V\dd p$。
+
+由$F=U-TS$：$\dd F=\dd U-T\dd S-S\dd T=-S\dd T-p\dd V$。
+
+由$G=U-TS+pV$：$\dd G=-S\dd T+V\dd p$。
+
+\textbf{麦克斯韦关系}（由二阶混合偏导相等）：
+
+$\left(\frac{\partial T}{\partial V}\right)_S=-\left(\frac{\partial p}{\partial S}\right)_V$，
+$\left(\frac{\partial T}{\partial p}\right)_S=\left(\frac{\partial V}{\partial S}\right)_p$，
+$\left(\frac{\partial S}{\partial V}\right)_T=\left(\frac{\partial p}{\partial T}\right)_V$，
+$\left(\frac{\partial S}{\partial p}\right)_T=-\left(\frac{\partial V}{\partial T}\right)_p$。
+
+\item \textbf{费米系统、玻色系统、玻耳兹曼系统}
+
+\textbf{费米系统}：由费米子（半整数自旋）组成。服从泡利不相容原理——每个单粒子量子态最多容纳一个粒子。分布：$a_l=\omega_l/(e^{\alpha+\beta\varepsilon_l}+1)$。
+
+\textbf{玻色系统}：由玻色子（整数自旋）组成。每个量子态可容纳任意多粒子。分布：$a_l=\omega_l/(e^{\alpha+\beta\varepsilon_l}-1)$。
+
+\textbf{玻耳兹曼系统}：可分辨的经典粒子（或满足经典极限条件的量子系统）。分布：$a_l=\omega_l e^{-\alpha-\beta\varepsilon_l}$。
+
+\item \textbf{熵的统计表达式与能量均分定理}
+
+\textbf{玻尔兹曼关系}：$S=k\ln\Omega$，其中$\Omega$为宏观态对应的微观状态数。
+
+\textbf{物理含义}：熵是系统微观粒子无规运动混乱程度的量度。孤立系中不可逆过程总是朝着$\Omega$增大（混乱度增加）的方向进行。平衡态对应$\Omega$最大的宏观态。
+
+\textbf{能量均分定理}：温度为$T$的平衡态下，每个平方项能量分量的统计平均值等于$\frac{1}{2}kT$。
+
+\textbf{证明}：能量$\varepsilon=\sum_i(a_ip_i^2+b_iq_i^2)$。对配分函数的相空间积分：
+\[\overline{\frac{1}{2}a_kp_k^2}=\frac{\int\frac{1}{2}a_kp_k^2 e^{-\beta\varepsilon}\dd\Gamma}{\int e^{-\beta\varepsilon}\dd\Gamma}=\frac{1}{2\beta}=\frac{1}{2}kT.\]
+同理可证势能平方项。该定理仅在经典统计适用时成立。
+
+\end{enumerate}
+
+\newpage
+
+\subsection*{二、计算与推导题}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+
+\item \textbf{卡诺循环计算}
+
+(1) 卡诺热机效率：
+\[\eta=1-\frac{T_2}{T_1}=1-\frac{300}{400}=0.25=25\%.\]
+
+(2) 由效率定义 $\eta=W/Q_1$，且 $W=Q_1-Q_2$：
+\[Q_2=Q_1(1-\eta)=500\times(1-0.25)=375\,\text{J}.\]
+
+(3) 净功：$W=Q_1-Q_2=500-375=125\,\text{J}$，或 $W=\eta Q_1=0.25\times500=125\,\text{J}$。
+
+\item \textbf{以$T,V$为状态参量推导$U$和$S$}
+
+已知$pV=nRT\Rightarrow p=nRT/V$。
+
+由能态方程：$\left(\frac{\partial U}{\partial V}\right)_T=T\left(\frac{\partial p}{\partial T}\right)_V-p=T\cdot\frac{nR}{V}-\frac{nRT}{V}=0$（焦耳定律）。
+
+故内能仅与温度有关：$\dd U=C_V\dd T \Rightarrow U=\int C_V\dd T+U_0$。
+
+对于熵，由$\dd S=\frac{\dd U+p\dd V}{T}$：
+\[\dd S=\frac{C_V\dd T}{T}+\frac{nR}{V}\dd V.\]
+积分得：
+\[S=\int\frac{C_V}{T}\dd T+nR\ln V+S_0.\]
+若$C_V$为常数：$S=nC_{V,m}\ln T+nR\ln V+S_0$。
+
+\item \textbf{三维自由粒子量子态数}
+
+自由粒子在体积$V$内，波矢$\kk$的允许值为$\kk=\frac{2\pi}{L}(n_x,n_y,n_z)$。$\kk$空间中态密度为$V/(2\pi)^3$。
+
+能量$\varepsilon=\hbar^2k^2/2m\Rightarrow k=\sqrt{2m\varepsilon}/\hbar$，$\dd k=\frac{\sqrt{2m}}{2\hbar\sqrt{\varepsilon}}\dd\varepsilon$。
+
+在$k\to k+\dd k$球壳内的量子态数（含自旋简并度$g_s$）：
+\[g(k)\dd k=g_s\cdot\frac{V}{(2\pi)^3}\cdot4\pi k^2\dd k=\frac{g_sV}{2\pi^2}k^2\dd k.\]
+代入$k$和$\dd k$，取$g_s=1$（若不考虑自旋）或乘以适当因子：
+\[g(\varepsilon)\dd\varepsilon=\frac{V}{2\pi^2}\cdot\frac{2m\varepsilon}{\hbar^2}\cdot\frac{\sqrt{2m}}{2\hbar\sqrt{\varepsilon}}\dd\varepsilon=\frac{2\pi V}{h^3}(2m)^{3/2}\sqrt{\varepsilon}\,\dd\varepsilon.\]
+
+（注：$h=2\pi\hbar$，$\hbar^3=h^3/(2\pi)^3$，化简即得。）
+
+\item \textbf{推导玻耳兹曼分布}
+
+在$\sum_la_l=N$和$\sum_la_l\varepsilon_l=E$约束下，求微观状态数$W=N!\prod_l\frac{\omega_l^{a_l}}{a_l!}$的极大值。
+
+取对数并用斯特林公式$\ln N!\approx N\ln N-N$：
+\[\ln W=N\ln N-N+\sum_l[a_l\ln\omega_l-a_l\ln a_l+a_l].\]
+
+引入拉格朗日乘子$\alpha,\beta$，令$\delta(\ln W-\alpha\sum_la_l-\beta\sum_la_l\varepsilon_l)=0$：
+\[\sum_l[\ln\omega_l-\ln a_l-\alpha-\beta\varepsilon_l]\delta a_l=0.\]
+
+由$\delta a_l$的任意性：$\ln\omega_l-\ln a_l-\alpha-\beta\varepsilon_l=0\Rightarrow a_l=\omega_l e^{-\alpha-\beta\varepsilon_l}$。
+
+\textbf{物理含义}：$\beta=1/kT$（温度的倒数），$\alpha=-\mu/kT$（负化学势除以$kT$）。$e^{-\alpha}=N/Z_1$由归一化条件$\sum_l a_l=N$确定，$Z_1=\sum_l\omega_l e^{-\beta\varepsilon_l}$为单粒子配分函数。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷二 答案
+% ============================================================
+\section*{练习卷（二）参考答案}
+
+\subsection*{一、简答题}
+
+\begin{enumerate}
+
+\item \textbf{理想气体的热力学定义与微观模型}
+
+理想气体是严格遵从玻意耳定律（$pV=C$，恒温）、阿伏伽德罗定律（同温同压下等体积含等量分子）和焦耳定律（内能仅是温度的函数）的气体。这三个规律反映气体在$p\to0$时的共同极限性质。
+
+\textbf{微观模型}：(1) 分子体积与气体体积相比可忽略，分子视为有质量的几何点；(2) 分子间无相互作用（无吸引和排斥）；(3) 分子间及分子与器壁的碰撞完全弹性，不损失动能。
+
+\item \textbf{准静态过程}
+
+\textbf{定义}：进行得无限缓慢，每一时刻系统都无限接近平衡态的过程（理想极限）。
+
+\textbf{判据}：外界参数变化的时间尺度远大于系统的弛豫时间。
+
+\textbf{重要性质}：(1) 过程中每一状态都可用状态参量描述，在状态图上可用连续曲线表示；(2) 无摩擦的准静态过程是可逆过程；(3) 外界对系统做的功可用平衡态参量计算：$W=\int(-p)\dd V$。
+
+\item \textbf{焦耳定律与可逆/不可逆过程}
+
+\textbf{焦耳定律}：气体的内能只是温度的函数，与体积无关：$\left(\frac{\partial U}{\partial V}\right)_T=0$。
+
+\textbf{物理解释}：理想气体分子间无相互作用势能，内能全部为分子动能，仅取决于温度。实际气体在$p\to0$极限下也满足焦耳定律。
+
+\textbf{可逆过程}：过程发生后，存在另一过程使系统和外界都完全复原。\textbf{不可逆过程}：不满足上述条件的过程。所有实际宏观过程都是不可逆的（热传导、摩擦、扩散、自由膨胀等）。
+
+\item \textbf{克劳修斯等式和不等式}
+
+\[\oint\frac{\đ Q}{T}\le0,\]
+等号对应可逆循环，不等号对应不可逆循环。
+
+\textbf{证明}：由卡诺定理，任意工作于$T_1,T_2$间的热机$\eta\le1-T_2/T_1$，即$Q_1/T_1+Q_2/T_2\le0$。将任意循环分解为无数微卡诺循环，求和取极限即得。$T$为热源温度。
+
+\item \textbf{单元复相系平衡条件}
+
+\textbf{条件}：$T^\alpha=T^\beta$（热平衡），$p^\alpha=p^\beta$（力学平衡），$\mu^\alpha(T,p)=\mu^\beta(T,p)$（相平衡）。
+
+\textbf{证明}：假想孤立两相系，总熵变：
+\[\delta S=\left(\frac{1}{T^\alpha}-\frac{1}{T^\beta}\right)\delta U^\alpha+\left(\frac{p^\alpha}{T^\alpha}-\frac{p^\beta}{T^\beta}\right)\delta V^\alpha-\left(\frac{\mu^\alpha}{T^\alpha}-\frac{\mu^\beta}{T^\beta}\right)\delta n^\alpha=0.\]
+由$\delta U^\alpha,\delta V^\alpha,\delta n^\alpha$的任意性即得三个平衡条件。
+
+\item \textbf{克拉珀龙方程推导}
+
+沿相平衡曲线$\mu^\alpha(T,p)=\mu^\beta(T,p)$，求全微分：
+\[\left(\frac{\partial\mu^\alpha}{\partial T}\right)_p\dd T+\left(\frac{\partial\mu^\alpha}{\partial p}\right)_T\dd p=\left(\frac{\partial\mu^\beta}{\partial T}\right)_p\dd T+\left(\frac{\partial\mu^\beta}{\partial p}\right)_T\dd p.\]
+由$\dd\mu=-S_m\dd T+V_m\dd p$得$\frac{\partial\mu}{\partial T}=-S_m$，$\frac{\partial\mu}{\partial p}=V_m$。代入：
+\[-S_m^\alpha\dd T+V_m^\alpha\dd p=-S_m^\beta\dd T+V_m^\beta\dd p\Rightarrow\frac{\dd p}{\dd T}=\frac{S_m^\beta-S_m^\alpha}{V_m^\beta-V_m^\alpha}=\frac{L}{T(V_m^\beta-V_m^\alpha)}.\]
+其中$L=T(S_m^\beta-S_m^\alpha)$为相变潜热。
+
+\item \textbf{经典极限条件}
+
+三种表达方式：(1) $a_l\ll\omega_l$（能级上的粒子数远小于简并度）；(2) $e^\alpha\gg1$；(3) $\frac{N}{V}(\frac{h^2}{2\pi mkT})^{3/2}\ll1$（数密度远小于量子浓度）。
+
+\textbf{愈易满足的条件}：高温、低密度、大质量。
+
+\textbf{三种系统的联系与区别}：满足经典极限条件时，费米分布和玻色分布均过渡到玻尔兹曼分布，三种系统的热力学量趋于一致。不满足时：费米气体表现出等效排斥（泡利原理），玻色气体表现出等效吸引，热力学量（压强、内能等）有显著差异。
+
+\end{enumerate}
+
+\newpage
+
+\subsection*{二、计算与推导题}
+
+\begin{enumerate}
+\setcounter{enumi}{7}
+
+\item \textbf{以$T,p$为状态参量推导$H$和$S$}
+
+已知$pV=nRT$。由焓态方程：$\left(\frac{\partial H}{\partial p}\right)_T=V-T\left(\frac{\partial V}{\partial T}\right)_p=\frac{nRT}{p}-T\cdot\frac{nR}{p}=0$。
+
+故焓仅与温度有关：$\dd H=C_p\dd T\Rightarrow H=\int C_p\dd T+H_0$。
+
+由$\dd H=T\dd S+V\dd p$：
+\[\dd S=\frac{\dd H-V\dd p}{T}=\frac{C_p\dd T}{T}-\frac{nR}{p}\dd p.\]
+积分：$S=\int\frac{C_p}{T}\dd T-nR\ln p+S_0$。若$C_p$为常数：$S=nC_{p,m}\ln T-nR\ln p+S_0$。
+
+\item \textbf{$T=0\,\text{K}$时简并自由电子气的性质}
+
+(1) 费米波矢：$\kk$空间态密度$V/(2\pi)^3$，含自旋每个$\kk$态容纳2个电子。$N=2\cdot\frac{V}{(2\pi)^3}\cdot\frac{4\pi}{3}k_F^3\Rightarrow k_F=(3\pi^2n)^{1/3}$。其中$n=N/V$。\textbf{费米能级}：$\varepsilon_F=\frac{\hbar^2k_F^2}{2m}=\frac{\hbar^2}{2m}(3\pi^2n)^{2/3}$。
+
+(2) $T=0$时总内能：$U_0=\sum_{|\kk|\le k_F}2\cdot\frac{\hbar^2k^2}{2m}=\frac{V}{5\pi^2}\frac{\hbar^2k_F^5}{2m}=\frac{3}{5}N\varepsilon_F$。\textbf{平均能量}：$\bar{E}=U_0/N=\frac{3}{5}\varepsilon_F$。
+
+(3) 对非相对论粒子$\varepsilon=p^2/2m\propto V^{-2/3}$，故$\partial\varepsilon/\partial V=-(2/3)\varepsilon/V$。由$p=-\sum_la_l\frac{\partial\varepsilon_l}{\partial V}$（见下题），得$p=\frac{2U}{3V}\Rightarrow pV=\frac{2}{3}U$。
+
+\item \textbf{证明$p=2U/3V$}
+
+能量$\varepsilon=\frac{p^2}{2m}=\frac{1}{2m}(\frac{2\pi\hbar}{L})^2(n_x^2+n_y^2+n_z^2)\propto V^{-2/3}$，故$\frac{\partial\varepsilon_l}{\partial V}=-\frac{2}{3}\frac{\varepsilon_l}{V}$。
+
+代入：
+\[p=-\sum_la_l\frac{\partial\varepsilon_l}{\partial V}=-\sum_la_l\left(-\frac{2}{3}\frac{\varepsilon_l}{V}\right)=\frac{2}{3V}\sum_la_l\varepsilon_l=\frac{2U}{3V}.\]
+
+该推导仅用到$\varepsilon\propto V^{-2/3}$的关系，不依赖于具体分布函数的形式，因此对玻尔兹曼分布、玻色分布和费米分布均成立。
+
+\item \textbf{普朗克辐射公式的推导}
+
+光子为玻色子，$\mu=0\Rightarrow\alpha=0$。分布函数：$a_l=\frac{\omega_l}{e^{\beta\varepsilon_l}-1}$。
+
+光子态密度（含两个偏振态）：$\omega(\varepsilon)\dd\varepsilon=\frac{V}{\pi^2\hbar^3c^3}\varepsilon^2\dd\varepsilon$。
+
+腔内辐射场能量密度：
+\[u(\varepsilon,T)\dd\varepsilon=\frac{\varepsilon}{V}\cdot a(\varepsilon)=\frac{\varepsilon}{V}\cdot\frac{\omega(\varepsilon)\dd\varepsilon}{e^{\beta\varepsilon}-1}=\frac{1}{\pi^2\hbar^3c^3}\frac{\varepsilon^3}{e^{\varepsilon/kT}-1}\dd\varepsilon.\]
+代入$\varepsilon=h\nu$，$\dd\varepsilon=h\dd\nu$：
+\[u(\nu,T)\dd\nu=\frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/kT}-1}\dd\nu.\]
+
+\textbf{波动观点阐释}：腔内电磁场可分解为一系列简正模式（驻波），每个模式等效于频率为$\nu$的独立谐振子。谐振子能级$(n+\frac12)h\nu$，平均能量不是经典的$kT$，而是$\frac{h\nu}{e^{h\nu/kT}-1}$。模式密度$\times$平均能量=普朗克公式。当$h\nu\ll kT$时恢复瑞利-金斯公式（经典极限）；当$h\nu\gg kT$时得到维恩公式。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷三 答案
+% ============================================================
+\section*{练习卷（三）参考答案}
+
+\subsection*{一、简答题}
+
+\begin{enumerate}
+
+\item \textbf{熵增加原理与第二定律数学表述}
+
+\textbf{熵增加原理}：系统经可逆绝热过程后熵不变，经不可逆绝热过程后熵增加。孤立系中$\Delta S\ge0$，熵减不可能实现。
+
+\textbf{统计意义}：$S=k\ln\Omega$，熵是系统微观粒子混乱程度的量度。孤立系中不可逆过程总是朝着微观状态数增多（概率增大）的方向进行。平衡态对应$\Omega$最大的状态。
+
+\textbf{第二定律数学表述}：由克劳修斯不等式，对任意过程：
+\[S_B-S_A\ge\int_A^B\frac{\đ Q}{T},\quad \dd S\ge\frac{\đ Q}{T}.\]
+等号对应可逆过程，不等号对应不可逆过程。这是热力学第二定律最普遍的数学表达。
+
+\item \textbf{特性函数（马休定理）}
+
+\textbf{马休定理}：若适当选取独立变量（自然变量），只要知道一个热力学函数，通过求偏导数即可得到均匀系统的全部热力学函数，从而完全确定系统的平衡性质。
+
+\textbf{以$F(T,V)$为例}：$\dd F=-S\dd T-p\dd V$。
+
+\[S=-\left(\frac{\partial F}{\partial T}\right)_V,\quad p=-\left(\frac{\partial F}{\partial V}\right)_T,\]
+\[U=F+TS=F-T\frac{\partial F}{\partial T},\quad H=U+pV,\quad G=F+pV.\]
+
+全部热力学量由$F(T,V)$唯一确定。
+
+类似地，$G(T,p)$、$H(S,p)$、$U(S,V)$各为相应自变量的特性函数。
+
+\item \textbf{一级相变与连续相变}
+
+\textbf{一级相变}：化学势连续，但一阶偏导数不连续。$S_m^\alpha\neq S_m^\beta$（有潜热$L=T\Delta S\neq0$），$V_m^\alpha\neq V_m^\beta$（有体积突变）。例子：固-液-气三相变、正常-超导（有外磁场时）。
+
+\textbf{连续相变（二级相变）}：化学势及其一阶偏导数均连续，二阶偏导数不连续。无潜热、无体积突变。$C_p$、$\alpha$、$\kappa_T$有突变或发散。例子：气-液临界点、正常-超导（零磁场）、铁磁-顺磁居里点、合金有序-无序转变。
+
+\item \textbf{热力学第三定律与稳定性条件}
+
+\textbf{三种表述}：(1) \textbf{能氏定理}：凝聚系的熵在等温过程中的改变随$T\to0$而趋于零：$\lim_{T\to0}(\Delta S)_T=0$。(2) \textbf{绝对零度不可达到}。(3) \textbf{普朗克表述}：$T\to0$时所有系统的熵趋于普适常数（可取为$S_0=0$）。
+
+\textbf{非临界态平衡稳定性条件}：$C_V>0$，$\left(\frac{\partial p}{\partial V}\right)_T<0$。
+
+\textbf{物理含义}：$C_V>0$保证热稳定（局域温度偏高→放热降温→恢复平衡）；$\left(\frac{\partial p}{\partial V}\right)_T<0$保证力学稳定（局域体积缩小→压强增大→膨胀恢复）。违反任一条件系统将失稳。
+
+\item \textbf{$\mu$空间与$\Gamma$空间}
+
+\textbf{$\mu$空间}：以\textbf{单个粒子}的$r$个广义坐标和$r$个广义动量为坐标轴的$2r$维空间。一个点代表一个粒子的运动状态。$N$粒子系统在$\mu$空间中对应$N$个点。用于近独立粒子系统。
+
+\textbf{$\Gamma$空间}：以\textbf{整个系统}的全部$s=Nr$个广义坐标和广义动量为坐标轴的$2s$维空间。一个点代表整个系统的微观状态。用于含相互作用的系统。$\Gamma$空间中代表点的运动服从刘维尔定理（不可压缩）。
+
+\textbf{区别}：$\mu$空间维数$2r$（低维），$\Gamma$空间维数$2Nr$（极高维）；$\mu$空间用于近独立粒子系统的最概然分布法，$\Gamma$空间用于系综理论。
+
+\item \textbf{玻色-爱因斯坦凝聚（BEC）}
+
+当理想玻色气体温度降至临界温度$T_c$以下时，宏观数量的玻色子聚集到$\varepsilon=0$的基态，形成\textbf{动量空间的凝聚}。
+
+\textbf{凝聚体特点}：(1) 化学势$\mu=0$（$T<T_c$时钉扎在零能级）；(2) 凝聚体对压强和能量无贡献（处于零能态）；(3) 凝聚粒子比例$N_0/N=1-(T/T_c)^{3/2}$；(4) BEC是纯量子统计效应，不需粒子间相互作用。
+
+临界温度：$T_c=\frac{h^2}{2\pi mk}\left(\frac{N}{2.612V}\right)^{2/3}$。
+
+\item \textbf{爱因斯坦模型 vs 德拜模型}
+
+\textbf{相同}：都用量子论修正经典杜隆-珀蒂定律，都给出$T\to0$时$C_V\to0$。
+
+\textbf{爱因斯坦模型}：假设$3N$个谐振子同频$\omega_E$独立振动。低温$C_V\propto e^{-\Theta_E/T}$（指数衰减，太快）。\textbf{缺陷}：未包含低频声学模。
+
+\textbf{德拜模型}：将固体视为连续弹性介质，$\omega\propto q$（无能隙声学模），态密度$\propto\omega^2$。低温$C_V\propto T^3$（德拜$T^3$律，与实验符合）。\textbf{成功原因}：正确描述了长波声学模——这些模式频率低、无能隙，是低温比热的主要来源。
+
+\item \textbf{涨落}
+
+\textbf{涨落}：宏观物理量围绕其统计平均值的随机偏离。
+
+\textbf{热力学极限下可忽略}：正则系综中$\overline{(\Delta E)^2}=kT^2C_V$，相对涨落$\frac{\sqrt{\overline{(\Delta E)^2}}}{\bar{E}}\sim\frac{1}{\sqrt{N}}$。$N\sim10^{23}$时相对涨落$\sim10^{-11}$，远小于实验测量精度。粒子数涨落同理。
+
+\textbf{涨落显著的情形}：(1) \textbf{临界点附近}：关联长度发散，等温压缩系数$\kappa_T\to\infty$，密度涨落巨大（临界乳光）；(2) \textbf{小系统}（介观/纳米尺度，$N$小）；(3) \textbf{低维系统}（热涨落更显著）；(4) \textbf{远离平衡态}的非平衡系统。
+
+\end{enumerate}
+
+\newpage
+
+\subsection*{二、计算与推导题}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+
+\item \textbf{熵判据证明平衡条件与稳定性条件}
+
+\textbf{（1）熵判据证明平衡条件}
+
+设孤立系分为两部分，总熵$S=S_1+S_2$。虚变动下：
+\[\delta S=\delta S_1+\delta S_2=\frac{\delta U_1+p_1\delta V_1}{T_1}+\frac{\delta U_2+p_2\delta V_2}{T_2}.\]
+约束：$\delta U_1+\delta U_2=0$，$\delta V_1+\delta V_2=0$。
+
+\[\delta S=\left(\frac{1}{T_1}-\frac{1}{T_2}\right)\delta U_1+\left(\frac{p_1}{T_1}-\frac{p_2}{T_2}\right)\delta V_1=0.\]
+
+由$\delta U_1,\delta V_1$的任意性得$T_1=T_2$，$p_1=p_2$——整个系统温度与压强均匀。
+
+\textbf{（2）稳定性条件的证明}
+
+取$\delta^2S<0$（熵取极大）。计算二阶变分：
+\[\delta^2S=-\frac{C_V}{T^2}(\delta T)^2+\frac{1}{T}\left(\frac{\partial p}{\partial V}\right)_T(\delta V)^2<0.\]
+该二次型为负定的充要条件是$C_V>0$且$\left(\frac{\partial p}{\partial V}\right)_T<0$。第一个条件隐含$\delta T$与$\delta V$项系数需满足的关系，最终给出上述两个独立条件。
+
+\item \textbf{正则系综能量涨落}
+
+正则分布$\rho_s=\frac{1}{Z}e^{-\beta E_s}$，$Z=\sum_se^{-\beta E_s}$。
+
+内能：$\bar{E}=U=-\frac{\partial}{\partial\beta}\ln Z$。
+
+能量平方的平均：
+\[\overline{E^2}=\frac{1}{Z}\sum_sE_s^2e^{-\beta E_s}=\frac{1}{Z}\frac{\partial^2Z}{\partial\beta^2}.\]
+
+故涨落：
+\[\overline{(\Delta E)^2}=\overline{E^2}-\bar{E}^2=\frac{1}{Z}\frac{\partial^2Z}{\partial\beta^2}-\left(\frac{1}{Z}\frac{\partial Z}{\partial\beta}\right)^2=\frac{\partial^2\ln Z}{\partial\beta^2}=-\frac{\partial U}{\partial\beta}=kT^2C_V.\]
+
+相对涨落：
+\[\frac{\sqrt{\overline{(\Delta E)^2}}}{\bar{E}}=\frac{\sqrt{kT^2C_V}}{U}\sim\frac{\sqrt{NkT^2\cdot Nk}}{NkT}\sim\frac{1}{\sqrt{N}}.\]
+
+$N\sim10^{23}\Rightarrow$相对涨落$\sim10^{-11}$，宏观系统能量涨落极小。这说明正则系综与微正则系综在热力学极限下等价——能量虽然在正则系综中允许涨落，但涨落幅度在实际测量中完全不可分辨。
+
+\item \textbf{从系综理论推导范德瓦尔斯方程}
+
+正则系综的位形积分（只考虑分子间相互作用）：
+\[Z=\frac{1}{N!h^{3N}}\int e^{-\beta\sum_i\frac{p_i^2}{2m}}\dd^{3N}p\int e^{-\beta U(\rr_1,\ldots,\rr_N)}\dd^{3N}r.\]
+
+动量积分给出因子$(2\pi mkT/h^2)^{3N/2}$。位形积分采用平均场近似：假设每个分子感受到其他分子的平均吸引势$\propto -\frac{N}{V}$，且分子有不可入体积$b_0$。
+
+自由能：$F=-kT\ln Z$。压强：
+\[p=-\left(\frac{\partial F}{\partial V}\right)_{T,N}=\frac{NkT}{V-Nb}-\frac{N^2a}{V^2}.\]
+
+整理得范德瓦尔斯方程：
+\[\left(p+\frac{aN^2}{V^2}\right)(V-Nb)=NkT.\]
+
+\textbf{参数物理意义}：$b$为分子固有体积的4倍（$b=4N_A\cdot\frac{4}{3}\pi r_0^3$），反映硬心排斥（泡利原理+电子云重叠）。$a$为分子间长程吸引强度参数，$\frac{aN^2}{V^2}$为内压修正项，反映吸引力使压强低于理想气体压强。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷四 答案
+% ============================================================
+\section*{练习卷（四）参考答案}
+
+\subsection*{一、简答题}
+
+\begin{enumerate}
+
+\item \textbf{温标三要素与常见温标}
+
+\textbf{三要素}：(1) \textbf{测温物质}——用来制造温度计的物质（如水银、酒精、理想气体）；(2) \textbf{测温物理属性}——用来标示温度数值的物理属性（如体积、压强、电阻、热电动势）；(3) \textbf{固定点}——温度的参考标准（如水的三相点 273.16\,K）。
+
+\textbf{常见温标}：(1) \textbf{气体温标}：$T_V = \frac{p}{p_t}\times273.16\,\text{K}$，利用定容气体温度计中气体压强随温度的变化；(2) \textbf{理想气体温标}：$T = 273.16\,\text{K}\times\lim_{p_t\to0}\frac{p}{p_t}$，不同气体在$p_t\to0$极限下给出相同结果；(3) \textbf{热力学温标}：由卡诺定理导出，$\frac{Q_2}{Q_1}=\frac{T_2}{T_1}$，与测温物质完全无关，具有绝对性；(4) \textbf{摄氏温标}：$t = T - 273.15$。
+
+\textbf{理想气体温标与热力学温标的区别与联系}：理想气体温标依赖理想气体的性质（$p\to0$极限），虽然不同气体在极限下趋于一致，但在理论上仍依赖物质属性；热力学温标基于热力学第二定律，完全不依赖任何测温物质的具体性质，是理论上的绝对温标。然而可以证明，在理想气体温标成立的范围内，两者给出完全相同的数值——即热力学温标等于理想气体温标。
+
+\item \textbf{三种平衡判据}
+
+\textbf{熵判据}（孤立系，$U,V,n$固定）：平衡态对应$\delta S=0$（熵取极值），稳定平衡对应$\delta^2S<0$（熵取极大值）。
+
+\textbf{自由能判据}（等温等容，$T,V,n$固定）：$F=U-TS$，平衡态$\delta F=0$，稳定平衡$\delta^2F>0$（$F$取极小值）。
+
+\textbf{吉布斯函数判据}（等温等压，$T,p,n$固定）：$G=U-TS+pV$，平衡态$\delta G=0$，稳定平衡$\delta^2G>0$（$G$取极小值）。
+
+从判据确定平衡条件与稳定性条件的方法：对具体系统写出对应热力学势的变分，令一阶变分为零→平衡条件（如$T$均匀，$p$均匀，$\mu$相等）；令二阶变分正/负定→稳定性条件（如$C_V>0$，$(\partial p/\partial V)_T<0$）。
+
+\item \textbf{一级相变、连续相变与亚稳态}
+
+\textbf{一级相变}：化学势连续，一阶偏导数不连续——有潜热（$S_m^\alpha\neq S_m^\beta$），有体积突变（$V_m^\alpha\neq V_m^\beta$）。例：固-液-气相变。
+
+\textbf{连续相变（二级相变）}：化学势及其一阶偏导数均连续，二阶偏导数不连续——无潜热，无体积突变。$C_p$、$\alpha$、$\kappa_T$有突变或发散。例：气-液临界点、铁磁-顺磁居里点。
+
+\textbf{过饱和蒸气和过热液体的解释}：
+
+在$p$-$V$图上（$T<T_c$），范德瓦尔斯等温线在气液共存区呈S形。中间段$\partial p/\partial V>0$违反力学稳定性条件，不可能稳定存在。用麦克斯韦等面积法则确定气液共存压强$p_{\text{coex}}$。在S形曲线的亚稳段（$\partial p/\partial V<0$但偏离平衡线），分别对应过饱和蒸气（压强高于$p_{\text{coex}}$的气态）和过热液体（压强低于$p_{\text{coex}}$的液态）。
+
+在$\mu$-$p$图上，在$p_{\text{coex}}$处$\mu$-$p$曲线出现交叉：较高化学势的分支对应亚稳态。当过饱和蒸气中出现足够大的液滴（临界核），或过热液体中形成足够大的气泡时，系统将通过一级相变跃迁到稳定相。
+
+\item \textbf{第三定律与能氏定理适用范围}
+
+\textbf{三种表述}：(1) \textbf{能氏定理}：$\lim_{T\to0}(\Delta S)_T=0$；(2) \textbf{绝对零度不可达到}；(3) \textbf{普朗克表述}：$T\to0$时$S\to$普适常数。
+
+\textbf{适用范围}：适用——凝聚系（固体、液体）的平衡态，如低温下晶体的热膨胀。\textbf{不适用}——非平衡态或冻结亚稳态，如玻璃态（残余熵不为零，无法达到真正的热力学平衡）、某些无序合金。
+
+\item \textbf{吉布斯关系式与吉布斯相律}
+
+\textbf{吉布斯关系式}：$S\dd T - V\dd p + \sum_{i=1}^k n_i\dd\mu_i = 0$。
+
+\textbf{证明}：由$G=\sum_in_i\mu_i$求全微分：$\dd G=\sum_i\mu_i\dd n_i+\sum_in_i\dd\mu_i$。又$\dd G=-S\dd T+V\dd p+\sum_i\mu_i\dd n_i$。两式相减即得。吉布斯关系式表明$k+2$个强度量间存在一个约束。
+
+\textbf{吉布斯相律}：$f = k - \varphi + 2$。
+
+\textbf{证明思路}：$\varphi$个相共有$\varphi(k+1)$个强度变量（每相有$T,p,\mu_1,\ldots,\mu_{k-1}$，$\mu_k$由吉布斯关系式确定）。平衡条件：$k(\varphi-1)$个相平衡方程（各组元在各相化学势相等）。自由度数$f = \varphi(k+1) - k(\varphi-1) - \varphi = k - \varphi + 2$。
+
+\item \textbf{理想费米气体与理想玻色气体在$T=0$的异同}
+
+\textbf{费米气体}（$T=0$）：电子从最低能级开始填充至$\varepsilon_F$，形成费米球。$U_0=\frac{3}{5}N\varepsilon_F\neq0$；$p_0V=\frac{2}{3}U_0\neq0$（简并压）；态密度$g(\varepsilon_F)>0$；化学势$\mu=\varepsilon_F>0$。
+
+\textbf{玻色气体}（$T=0$）：全部粒子凝聚在$\varepsilon=0$基态。$U_0=0$；$p_0=0$；化学势$\mu=0$。
+
+\textbf{本质差异}：泡利不相容原理使费米子不能占据同一量子态→被迫占据高能态→$T=0$时仍有非零动能和压强。玻色子无此限制→全部凝聚到最低能态。
+
+\item \textbf{弱简并费米气体与玻色气体的异同}
+
+对弱简并情形（$e^\alpha$稍大于1），将分布函数作级数展开保留一级修正：
+
+\textbf{内能}：费米气体的内能比玻尔兹曼气体大$\frac{1}{2^{5/2}}$倍——泡利排斥使费米子倾向于占据较高能态，等效排斥。玻色气体的内能比玻尔兹曼气体小同样的倍数——玻色子倾向于占据较低能态，等效吸引。
+
+\textbf{物理原因}：费米子受泡利原理约束，两个同自旋费米子不能占据同一量子态→有效排斥；玻色子倾向于占据同一量子态（玻色加强）→有效吸引。在经典极限（高温低密度）下两者均回到玻尔兹曼统计。
+
+\item \textbf{三种系综的分布函数}
+
+\textbf{微正则系综}（$N,E,V$固定）：
+\begin{itemize}
+\item 量子：$\rho_s = 1/\Omega$（$E\le E_s\le E+\Delta E$）
+\item 经典：$\rho(q,p) = \begin{cases}\text{const}, & E\le H(q,p)\le E+\Delta E\\0, &\text{其他}\end{cases}$
+\end{itemize}
+
+\textbf{正则系综}（$N,V,T$固定）：
+\begin{itemize}
+\item 量子：$\rho_s = \frac{1}{Z}e^{-\beta E_s}$，$Z=\sum_se^{-\beta E_s}$
+\item 经典：$\rho(q,p) = \frac{1}{Z}e^{-\beta H(q,p)}$，$Z=\frac{1}{N!h^{Nr}}\int e^{-\beta H}\dd\Gamma$
+\end{itemize}
+
+\textbf{巨正则系综}（$\mu,V,T$固定）：
+\begin{itemize}
+\item 量子：$\rho_{N,s} = \frac{1}{\Xi}e^{-\alpha N-\beta E_s}$，$\Xi=\sum_{N,s}e^{-\alpha N-\beta E_s}$
+\item 经典：$\rho_N(q,p) = \frac{1}{\Xi}e^{-\alpha N-\beta H_N}$，$\Xi=\sum_N\frac{e^{-\alpha N}}{N!h^{Nr}}\int e^{-\beta H_N}\dd\Gamma_N$
+\end{itemize}
+
+其中$\alpha=-\mu/kT$，$\beta=1/kT$。
+
+\end{enumerate}
+
+\subsection*{二、计算与推导题}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+
+\item \textbf{证明平衡判据}
+
+利用熵增加原理$\Delta S_{\text{孤立系}}\le0$（或$\delta S=0,\delta^2S<0$）。
+
+\textbf{(1) $S,V$不变时，$U$最小}：孤立系中，若$S,V$不变，由热力学基本方程$\dd U=T\dd S-p\dd V$得$\dd U=0$。考虑虚变动，熵判据$\delta S=0$等价于$\delta U=0$（$\delta S=\frac{1}{T}\delta U+\frac{p}{T}\delta V=0$，$\delta V=0\Rightarrow\delta U=0$），$\delta^2S<0$等价于$\delta^2U>0$（$U$取极小）。
+
+\textbf{(2) $S,p$不变时，$H$最小}：$H=U+pV$，$\dd H=T\dd S+V\dd p$。在$S,p$不变时，$\dd H=0$。考虑虚变动，$\delta^2H>0$（$H$取极小值）给出稳定平衡条件。
+
+\textbf{(3) $F,V$不变时，$T$最小}：$F=U-TS$，$\dd F=-S\dd T-p\dd V$。在$F,V$不变时，平衡态对应$T$取极小值。
+
+\textbf{一般原则}：在给定热力学势的自然变量中，勒让德变换后的热力学势在各自独立变量不变时取极值——这就是为何引入$F,G,H$等热力学势的原因：它们分别在不同实验条件下取极值，方便判断平衡。
+
+\item \textbf{极端相对论粒子的量子态数}
+
+$\varepsilon=cp\Rightarrow p=\varepsilon/c$，$\dd p=\dd\varepsilon/c$。
+
+$\kk$空间态密度$V/(2\pi)^3$，在$p\to p+\dd p$球壳内（含自旋简并$g_s$，取$g_s=1$）：
+\[g(p)\dd p = \frac{V}{(2\pi)^3}\cdot4\pi p^2\dd p = \frac{V}{2\pi^2}p^2\dd p.\]
+
+代入$p=\varepsilon/c$，$\dd p=\dd\varepsilon/c$：
+\[g(\varepsilon)\dd\varepsilon = \frac{V}{2\pi^2}\cdot\frac{\varepsilon^2}{c^2}\cdot\frac{\dd\varepsilon}{c} = \frac{V}{2\pi^2\hbar^3 c^3}\varepsilon^2\dd\varepsilon.\]
+
+（注：利用$\hbar=h/2\pi$，$\hbar^3=h^3/(2\pi)^3$，可改写为含$h$的形式。）
+
+与非相对论情况（$g(\varepsilon)\propto\sqrt{\varepsilon}$）对比，极端相对论粒子的态密度$g(\varepsilon)\propto\varepsilon^2$，增长更快。这是因为相对论下能量-动量关系不同导致$\kk$空间球壳体积的$\varepsilon$依赖关系改变。
+
+\item \textbf{极端相对论粒子的$p=U/3V$}
+
+$\varepsilon=cp\propto L^{-1}\propto V^{-1/3}$，故$\frac{\partial\varepsilon_l}{\partial V}=-\frac{1}{3}\frac{\varepsilon_l}{V}$。
+
+代入压强公式：
+\[p = -\sum_l a_l\frac{\partial\varepsilon_l}{\partial V} = -\sum_l a_l\left(-\frac{1}{3}\frac{\varepsilon_l}{V}\right) = \frac{1}{3V}\sum_l a_l\varepsilon_l = \frac{U}{3V}.\]
+
+\textbf{与分布无关}：该推导仅用到$\varepsilon\propto V^{-1/3}$（极端相对论粒子的标度关系），不依赖于$a_l$的具体分布形式，因此结论对玻尔兹曼分布、玻色分布和费米分布均成立。
+
+\textbf{与非相对论对比}：非相对论$\varepsilon\propto V^{-2/3}$→$p=2U/3V$；极端相对论$\varepsilon\propto V^{-1/3}$→$p=U/3V$。光子气体（$\varepsilon=cp$，$m=0$）的辐射压强$p=u/3$（$u=U/V$），正是这一结果的体现。
+
+\item \textbf{能氏定理证明$T\to0$时各系数→0}
+
+\textbf{(1) 热容量$C_V\to0$}：$C_V=T(\partial S/\partial T)_V$。由能氏定理，$T\to0$时$\Delta S\to0$（$S$趋于常数），故$\partial S/\partial T$在$T=0$处有限。$C_V = T\times\text{有限值}\to0$。
+
+\textbf{(2) 体胀系数$\alpha\to0$}：由麦克斯韦关系$(\partial S/\partial p)_T=-(\partial V/\partial T)_p$。能氏定理给出$T\to0$时$(\partial S/\partial p)_T\to0$，故$(\partial V/\partial T)_p\to0$，即$\alpha=\frac{1}{V}(\partial V/\partial T)_p\to0$。
+
+\textbf{(3) 压强系数$\beta\to0$}：由麦克斯韦关系$(\partial S/\partial V)_T=(\partial p/\partial T)_V$。同理$T\to0$时$(\partial S/\partial V)_T\to0$→$(\partial p/\partial T)_V\to0$→$\beta=\frac{1}{p}(\partial p/\partial T)_V\to0$。
+
+\textbf{(4) $\dd p/\dd T\to0$}：由克拉珀龙方程$\dd p/\dd T=\Delta S/\Delta V$。$T\to0$时$\Delta S\to0$（能氏定理）→$\dd p/\dd T\to0$，即一级相变的两相平衡曲线在$T=0$处的切线是水平的。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷五 答案
+% ============================================================
+\section*{练习卷（五）参考答案}
+
+\subsection*{一、简答题}
+
+\begin{enumerate}
+
+\item \textbf{理想气体的热力学定义}
+
+理想气体是严格遵从玻意耳定律（$pV=C$，恒温下）、阿伏伽德罗定律（同温同压下等体积含等量分子）和焦耳定律（内能仅是温度的函数）的气体。这三个规律是\textbf{相互独立}的——违反其中任何一个不会必然违反另外两个。它们都反映气体在$p\to0$时的共同极限性质。
+
+\textbf{内能特点}：$U=U(T)$仅依赖于温度（焦耳定律的推论），$\dd U=C_V\dd T$，$\left(\frac{\partial U}{\partial V}\right)_T=0$。
+
+\textbf{焓的特点}：$H=U+pV=U(T)+nRT$，也仅是温度的函数。$C_p-C_V=nR$。
+
+\item \textbf{可逆过程与不可逆过程}
+
+\textbf{可逆过程}：过程发生后，存在另一过程使系统完全回到初态，且外界也完全复原，不留下任何变化。\textbf{不可逆过程}：不满足该条件的过程。所有实际发生的宏观过程都是不可逆的。
+
+\textbf{准静态过程不一定可逆}：准静态过程意味着每一时刻系统都接近平衡态（进行得无限缓慢），但如果有摩擦，即使进行得再慢也是不可逆的。例如：活塞与气缸壁之间有摩擦时，即使过程无限缓慢，气体膨胀对外做功一部分被摩擦消耗为热→不可逆。无摩擦的准静态过程才可逆。因此：无摩擦准静态 $\Longleftrightarrow$ 可逆。
+
+\item \textbf{克劳修斯等式和不等式的证明}
+
+\textbf{陈述}：$\oint\frac{\đ Q}{T}\le0$，等号对可逆循环，不等号对不可逆循环。
+
+\textbf{证明}：考虑工作于$T_{i1},T_{i2}$间的微卡诺循环。由卡诺定理，$\eta=1-\frac{Q_{i2}}{Q_{i1}}\le 1-\frac{T_{i2}}{T_{i1}}\Rightarrow \frac{Q_{i1}}{T_{i1}}+\frac{Q_{i2}}{T_{i2}}\le0$（$Q_{i1},Q_{i2}$分别为从$T_{i1},T_{i2}$吸收的热量）。对任意循环，用一簇等温线和绝热线将$p$-$V$图上的循环分割为$n$个微卡诺循环。当$n\to\infty$时，内部分割线互相抵消，求和趋于环路积分：$\lim_{n\to\infty}\sum_{i=1}^n(\frac{Q_{i1}}{T_{i1}}+\frac{Q_{i2}}{T_{i2}})\le0 \Rightarrow \oint\frac{\đ Q}{T}\le0$。
+
+\item \textbf{临界态与非临界态稳定性条件}
+
+\textbf{临界态稳定性条件}：在临界点，气液两相差异消失。等温线上$p$-$V$曲线的拐点处：$\left(\frac{\partial p}{\partial V}\right)_T=0$，$\left(\frac{\partial^2 p}{\partial V^2}\right)_T=0$。
+
+\textbf{证明思路}：临界点是气液共存线的终点。在$p$-$V$图上，$T<T_c$时等温线出现S形（范德瓦尔斯环），麦克斯韦等面积法则确定的气液共存区间随$T\nearrow T_c$而缩小。$T=T_c$时，共存区间缩为一个点——等温线在临界点处出现水平拐点：一阶和二阶导数同时为零。
+
+\textbf{非临界态稳定性条件}：$C_V>0$，$\left(\frac{\partial p}{\partial V}\right)_T<0$。
+
+\textbf{物理含义}：$C_V>0$→热稳定（如果某区域温度偏高，它会向周围放热降温回到平衡）；$\left(\frac{\partial p}{\partial V}\right)_T<0$→力学稳定（如果某区域被意外压缩，压强增大会使其膨胀恢复）。任一条件被违反，小的涨落会被正反馈放大→系统失稳→发生相变。
+
+\item \textbf{熵的统计表达式与全同粒子微观状态}
+
+\textbf{玻尔兹曼关系}：$S=k\ln\Omega$。物理含义：熵是系统微观粒子无规运动混乱程度的度量。$\Omega$为宏观态对应的微观状态数。平衡态对应$\Omega$（从而$S$）最大的宏观态。孤立系中不可逆过程总是朝着$\Omega$增大的方向进行。
+
+\textbf{全同近独立粒子系统的微观状态确定方法}：对于全同费米子/玻色子系统，由于粒子的不可分辨性，微观状态不是由"哪个粒子在哪个态"确定，而是由\textbf{各单粒子态上的占据数}$\{a_l\}$确定。费米系统中$a_l=0,1$（每个态最多一个粒子）；玻色系统中$a_l=0,1,2,\ldots$（无限制）。波函数必须是全同粒子交换下的对称（玻色子）或反对称（费米子）波函数。
+
+\item \textbf{电子热容远小于离子振动热容的原因}
+
+室温下（$T\sim300\,\text{K}$）：离子振动热容由杜隆-珀蒂定律给出$C_l\approx 3R$。电子热容$C_e=\frac{\pi^2}{2}Nk\frac{T}{T_F}\approx R\times\frac{\pi^2}{2}\times\frac{300}{10^4\text{--}10^5}\sim10^{-2}R$。两者相差约两个数量级。
+
+\textbf{物理原因}：只有费米面附近$\sim kT$能量范围内的电子能被热激发，这部分电子比例$\sim T/T_F\sim10^{-2}$。深埋在费米球内部的电子因泡利原理被阻塞，无法参与热激发。而所有离子都参与振动。
+
+\textbf{极低温下电子热容不可忽略的原因}：$T\to0$时，晶格比热$C_l\propto T^3$（德拜），电子比热$C_e\propto T$。由于$T^3$衰减比$T$更快，在$T\ll\sqrt{\gamma/\beta}$的极低温下，$C_e>C_l$，电子贡献超过晶格贡献，成为热容的主要来源。
+
+\item \textbf{金属中电子形成强简并费米气体的定量说明}
+
+对典型金属（如Na，$n\approx2.65\times10^{28}\,\text{m}^{-3}$）：
+\[\varepsilon_F=\frac{\hbar^2}{2m}(3\pi^2n)^{2/3}\approx3.2\,\text{eV},\quad T_F=\frac{\varepsilon_F}{k}\approx3.7\times10^4\,\text{K}.\]
+
+室温$T\approx300\,\text{K}\ll T_F$，电子气体处于\textbf{强简并}状态——费米-狄拉克分布函数与$T=0$的阶跃函数差别极小，只有费米面附近$\sim kT/\varepsilon_F\sim0.01$范围内的分布有微小变化。
+
+\textbf{原子内电子对热容无贡献的原因}：原子内层电子（如1s, 2s, 2p等）的能级间距$\Delta E\sim1\text{--}10^4\,\text{eV}$，对应温度$\sim10^4\text{--}10^8\,\text{K}$。室温下$kT\sim0.025\,\text{eV}\ll\Delta E$，内层电子几乎不可能被热激发到更高能态→对热容的贡献可忽略。只有费米面附近（能量$\sim\varepsilon_F$）的传导电子参与低温热激发。
+
+\end{enumerate}
+
+\subsection*{二、计算与推导题}
+
+\begin{enumerate}
+\setcounter{enumi}{7}
+
+\item \textbf{两相共存时$C_p$和$\kappa_T$趋于无穷}
+
+\textbf{定压热容$C_p\to\infty$}：在两相共存区，等压加热不改变温度（$T$保持为相变温度），输入的热量全部用于驱动相变（潜热）。$C_p=T(\partial S/\partial T)_p$，由于$\dd T=0$而$\dd S\neq0$（系统从一相变为另一相，熵发生有限变化），故$C_p\to\infty$。
+
+数学上：在两相共存时，温度$T$与压强$p$不独立（由相平衡曲线$p=p(T)$约束）。加热→部分物质从$\alpha$相变为$\beta$相→吸收潜热，但不改变$T$。$C_p$形式上发散。
+
+\textbf{等温压缩系数$\kappa_T\to\infty$}：在两相共存区，等温压缩时压强不改变（$p$保持为$p_{\text{coex}}$），体积可以从$V^\alpha$连续变化到$V^\beta$（两相比例改变）。$\kappa_T=-\frac{1}{V}(\partial V/\partial p)_T$，由于$\dd p=0$而$\dd V\neq0$（因部分物质相变引起体积变化），故$\kappa_T\to\infty$。
+
+\textbf{物理图像}：在两相共存区，$p$和$T$被锁定在相平衡曲线上。加热→相变→体积改变，但$p,T$不变→$C_p$和$\kappa_T$发散。这是相变的一般特征。
+
+\item \textbf{微正则系综中熵的表达式}
+
+微正则系综：孤立系，$E\le E_s\le E+\Delta E$内的$\Omega$个微观状态等概率。
+\[\rho_s=\frac{1}{\Omega},\quad\sum_{s=1}^{\Omega}\rho_s=1.\]
+\[S=-k\sum_s\rho_s\ln\rho_s=-k\sum_{s=1}^{\Omega}\frac{1}{\Omega}\ln\frac{1}{\Omega}=-k\cdot\Omega\cdot\frac{1}{\Omega}\cdot(-\ln\Omega)=k\ln\Omega.\]
+
+这正是玻尔兹曼关系。信息论中$-k\sum\rho_s\ln\rho_s$是信息熵的定义，统计物理中的熵是其在等概率分布下的特例。这一形式的优点是可以推广到任意概率分布。
+
+\item \textbf{正则系综中熵的表达式}
+
+正则分布：$\rho_s=\frac{1}{Z}e^{-\beta E_s}$，$Z=\sum_se^{-\beta E_s}$。
+\[S=-k\sum_s\rho_s\ln\rho_s=-k\sum_s\rho_s(-\ln Z-\beta E_s)=k\ln Z\sum_s\rho_s+k\beta\sum_s\rho_sE_s.\]
+由$\sum_s\rho_s=1$和$\sum_s\rho_s E_s=\bar{E}=U$：
+\[S=k\ln Z+k\beta U=k(\ln Z+\beta U).\]
+
+这就回到了正则系综中熵的标准表达式。该结果与由$F=-kT\ln Z$和$F=U-TS$推出的$S=(U-F)/T$一致。
+
+\textbf{统一性}：$S=-k\sum_s\rho_s\ln\rho_s$是微正则系综（$\rho_s=1/\Omega$）、正则系综（$\rho_s=e^{-\beta E_s}/Z$）和巨正则系综的熵的统一表达式。这是吉布斯熵公式，是统计物理中熵的最一般定义。
+
+\item \textbf{巨正则系综粒子数涨落}
+
+巨正则分布：$\rho_{N,s}=\frac{1}{\Xi}e^{-\alpha N-\beta E_s}$，$\Xi=\sum_{N,s}e^{-\alpha N-\beta E_s}$，$\alpha=-\mu/kT$。
+
+平均粒子数：$\bar{N}=-\frac{\partial}{\partial\alpha}\ln\Xi$。
+
+粒子数平方平均：$\overline{N^2}=\frac{1}{\Xi}\sum_{N,s}N^2e^{-\alpha N-\beta E_s}=\frac{1}{\Xi}\frac{\partial^2\Xi}{\partial\alpha^2}$。
+
+涨落：
+\[\overline{(\Delta N)^2}=\overline{N^2}-\bar{N}^2=\frac{\partial^2\ln\Xi}{\partial\alpha^2}=-\frac{\partial\bar{N}}{\partial\alpha}=kT\left(\frac{\partial\bar{N}}{\partial\mu}\right)_{T,V}.\]
+
+利用热力学关系$(\partial\mu/\partial N)_{T,V}=V(\partial p/\partial N)_{T,V}$，可证$\overline{(\Delta N)^2}=\bar{N}kT\kappa_T/V$。
+
+相对涨落：
+\[\frac{\sqrt{\overline{(\Delta N)^2}}}{\bar{N}}\sim\frac{1}{\sqrt{\bar{N}}}.\]
+
+热力学极限（$\bar{N}\sim10^{23}$）下相对涨落$\sim10^{-11}$，完全可忽略。但在临界点附近$\kappa_T$发散→粒子数涨落显著增强→临界乳光等现象。
+
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+%                       练习卷六 答案
+% ============================================================
+\section*{练习卷（六）参考答案}
+
+\subsection*{一、简答题}
+
+\begin{enumerate}
+
+\item \textbf{三个基本热力学函数与U,S的确定}
+
+三个基本热力学函数：\textbf{物态方程、内能、熵}。其他热力学函数均可由此导出：$H=U+pV$，$F=U-TS$，$G=U-TS+pV$；麦克斯韦关系结合物态方程可求各种偏导数。
+
+已知$p=p(T,V)$和$C_V(T,V)$，确定$U$和$S$的方法：
+\[U(T,V)=\int\left[C_V\dd T+\left(T\frac{\partial p}{\partial T}-p\right)\dd V\right]+U_0,\]
+\[S(T,V)=\int\left[\frac{C_V}{T}\dd T+\frac{\partial p}{\partial T}\dd V\right]+S_0.\]
+
+关键在于利用能态方程$(\partial U/\partial V)_T=T(\partial p/\partial T)_V-p$——由物态方程和麦克斯韦关系得到。
+
+\item \textbf{熵判据与稳定性条件的物理含义}
+
+\textbf{熵判据证明}（同练习卷三第9题）。
+
+\textbf{$C_V>0$的物理含义}：热稳定。假设某区域因涨落温度偏高$\delta T>0$，若$C_V<0$，则该区域内能将减少→进一步升温→正反馈→失稳。$C_V>0$时，温度偏高区域会向周围放热→恢复平衡。
+
+\textbf{$\left(\frac{\partial p}{\partial V}\right)_T<0$的物理含义}：力学稳定。假设某区域因涨落体积缩小$\delta V<0$，若$\partial p/\partial V>0$，则压强反而降低→被周围进一步压缩→正反馈→失稳。$\partial p/\partial V<0$时，体积缩小→压强增大→膨胀恢复。
+
+两个条件是独立的热力学稳定性判据，违反任一条统都会自发演化（可能发生相变）。
+
+\item \textbf{克拉珀龙方程及其应用}
+
+\textbf{推导}（同练习卷二第6题）。
+
+\frac{\dd p}{\dd T}=\frac{S_m^\beta-S_m^\alpha}{V_m^\beta-V_m^\alpha}=\frac{L}{T(V_m^\beta-V_m^\alpha)}.
+
+\textbf{在固-液平衡中}：$L_{\text{熔化}}>0$。通常$V_m^{\text{液}}>V_m^{\text{固}}$→$\dd p/\dd T>0$（加压→熔点升高）。但水是著名的例外：$V_m^{\text{冰}}>V_m^{\text{水}}$→$\dd p/\dd T<0$（加压→熔点降低，冰刀原理）。
+
+\textbf{在液-气平衡中}：$L_{\text{汽化}}>0$，$V_m^{\text{气}}\gg V_m^{\text{固/液}}$→$\dd p/\dd T>0$。近似$V_m^{\text{液}}$忽略，并用理想气体$V_m^{\text{气}}=RT/p$→$\frac{\dd\ln p}{\dd T}=\frac{L}{RT^2}$。
+
+\textbf{在固-气平衡中}：$L_{\text{升华}}>0$，同理$\dd p/\dd T>0$。
+
+\item \textbf{热力学方法与统计物理方法的对比}
+
+\textbf{热力学方法（唯象理论）}：以四大实验定律为公理→逻辑演绎→导出宏观量之间的普遍关系。不依赖微观结构假设，结论普适可靠。\textbf{局限性}：无法给出具体物质的定量结果（如无法仅靠热力学算出来材料的比热数值）。
+
+\textbf{统计物理方法（微观理论）}：从微观粒子模型出发+等概率原理→统计平均→导出宏观量。\textbf{优点}：可具体计算物态方程、热容等。\textbf{局限性}：依赖模型假设的准确性。
+
+\textbf{联系}：(1) $S=k\ln\Omega$——统计物理为热力学提供了微观基础；(2) 配分函数是桥梁——一旦求出配分函数，通过热力学关系即可导出全部宏观量（$F=-kT\ln Z$等）；(3) 热力学为统计物理提供宏观框架和实验验证。
+
+\item \textbf{$\mu$空间、$\Gamma$空间与经典极限条件}
+
+\textbf{$\mu$空间}：单粒子相空间，$2r$维（$r$为单粒子自由度）。一个点代表一个粒子的状态。\textbf{$\Gamma$空间}：全系统相空间，$2Nr$维。一个点代表整个系统的微观状态。
+
+\textbf{区别}：$\mu$空间用于近独立粒子系统+最概然分布法；$\Gamma$空间用于一般系统+系综理论。$\mu$空间中$N$个点对应$\Gamma$空间中一个点。
+
+\textbf{经典极限条件的三种表达}：(1) $a_l\ll\omega_l$（占据数<<简并度）；(2) $e^\alpha\gg1$；(3) $\frac{N}{V}\left(\frac{h^2}{2\pi mkT}\right)^{3/2}\ll1$（数密度<<量子浓度）。
+
+愈易满足的条件：高温（$T$大→量子浓度大→条件(3)易满足）、低密度（$n$小）、大质量（$m$大→量子浓度小）。
+
+\item \textbf{普朗克辐射公式的推导与物理图像}
+
+\textbf{推导}：光子为$\mu=0$的玻色子→分布$a_l=\omega_l/(e^{\beta\varepsilon_l}-1)$。态密度$\omega(\varepsilon)\dd\varepsilon=\frac{V}{\pi^2\hbar^3c^3}\varepsilon^2\dd\varepsilon$（含2个偏振）。能量密度$u(\varepsilon)\dd\varepsilon=(\varepsilon/V)\cdot a(\varepsilon)$。代入$\varepsilon=h\nu$即得普朗克公式。
+
+\textbf{波动观点}：腔内电磁场可分解为一系列独立简正模式（驻波），每个模式等效于频率为$\nu$的量子谐振子，能级$(n+\frac12)h\nu$。每个谐振子的平均能量不是经典的$kT$，而是$\frac{h\nu}{e^{h\nu/kT}-1}$（由玻色统计自然给出）。将单位频率间隔内的模式数$\times$平均能量→普朗克公式。它统一了长波段的瑞利-金斯（$h\nu\ll kT$→$u_\nu\propto\nu^2T$）和短波段的维恩（$h\nu\gg kT$→$u_\nu\propto\nu^3e^{-h\nu/kT}$）两个极限公式。
+
+\item \textbf{BEC、费米能级与费米温度}
+
+\textbf{BEC}：理想玻色气体在$T<T_c$时，宏观数量粒子凝聚到$\varepsilon=0$基态→动量空间凝聚。$\mu=0$，$N_0/N=1-(T/T_c)^{3/2}$。
+
+\textbf{费米能级}：$T=0$时电子的最高占据能级。$\varepsilon_F=\frac{\hbar^2}{2m}(3\pi^2n)^{2/3}$。\textbf{费米温度}：$T_F=\varepsilon_F/k\sim10^4\text{--}10^5\,\text{K}$。
+
+\textbf{低温费米气体热容与经典差别}：经典能均分→$C_V=\frac{3}{2}Nk$（温度无关的常数）。量子统计→$C_V=\frac{\pi^2}{2}Nk\frac{T}{T_F}\propto T$。差别根源：泡利不相容原理→只有费米面附近$\sim kT$范围的电子（占比$\sim T/T_F\sim10^{-2}$）能被热激发。经典理论假设全部$N$个电子均分能量，高估了$\sim T_F/T\sim100$倍。
+
+\item \textbf{临界点的物理意义、特点与涨落}
+
+\textbf{临界点物理意义}：气液共存线的终点。$T>T_c$时气液两相差别消失，无法通过等温压缩使气体液化。数学定义：$(\partial p/\partial V)_T=0$且$(\partial^2p/\partial V^2)_T=0$。
+
+\textbf{特点}：(1) 密度差$\rho_l-\rho_g\to0$（两相不可区分）；(2) 潜热→0；(3) 关联长度$\xi$发散→$\xi\propto|T-T_c|^{-\nu}$；(4) 各物理量呈幂律：$\kappa_T\propto|T-T_c|^{-\gamma}$，$C_V\propto|T-T_c|^{-\alpha}$；(5) 临界乳光（巨大密度涨落→光散射增强）；(6) 临界慢化（恢复平衡的弛豫时间发散）；(7) 普适性——不同流体的临界指数相同。
+
+\textbf{涨落很大的情况}：(1) 临界点附近（$\kappa_T$发散→密度涨落巨大）；(2) 小系统（$N$小→$\sim1/\sqrt{N}$不可忽略）；(3) 低维系统；(4) 非平衡系统。
+
+\end{enumerate}
+
+\subsection*{二、计算与推导题}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+
+\item \textbf{第二位力系数气体的$H$和$S$}
+
+物态方程：$pV=nRT+nBp\Rightarrow V=\frac{nRT}{p}+nB$。
+
+由焓态方程：$\left(\frac{\partial H}{\partial p}\right)_T=V-T\left(\frac{\partial V}{\partial T}\right)_p$。计算：
+\[\left(\frac{\partial V}{\partial T}\right)_p=\frac{nR}{p}+n\frac{\dd B}{\dd T}.\]
+\[\left(\frac{\partial H}{\partial p}\right)_T=\left(\frac{nRT}{p}+nB\right)-T\left(\frac{nR}{p}+n\frac{\dd B}{\dd T}\right)=n\left(B-T\frac{\dd B}{\dd T}\right).\]
+故$\dd H=C_p\dd T+n\left(B-T\frac{\dd B}{\dd T}\right)\dd p$。积分得$H=\int C_p\dd T+n\int\left(B-T\frac{\dd B}{\dd T}\right)\dd p+H_0$。
+
+对于熵：$\dd S=\frac{\dd H-V\dd p}{T}=\frac{C_p\dd T}{T}+\frac{n}{T}\left(B-T\frac{\dd B}{\dd T}-B\right)\dd p-\frac{nR}{p}\dd p=\frac{C_p\dd T}{T}-n\frac{\dd B}{\dd T}\dd p-\frac{nR}{p}\dd p$。
+\[S=\int\frac{C_p}{T}\dd T-nR\ln p-n\int\frac{\dd B}{\dd T}\dd p+S_0.\]
+
+当$B=0$时$\dd B/\dd T=0$→回到理想气体的$H$和$S$表达式。$B(T)$项体现了实际气体与理想气体的偏离。
+
+\item \textbf{$T=0\,\text{K}$时自由电子气体的推导}
+
+(1) 费米波矢：含自旋，$N=2\cdot\frac{V}{(2\pi)^3}\cdot\frac{4\pi}{3}k_F^3\Rightarrow\boxed{k_F=(3\pi^2n)^{1/3}}$。
+
+费米能级：$\boxed{\varepsilon_F=\frac{\hbar^2k_F^2}{2m}=\frac{\hbar^2}{2m}(3\pi^2n)^{2/3}}$。
+
+(2) 费米动量：$\boxed{p_F=\hbar k_F=\hbar(3\pi^2n)^{1/3}}$。
+
+(3) 费米速率：$\boxed{v_F=\frac{p_F}{m}=\frac{\hbar}{m}(3\pi^2n)^{1/3}}$。
+
+(4) 总内能（$T=0$）：$U_0=\int_0^{k_F}\frac{\hbar^2k^2}{2m}\cdot\frac{V}{\pi^2}k^2\dd k=\frac{V}{5\pi^2}\frac{\hbar^2k_F^5}{2m}=\boxed{\frac{3}{5}N\varepsilon_F}$。
+
+(5) 压强：由$p=2U/3V$（非相对论）→$p_0=\frac{2}{5}n\varepsilon_F$（简并压）。对典型金属（$n\sim10^{28}\,\text{m}^{-3}$，$\varepsilon_F\sim\text{几eV}$）→$p_0\sim10^4\,\text{atm}$。如此巨大的简并压被离子实的静电吸引所平衡，解释了金属的稳定性。
+
+\item \textbf{从微正则分布推导巨正则分布}
+
+考虑系统+大热源兼粒子源组成的孤立复合系统，总能量$E_0$，总粒子数$N_0$。系统具有能量$E$和粒子数$N$时，热源的微观状态数为$\Omega_R(E_0-E, N_0-N)$。
+
+系统处于特定$(N,s)$态的概率正比于$\Omega_R$：
+\[P(N,s)\propto\Omega_R(E_0-E, N_0-N)=e^{S_R(E_0-E, N_0-N)/k}.\]
+
+将$S_R$在$(E_0,N_0)$附近展开到一阶：
+\[S_R(E_0-E, N_0-N)\approx S_R(E_0,N_0)-\left(\frac{\partial S_R}{\partial E}\right)_{N,V}E-\left(\frac{\partial S_R}{\partial N}\right)_{E,V}N.\]
+由热力学关系：$\left(\frac{\partial S}{\partial E}\right)_{N,V}=\frac{1}{T}$，$\left(\frac{\partial S}{\partial N}\right)_{E,V}=-\frac{\mu}{T}$。
+
+\[\therefore P(N,s)\propto\exp\left(-\frac{E}{kT}+\frac{\mu N}{kT}\right)=e^{-\alpha N-\beta E_s}.\]
+
+归一化：$\rho_{N,s}=\frac{1}{\Xi}e^{-\alpha N-\beta E_s}$，$\Xi=\sum_{N,s}e^{-\alpha N-\beta E_s}$为巨配分函数。
+
+$\alpha=-\mu/kT$反映了系统的化学势，$\beta=1/kT$反映了温度。
+
+\item \textbf{能量涨落与临界点}
+
+\textbf{推导}（同练习卷三第10题）：
+\[\overline{(\Delta E)^2}=\frac{\partial^2\ln Z}{\partial\beta^2}=kT^2C_V,\quad\frac{\sqrt{\overline{(\Delta E)^2}}}{\bar{E}}\sim\frac{1}{\sqrt{N}}.\]
+
+\textbf{热力学极限下}：$N\sim10^{23}$→相对涨落$\sim10^{-11}$，能量在正则系综中的分布极其尖锐→正则系综与微正则系综等价。
+
+\textbf{临界点附近涨落增强}：能量涨落$\propto C_V$，而$C_V$在临界点附近发散（$C_V\propto|T-T_c|^{-\alpha}$）→$\overline{(\Delta E)^2}$急剧增大→关联长度$\xi$发散→不同区域的涨落强关联→即使宏观系统也表现出可观测的巨大涨落（如临界乳光现象）。在临界点，平均场理论失效，需重正化群等更精确方法。
+
+\end{enumerate}
+
+\end{document}

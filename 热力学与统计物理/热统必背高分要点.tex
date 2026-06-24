@@ -1,0 +1,605 @@
+\documentclass[10pt,a4paper,fontset=mac]{ctexart}
+
+\usepackage[a4paper,margin=1.2cm,headheight=15pt]{geometry}
+\usepackage{setspace}
+\setstretch{0.92}
+\usepackage{amsmath, amssymb, amsfonts, bm, mathtools}
+\usepackage{physics}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{热力学与统计物理 · 必背高分要点}
+\rhead{\thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\đ}{\mathrm{đ}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{热力学与统计物理 · 必背高分要点}}\\[0.3em]
+{\normalsize 六套练习卷 + 复习大纲全覆盖}
+\end{center}
+
+\vspace{-0.5em}
+
+\begin{multicols}{2}
+
+\section*{一、热力学基本概念}
+
+\begin{itemize}
+\item \textbf{孤立系}：无物质交换，无能量交换
+\item \textbf{闭系}：无物质交换，有能量交换
+\item \textbf{开系}：有物质交换，有能量交换
+\item \textbf{广延量}：$\propto$ 物质的量（$V,U,S,n$），有可加性
+\item \textbf{强度量}：与物质的量无关（$p,T,\mu$）
+\item 广延量除以体积/质量 $\to$ 强度量
+\end{itemize}
+
+\section*{二、第零定律与温度}
+
+\textbf{第零定律}：A与C热平衡，B与C热平衡 $\Rightarrow$ A与B热平衡。
+
+\textbf{温度存在性}：
+\[
+g_A(p_A,V_A)=g_B(p_B,V_B)
+\]
+
+\textbf{温标三要素}：测温物质、测温属性、固定点。
+
+\textbf{常见温标}：理想气体温标 $T=273.16\lim_{p_t\to0}\frac{p}{p_t}$；热力学温标 $\frac{Q_2}{Q_1}=\frac{T_2}{T_1}$。
+
+\section*{三、物态方程}
+
+三个响应函数：
+\[
+\alpha=\frac{1}{V}\!\left(\frac{\partial V}{\partial T}\right)_p,\quad
+\beta=\frac{1}{p}\!\left(\frac{\partial p}{\partial T}\right)_V,\quad
+\kappa_T=-\frac{1}{V}\!\left(\frac{\partial V}{\partial p}\right)_T
+\]
+
+循环关系：
+\[
+\left(\frac{\partial V}{\partial p}\right)_T\left(\frac{\partial p}{\partial T}\right)_V\left(\frac{\partial T}{\partial V}\right)_p=-1,\quad \alpha=\kappa_T\beta p
+\]
+
+\textbf{理想气体}：$pV=nRT$。\textbf{范德瓦尔斯}：$(p+\frac{an^2}{V^2})(V-nb)=nRT$。
+
+\section*{四、热力学第一定律}
+
+\[
+\dd U=\đ Q+\đ W,\quad \đ W=-p\dd V\;\text{（体积功）}
+\]
+
+\textbf{热容}：
+\[
+C_V=\left(\frac{\partial U}{\partial T}\right)_V,\quad
+C_p=\left(\frac{\partial H}{\partial T}\right)_p,\quad
+H\equiv U+pV
+\]
+
+\textbf{理想气体}：
+\[
+\boxed{C_p-C_V=nR},\quad \gamma\equiv\frac{C_p}{C_V}
+\]
+\[
+U=\int C_V\dd T+U_0,\quad H=\int C_p\dd T+H_0
+\]
+
+\textbf{焦耳定律}：$(\partial U/\partial V)_T=0$（理想气体内能仅为温度函数）。
+
+\textbf{绝热过程}（$C_V$常数）：$pV^\gamma=\text{const}$，$TV^{\gamma-1}=\text{const}$。
+
+\section*{五、热力学第二定律}
+
+\begin{itemize}
+\item \textbf{克劳修斯表述}：热不能自发从低温传到高温
+\item \textbf{开尔文表述}：第二类永动机不可能
+\item \textbf{两种表述等价}（反证法互推）
+\end{itemize}
+
+\textbf{卡诺定理}：$\eta\le1-\frac{T_2}{T_1}$，可逆时取等号。
+
+\textbf{卡诺循环}：$\eta=1-\frac{T_2}{T_1}$，$W=Q_1-Q_2$。逆循环制冷系数 $\eta'=\frac{T_2}{T_1-T_2}$。
+
+\textbf{克劳修斯等式/不等式}：
+\[
+\boxed{\oint\frac{\đ Q}{T}\le0}
+\]
+
+\section*{六、熵}
+
+\textbf{定义}：$\dd S=\frac{\đ Q}{T}$（可逆）。$S_B-S_A=\int_A^B\frac{\đ Q}{T}$。
+
+\textbf{热力学基本方程}：
+\[
+\boxed{\dd U=T\dd S-p\dd V}
+\]
+
+\textbf{第二定律数学表述}：
+\[
+\boxed{S_B-S_A\ge\int_A^B\frac{\đ Q}{T}},\quad \dd S\ge\frac{\đ Q}{T}
+\]
+
+\textbf{熵增加原理}：孤立系 $\Delta S\ge0$，不可逆绝热过程熵增加。
+
+\textbf{统计意义}：$S=k\ln\Omega$，熵是混乱度的量度。
+
+\textbf{理想气体的熵}：
+\[
+S=nC_{V,m}\ln T+nR\ln V+S_0=nC_{p,m}\ln T-nR\ln p+S_0
+\]
+
+\section*{七、热力学势与麦克斯韦关系}
+
+四大热力学势：
+\[
+\begin{aligned}
+\dd U &= T\dd S-p\dd V \\
+\dd H &= T\dd S+V\dd p\quad(H=U+pV) \\
+\dd F &= -S\dd T-p\dd V\quad(F=U-TS) \\
+\dd G &= -S\dd T+V\dd p\quad(G=U-TS+pV)
+\end{aligned}
+\]
+
+\textbf{麦克斯韦关系（必背！）}：
+\[
+\boxed{\left(\frac{\partial T}{\partial V}\right)_S=-\left(\frac{\partial p}{\partial S}\right)_V}
+\]
+\[
+\boxed{\left(\frac{\partial T}{\partial p}\right)_S=\left(\frac{\partial V}{\partial S}\right)_p}
+\]
+\[
+\boxed{\left(\frac{\partial S}{\partial V}\right)_T=\left(\frac{\partial p}{\partial T}\right)_V}
+\]
+\[
+\boxed{\left(\frac{\partial S}{\partial p}\right)_T=-\left(\frac{\partial V}{\partial T}\right)_p}
+\]
+
+\textbf{能态方程}：$(\frac{\partial U}{\partial V})_T=T(\frac{\partial p}{\partial T})_V-p$
+
+\textbf{焓态方程}：$(\frac{\partial H}{\partial p})_T=V-T(\frac{\partial V}{\partial T})_p$
+
+\textbf{$C_p-C_V$}：
+\[
+\boxed{C_p-C_V=T\left(\frac{\partial p}{\partial T}\right)_V\left(\frac{\partial V}{\partial T}\right)_p=\frac{VT\alpha^2}{\kappa_T}}
+\]
+
+\section*{八、特性函数与平衡判据}
+
+\textbf{特性函数}：适当独立变量下，一个热力学函数 $\to$ 全部热力学量。$F(T,V)$、$G(T,p)$、$H(S,p)$、$U(S,V)$。
+
+吉布斯-亥姆霍兹方程：
+\[
+\left[\frac{\partial}{\partial T}\!\left(\frac{F}{T}\right)\right]_V=-\frac{U}{T^2},\quad
+\left[\frac{\partial}{\partial T}\!\left(\frac{G}{T}\right)\right]_p=-\frac{H}{T^2}
+\]
+
+\textbf{三种平衡判据}：
+
+\begin{tabular}{c|c|c}
+判据 & 条件 & 平衡态 \\
+\hline
+熵判据 & 孤立系 & $S$极大 \\
+自由能判据 & 等温等容 & $F$极小 \\
+吉布斯判据 & 等温等压 & $G$极小 \\
+\end{tabular}
+
+\textbf{稳定性条件}：
+\[
+\boxed{C_V>0,\quad\left(\frac{\partial p}{\partial V}\right)_T<0}
+\]
+
+\section*{九、单元系相变}
+
+\textbf{复相平衡条件}：$T^\alpha=T^\beta$，$p^\alpha=p^\beta$，$\mu^\alpha=\mu^\beta$。
+
+\textbf{克拉珀龙方程（必背！）}：
+\[
+\boxed{\frac{\dd p}{\dd T}=\frac{S_m^\beta-S_m^\alpha}{V_m^\beta-V_m^\alpha}=\frac{L}{T\Delta V_m}}
+\]
+
+\textbf{蒸气压方程}（气-液，气相为理想气体）：
+\[
+\frac{\dd\ln p}{\dd T}=\frac{L}{RT^2},\quad\ln p=-\frac{L}{RT}+C
+\]
+
+\textbf{开系基本方程}：
+\[
+\dd G=-S\dd T+V\dd p+\mu\dd n,\quad
+\dd U=T\dd S-p\dd V+\mu\dd n
+\]
+
+\textbf{巨热力势}：$J=F-\mu n=-pV$。
+
+\textbf{相变分类}：
+\begin{itemize}
+\item \textbf{一级}：有潜热$L\neq0$，有体积突变。例：三态相变
+\item \textbf{连续（二级）}：无潜热，$C_p,\alpha,\kappa_T$突变。例：临界点、居里点
+\end{itemize}
+
+\textbf{临界点}：$(\frac{\partial p}{\partial V})_T=0$且$(\frac{\partial^2 p}{\partial V^2})_T=0$。
+
+\textbf{爱伦费斯特方程}（二级相变）：
+\[
+\frac{\dd p}{\dd T}=\frac{C_{p,m}^\beta-C_{p,m}^\alpha}{TV_m(\alpha^\beta-\alpha^\alpha)}
+\]
+
+\section*{十、多元系}
+
+\textbf{吉布斯-杜安关系}：
+\[
+S\dd T-V\dd p+\sum_i n_i\dd\mu_i=0
+\]
+
+\textbf{吉布斯相律}：
+\[
+\boxed{f=k-\varphi+2}
+\]
+
+\textbf{质量作用定律}：$\prod_i p_i^{\nu_i}=K_p(T)$。
+
+\textbf{范特霍夫方程}：$\frac{\dd\ln K_p}{\dd T}=\frac{\Delta H_m}{RT^2}$。
+
+\textbf{理想溶液}：$\mu_i=\mu_i^*(T,p)+RT\ln x_i$。
+
+\section*{十一、热力学第三定律}
+
+\textbf{三种表述}：
+\begin{enumerate}
+\item 能氏定理：$\lim_{T\to0}(\Delta S)_T=0$
+\item 绝对零度不可达到
+\item 普朗克：$T\to0$时$S\to S_0$（可取为0）
+\end{enumerate}
+
+\textbf{推论}（$T\to0$时）：
+\[
+C_V\to0,\;\alpha\to0,\;\beta\to0,\;\frac{\dd p}{\dd T}\to0
+\]
+
+\textbf{适用范围}：凝聚系平衡态。不适用：非平衡态/亚稳态（如玻璃）。
+
+\section*{十二、$\mu$空间与$\Gamma$空间}
+
+\begin{tabular}{c|c|c}
+ & $\mu$空间 & $\Gamma$空间 \\
+\hline
+描述对象 & 单个粒子 & 整个系统 \\
+维数 & $2r$ & $2Nr$ \\
+用途 & 最概然分布法 & 系综理论 \\
+\end{tabular}
+
+\section*{十三、三种统计分布}
+
+\textbf{量子态数}（三维自由粒子）：
+\[
+\boxed{g(\varepsilon)\dd\varepsilon=\frac{2\pi V}{h^3}(2m)^{3/2}\sqrt{\varepsilon}\,\dd\varepsilon}
+\]
+
+\textbf{极端相对论}（$\varepsilon=cp$）：
+\[
+g(\varepsilon)\dd\varepsilon=\frac{4\pi V}{h^3c^3}\varepsilon^2\dd\varepsilon
+\]
+
+\textbf{三种分布（必背！）}：
+
+\begin{tabular}{c|c|c}
+分布 & $a_l$ & 适用对象 \\
+\hline
+玻尔兹曼 & $\omega_l e^{-\alpha-\beta\varepsilon_l}$ & 经典/可分辨 \\
+玻色 & $\dfrac{\omega_l}{e^{\alpha+\beta\varepsilon_l}-1}$ & 玻色子（整数自旋） \\
+费米 & $\dfrac{\omega_l}{e^{\alpha+\beta\varepsilon_l}+1}$ & 费米子（半整数自旋） \\
+\end{tabular}
+
+微观状态数：
+\[
+W_M=N!\prod_l\frac{\omega_l^{a_l}}{a_l!},\;
+W_B=\prod_l\frac{(\omega_l+a_l-1)!}{a_l!(\omega_l-1)!},\;
+W_F=\prod_l\frac{\omega_l!}{a_l!(\omega_l-a_l)!}
+\]
+
+\textbf{参数含义}：$\boxed{\beta=\frac{1}{kT}}$，$\boxed{\alpha=-\frac{\mu}{kT}}$。
+
+\textbf{经典极限条件}（非简并条件）：
+\begin{enumerate}
+\item $a_l\ll\omega_l$（占据数$\ll$简并度）
+\item $e^\alpha\gg1$
+\item $\frac{N}{V}\big(\frac{h^2}{2\pi mkT}\big)^{3/2}\ll1$
+\end{enumerate}
+满足条件时费米/玻色 $\to$ 玻尔兹曼。易满足条件：高温、低密度、大质量。
+
+\textbf{玻尔兹曼关系}：
+\[
+\boxed{S=k\ln\Omega}
+\]
+
+\textbf{能量均分定理}：每平方项能量分量 $\overline{\varepsilon_i}=\frac{1}{2}kT$。
+
+\textbf{单粒子配分函数}：$Z_1=\sum_l\omega_le^{-\beta\varepsilon_l}$。
+
+\textbf{热力学量}：$N=e^{-\alpha}Z_1$，$U=-N\frac{\partial\ln Z_1}{\partial\beta}$，$p=\frac{N}{\beta}\frac{\partial\ln Z_1}{\partial V}$。
+
+\textbf{麦克斯韦速度分布}：
+\[
+f(v)\dd v=4\pi\!\left(\frac{m}{2\pi kT}\right)^{3/2}\!v^2e^{-\frac{mv^2}{2kT}}\dd v
+\]
+\[
+v_p=\sqrt{\frac{2kT}{m}},\;\bar{v}=\sqrt{\frac{8kT}{\pi m}},\;v_{rms}=\sqrt{\frac{3kT}{m}}
+\]
+
+\section*{十四、玻色统计与费米统计}
+
+\textbf{玻色-爱因斯坦凝聚（BEC）}：
+\[
+T_c=\frac{h^2}{2\pi mk}\!\left(\frac{N}{2.612V}\right)^{2/3},\quad
+\frac{N_0}{N}=1-\!\left(\frac{T}{T_c}\right)^{3/2}\!(T<T_c)
+\]
+$T<T_c$时$\mu=0$，凝聚体对$p,U$无贡献（能量为0的基态）。纯量子统计效应。
+
+\textbf{普朗克辐射公式（光子$\mu=0$）}：
+\[
+\boxed{u(\nu,T)\dd\nu=\frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/kT}-1}\dd\nu}
+\]
+\begin{itemize}
+\item $h\nu\ll kT$：瑞利-金斯 $u_\nu\propto\nu^2T$
+\item $h\nu\gg kT$：维恩 $u_\nu\propto\nu^3e^{-h\nu/kT}$
+\item 积分得斯特藩-玻尔兹曼：$U/V=aT^4$
+\end{itemize}
+
+\textbf{理想费米气体（电子气）}：
+\[
+\boxed{k_F=(3\pi^2n)^{1/3}},\quad
+\boxed{\varepsilon_F=\frac{\hbar^2}{2m}(3\pi^2n)^{2/3}}
+\]
+\[
+T_F=\frac{\varepsilon_F}{k}\sim10^4\text{--}10^5\text{K},\quad
+v_F=\frac{\hbar k_F}{m}\sim10^6\text{m/s}
+\]
+
+\textbf{$T=0$时}：
+\[
+\boxed{U_0=\frac{3}{5}N\varepsilon_F},\quad
+\boxed{p_0=\frac{2}{5}n\varepsilon_F}
+\]
+
+\textbf{电子比热（低温）}：
+\[
+\boxed{C_V=\frac{\pi^2}{2}Nk\frac{T}{T_F}=\gamma T}
+\]
+
+\textbf{压强公式}（与分布无关）：
+\[
+p=-\sum_la_l\frac{\partial\varepsilon_l}{\partial V}
+\]
+非相对论（$\varepsilon\propto V^{-2/3}$）：$\boxed{p=\frac{2U}{3V}}$。极端相对论（$\varepsilon\propto V^{-1/3}$）：$p=\frac{U}{3V}$。
+
+\textbf{费米-狄拉克分布}：
+\[
+\boxed{f(\varepsilon)=\frac{1}{e^{(\varepsilon-\mu)/kT}+1}}
+\]
+
+\section*{十五、系综理论}
+
+\textbf{刘维尔定理}：$\frac{\dd\rho}{\dd t}=0$，相空间运动不可压缩。
+
+\textbf{三种系综对比}：
+
+\begin{tabular}{c|c|c|c}
+系综 & 固定量 & 分布函数 & 特征函数 \\
+\hline
+微正则 & $N,E,V$ & $\rho_s=1/\Omega$ & $S=k\ln\Omega$ \\
+正则 & $N,V,T$ & $\rho_s=e^{-\beta E_s}/Z$ & $F=-kT\ln Z$ \\
+巨正则 & $\mu,V,T$ & $\rho_{N,s}=e^{-\alpha N-\beta E_s}/\Xi$ & $J=-pV=-kT\ln\Xi$ \\
+\end{tabular}
+
+\textbf{正则配分函数}：$Z=\sum_se^{-\beta E_s}=\frac{1}{N!h^{Nr}}\!\int\!e^{-\beta H}\dd\Gamma$。
+
+\textbf{巨正则配分函数}：$\Xi=\sum_{N,s}e^{-\alpha N-\beta E_s}$。
+
+\textbf{热力学量（正则系综）}：
+\[
+U=-\frac{\partial\ln Z}{\partial\beta},\;
+p=\frac{1}{\beta}\frac{\partial\ln Z}{\partial V},\;
+S=k(\ln Z+\beta U)
+\]
+
+\textbf{热力学量（巨正则系综）}：
+\[
+\bar{N}=-\frac{\partial\ln\Xi}{\partial\alpha},\;
+U=-\frac{\partial\ln\Xi}{\partial\beta},\;
+S=k(\ln\Xi+\beta U+\alpha\bar{N})
+\]
+
+\textbf{能量涨落}：
+\[
+\boxed{\overline{(\Delta E)^2}=kT^2C_V},\quad
+\frac{\sqrt{\overline{(\Delta E)^2}}}{\bar{E}}\sim\frac{1}{\sqrt{N}}
+\]
+
+\textbf{粒子数涨落}：
+\[
+\overline{(\Delta N)^2}=kT\!\left(\frac{\partial\bar{N}}{\partial\mu}\right)_{T,V},\quad
+\frac{\sqrt{\overline{(\Delta N)^2}}}{\bar{N}}\sim\frac{1}{\sqrt{\bar{N}}}
+\]
+
+\textbf{涨落大}：临界点（$\kappa_T\to\infty$）、小系统（$N$小）、低维。
+
+\textbf{吉布斯熵公式（统一表达式）}：
+\[
+\boxed{S=-k\sum_s\rho_s\ln\rho_s}
+\]
+
+\section*{十六、固体比热}
+
+\textbf{爱因斯坦模型}：
+\[
+C_V=3Nk\!\left(\frac{\Theta_E}{T}\right)^2\!\frac{e^{\Theta_E/T}}{(e^{\Theta_E/T}-1)^2},\;
+\Theta_E=\frac{\hbar\omega_E}{k}
+\]
+低温：$C_V\propto e^{-\Theta_E/T}$（指数衰减，太快）。
+
+\textbf{德拜模型}：
+\[
+C_V=9Nk\!\left(\frac{T}{\Theta_D}\right)^3\!\int_0^{\Theta_D/T}\!\!\frac{x^4e^x}{(e^x-1)^2}\dd x
+\]
+低温：$\boxed{C_V=\frac{12\pi^4}{5}Nk(\frac{T}{\Theta_D})^3\propto T^3}$（德拜$T^3$律）。
+
+\textbf{德拜优于爱因斯坦的原因}：德拜包含了$\omega\to0$的无能隙长波声学模，爱因斯坦假设单一高频$\omega_E$→人为引入能隙→低温被冻结→$C_V$衰减过快。
+
+\section*{十七、范德瓦尔斯方程（系综推导）}
+
+\[
+\boxed{\left(p+\frac{aN^2}{V^2}\right)(V-Nb)=NkT}
+\]
+\begin{itemize}
+\item $a$：分子间长程吸引强度。$\frac{aN^2}{V^2}$为内压修正
+\item $b$：分子硬心排斥，$b=4N_A\cdot\frac{4}{3}\pi r_0^3$
+\end{itemize}
+
+\textbf{临界参数}：$T_c=\frac{8a}{27Rb}$，$p_c=\frac{a}{27b^2}$，$V_{m,c}=3b$。
+
+\section*{十八、热力学vs统计物理}
+
+\begin{tabular}{c|c|c}
+ & 热力学（唯象） & 统计物理（微观） \\
+\hline
+出发点 & 四大定律 & 微观模型+等概率原理 \\
+方法 & 逻辑演绎 & 统计平均 \\
+特点 & 普适可靠 & 可具体计算 \\
+核心 & 热力学势+全微分 & 配分函数 \\
+桥梁 & — & $S=k\ln\Omega$, $F=-kT\ln Z$ \\
+\end{tabular}
+
+\section*{十九、必背数值关系}
+
+\[
+\boxed{\beta=\frac{1}{kT}},\quad
+\boxed{\alpha=-\frac{\mu}{kT}=-\beta\mu},\quad
+R=N_Ak,\quad nR=Nk
+\]
+\[
+h=2\pi\hbar,\quad e=1.602\times10^{-19}\,\text{C},\quad k=1.381\times10^{-23}\,\text{J/K}
+\]
+\[
+\hbar=1.054\times10^{-34}\,\text{J·s},\quad m_e=9.11\times10^{-31}\,\text{kg}
+\]
+
+\section*{二十、必背推导链}
+
+\begin{enumerate}
+\item 热力学基本方程 $\to$ 全微分 $\to$ 麦克斯韦关系 $\to$ 能态/焓态方程 $\to$ $C_p-C_V$
+\item 卡诺定理 $\to$ 克劳修斯等式/不等式 $\to$ 熵 $\to$ 第二定律数学表述
+\item $\mu^\alpha=\mu^\beta$ $\to$ 克拉珀龙方程 $\to$ 蒸气压方程
+\item $\mu$空间态密度 $\to$ 分布函数推导 $\to$ 热力学量的统计表达式
+\item 正则配分函数 $\to$ $F=-kT\ln Z$ $\to$ 涨落公式
+\item 巨正则配分函数 $\to$ $J=-kT\ln\Xi$ $\to$ 粒子数涨落 $\to$ 范德瓦尔斯方程
+\end{enumerate}
+
+\section*{二十一、常见计算套路}
+
+\textbf{1. 给定EOS求$U$和$S$：}
+\begin{enumerate}
+\item 由$p(T,V)$利用能态方程求$(\partial U/\partial V)_T$
+\item 积分$\dd U=C_V\dd T+(\partial U/\partial V)_T\dd V$得$U$
+\item 由$\dd S=\frac{C_V}{T}\dd T+\frac{\partial p}{\partial T}\dd V$积分得$S$
+\item 类似地，以$T,p$为变量时，先用焓态方程，再积分
+\end{enumerate}
+
+\textbf{2. 费米气体计算：}
+\begin{enumerate}
+\item $k_F=(3\pi^2n)^{1/3}\to\varepsilon_F=\frac{\hbar^2k_F^2}{2m}\to T_F=\varepsilon_F/k$
+\item $U_0=\frac{3}{5}N\varepsilon_F$，$\bar{E}=\frac{3}{5}\varepsilon_F$
+\item $p_0=\frac{2}{5}n\varepsilon_F$，或$pV=\frac{2}{3}U$
+\item 态密度$g(\varepsilon_F)=\frac{3}{2}N/\varepsilon_F$，$C_V=\gamma T$
+\end{enumerate}
+
+\textbf{3. 配分函数$\to$热力学量：}
+\begin{enumerate}
+\item 求$Z$（或$\Xi$）$\to\ln Z\to F=-kT\ln Z$
+\item $U=-\frac{\partial\ln Z}{\partial\beta}$，$p=\frac{1}{\beta}\frac{\partial\ln Z}{\partial V}$
+\item $S=k(\ln Z+\beta U)$，$\overline{(\Delta E)^2}=kT^2C_V$
+\end{enumerate}
+
+\textbf{4. 相变问题：}
+\begin{enumerate}
+\item 由$\mu^\alpha=\mu^\beta$沿相平衡曲线求全微分$\to$克拉珀龙方程
+\item 气液平衡用蒸气压方程$\frac{\dd\ln p}{\dd T}=\frac{L}{RT^2}$
+\item 临界点条件$\partial p/\partial V=0$且$\partial^2p/\partial V^2=0$
+\end{enumerate}
+
+\section*{二十二、易错点提醒}
+
+\begin{itemize}
+\item $\đ Q$和$\đ W$不是全微分，用$\đ$不是$\dd$。克劳修斯不等式中的$T$是\textbf{热源温度}
+\item 麦克斯韦关系中含$S$和$p$的那个有\textbf{负号}：$(\partial S/\partial p)_T=-(\partial V/\partial T)_p$
+\item 玻色分布分母$-1$，费米分布分母$+1$；经典极限$a_l\ll\omega_l$，不是$a_l\gg\omega_l$
+\item $Z_1$是\textbf{单粒子}配分函数，$Z$是\textbf{全系统}正则配分函数
+\item BEC是$\kk$空间的凝聚，不是坐标空间的凝聚
+\item $e^\alpha\gg1$时量子统计$\to$玻尔兹曼；化学势$\mu$：费米$>0$，玻色$\le0$
+\item 能态方程求$U$时先求$(\partial U/\partial V)_T$再积分；焓态方程求$H$时先求$(\partial H/\partial p)_T$再积分
+\item $C_p$和$\kappa_T$在两相共存区$\to\infty$；$\dd p/\dd T$在$T\to0$时$\to0$
+\end{itemize}
+
+\section*{二十三、统计物理计算速查}
+
+\textbf{三维自由粒子}：$g(\varepsilon)\propto\sqrt{\varepsilon}$，$\varepsilon\propto V^{-2/3}$，$p=\frac{2U}{3V}$。
+
+\textbf{极端相对论}：$g(\varepsilon)\propto\varepsilon^2$，$\varepsilon\propto V^{-1/3}$，$p=\frac{U}{3V}$。
+
+\textbf{二维自由粒子}：$g(\varepsilon)=\frac{mA}{\pi\hbar^2}=\text{const}$（与$\varepsilon$无关！）。$n=k_F^2/2\pi$，$\varepsilon_F=\pi\hbar^2n/m$，$U_0=\frac{1}{2}N\varepsilon_F$。
+
+\textbf{一维自由粒子}：$g(\varepsilon)\propto\varepsilon^{-1/2}$（$\varepsilon$小时态密度大）。
+
+\textbf{光子气体}：$p=\frac{U}{3V}$，$U/V=aT^4$（$a=\frac{\pi^2k^4}{15\hbar^3c^3}$）。
+
+\textbf{声子气体（德拜）}：$U/V\propto T^4$（低温），$C_V\propto T^3$。
+
+\textbf{弱简并修正}（一级）：
+\[
+pV=NkT\!\left[1\pm\frac{1}{2^{5/2}}\frac{N}{V}\!\left(\frac{h^2}{2\pi mkT}\right)^{3/2}+\cdots\right]
+\]
+$+$费米（排斥），$-$玻色（吸引）。
+
+\textbf{Boltzmann分布推导}：$\ln W$取极大$+\sum_l a_l=N$和$\sum_l a_l\varepsilon_l=E$约束$+\,$斯特林公式$+\,$拉格朗日乘子法$\to a_l=\omega_le^{-\alpha-\beta\varepsilon_l}$。
+
+\textbf{微正则$\to$巨正则}：系统+热源兼粒子源组成孤立系$\to P(N,s)\propto\Omega_R(E_0-E,N_0-N)\to$展开$S_R$到一阶$\to e^{-\alpha N-\beta E_s}$。
+
+\textbf{正则系综能量涨落推导}：
+\[
+\overline{E^2}=\frac{1}{Z}\frac{\partial^2Z}{\partial\beta^2},\;
+\overline{(\Delta E)^2}=\frac{\partial^2\ln Z}{\partial\beta^2}=-\frac{\partial U}{\partial\beta}=kT^2C_V.
+\]
+
+\textbf{习题9.1（熵与分布函数）}：
+\[
+S=-k\sum_s\rho_s\ln\rho_s.
+\]
+微正则$\rho_s=1/\Omega\to S=k\ln\Omega$。
+正则$\rho_s=e^{-\beta E_s}/Z\to S=k(\ln Z+\beta U)$。
+
+\section*{二十四、拉格朗日乘子法求最概然分布}
+
+统一步骤：
+\begin{enumerate}
+\item 写出微观状态数$W\{a_l\}$的表达式（区分M/B/F）
+\item 取对数并用斯特林近似$\ln N!\approx N\ln N-N$
+\item 约束条件：$\sum_l a_l=N$，$\sum_l a_l\varepsilon_l=E$
+\item 构造$F=\ln W-\alpha\sum_l a_l-\beta\sum_l a_l\varepsilon_l$
+\item 令$\partial F/\partial a_l=0$，解出$a_l$
+\item 由归一化条件确定$\alpha$，由$\beta=1/kT$确定温度
+\end{enumerate}
+
+\textbf{斯特林公式}：$\ln N!\approx N\ln N-N$（$N\gg1$）。更精确：$\ln N!=N\ln N-N+\frac{1}{2}\ln(2\pi N)+\cdots$。
+
+\end{multicols}
+
+\end{document}
